@@ -1,0 +1,22 @@
+The files in this directory provide suggestions for customizing an
+initialization file ("rc file") for latexmk.  See the latexmk
+documentation for general information on its initialization files.
+
+Not only do these files provide solutions to particular problems, but
+they can be also used as inspiration for solutions to other cases.
+
+NOTES: 
+
+1. The examples are not complete rc files, but contain fragments that
+   you can copy to one of your .latexmkrc/latexmkrc files.
+
+2. These examples are developed by particular users to solve
+   particular problems.  You may have to customize them for your own
+   needs.  So read the comments carefully, and understand how the
+   examples are working.
+
+3. Another source of examples is in Herb Schulz's distribution of
+   TexShop, at http://homepage.mac.com/herbs2, for some further
+   examples.  (The file Latexmk321jTeXShop.zip is the one you want.)
+   It shows how to use glossaries, epstopdf, pdftricks and pst-pdf.
+
