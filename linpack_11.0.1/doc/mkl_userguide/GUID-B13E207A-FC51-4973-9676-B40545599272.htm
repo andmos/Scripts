@@ -1,0 +1,75 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Setting the Number of Threads Using an OpenMP* Environment Variable">
+<meta name="DC.subject" content="number of threads, changing with OpenMP* environment variable">
+<meta name="keywords" content="number of threads, changing with OpenMP* environment variable">
+<meta name="DC.Relation" scheme="URI" content="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-0073DDBD-3239-44B2-AD92-87A533733E11.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-B13E207A-FC51-4973-9676-B40545599272">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Setting the Number of Threads Using an OpenMP* Environment Variable</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-B13E207A-FC51-4973-9676-B40545599272">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Setting the Number of Threads Using an OpenMP* Environment Variable</h1>
+ 
+   
+  <div id="GUID-74403C93-28FF-4DB1-B5C3-B67CE0BD5C9F"> 
+	 <p id="GUID-AB09FD96-1FBC-4AD0-8CD2-7746BD724916">You can set the number of threads using the environment variable 
+		<samp class="codeph" id="GUID-C6F1867E-E21A-49A9-8B01-1D8160348C2D">OMP_NUM_THREADS</samp>. To change the number of threads, 
+		<span id="GUID-6BA3A6DD-FD40-4283-9744-B7C8D9AF51A6">use the appropriate command</span> in the command shell in which the program is going to run, 
+		<span id="GUID-177940DA-E321-4F5C-8544-1441D4E118AD">for example:</span>
+	 </p>
+ 
+	 <ul type="disc" id="GUID-4DF045F5-8F0A-428C-990E-BB2E8125D2B4"> 
+		<li id="GUID-ADCAF86D-5D99-434E-98A0-C5896B3D3351">For the bash shell, enter: 
+		  <samp class="codeph" id="GUID-CE9AAB5C-3EBA-4CEE-90F6-EA219BF88FDC"><br> export OMP_NUM_THREADS=<var>&lt;number of threads to use&gt;</var></samp>
+		</li>
+ 
+		<li id="GUID-518D8FF8-617E-4DBA-890C-2A27157D0931">For the csh or tcsh shell, enter: 
+		  <samp class="codeph" id="GUID-1BA96BA3-5357-4339-ACCB-4CE4035CDDE7"><br> setenv OMP_NUM_THREADS 
+			 <var>&lt;number of threads to use&gt;</var></samp>
+		</li>
+ 
+	 </ul>
+ 
+	 <p id="GUID-6C667505-7971-49AA-A8F7-21563516751D"> 
+		</p>
+ 
+	 <p id="GUID-AFCD2B8B-ACBE-484B-9786-C818A09F1922"> 
+		</p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">Improving Performance with Threading</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-0073DDBD-3239-44B2-AD92-87A533733E11.htm">Using Additional Threading Control
+		  </a></div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Threaded Functions and Problems">
+<meta name="DC.subject" content="FFT interface, threaded problems, LAPACK, threaded routines, BLAS, threaded functions">
+<meta name="keywords" content="FFT interface, threaded problems, LAPACK, threaded routines, BLAS, threaded functions">
+<meta name="DC.Relation" scheme="URI" content="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-2E857767-CF73-4460-A7EA-5A85D21E9431">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Threaded Functions and Problems</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-2E857767-CF73-4460-A7EA-5A85D21E9431">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Threaded Functions and Problems</h1>
+ 
+   
+  <div id="GUID-612A498D-99A7-46FD-80D8-4097FC9C7541"> 
+	 <p id="GUID-18AF131C-5C93-4D03-8D32-99069252C58C">The following Intel MKL function domains are threaded: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-E3F8A448-C29A-4370-AEA0-9031E5FE0889"> 
+		<li> 
+		  <p id="GUID-D87C68F0-D6D6-4D62-AA3A-AB7FDB895DFE">Direct sparse solver. 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-EF3ED8B9-AB11-486D-B48E-B5E05D6EC44A">LAPACK. 
+		  </p>
+ 
+		  <p id="GUID-F4A09C22-2976-47F6-B1E2-F7E773DBABCF">For the list of threaded routines, see 
+			 <a href="GUID-2E857767-CF73-4460-A7EA-5A85D21E9431.htm#LAPACK">Threaded LAPACK Routines</a>. 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-5BC1FC60-A665-42F8-BB2F-B23DC57AF034">Level1 and Level2 BLAS. 
+		  </p>
+ 
+		  <p id="GUID-DBABB3F0-6D33-4E7F-A866-63737A2075C1">For the list of threaded routines, see 
+			 <a href="GUID-2E857767-CF73-4460-A7EA-5A85D21E9431.htm#BLAS">Threaded BLAS Level1 and Level2 Routines</a>. 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-78BF7D96-93EB-4F27-8008-5DD87157AF5B">All Level 3 BLAS and all Sparse BLAS routines except Level 2 Sparse Triangular solvers. 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-65721156-2842-40F7-9F1F-27DFD1256C61">All mathematical VML functions. 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-27982994-92E2-4392-8058-2FC8371F2575">FFT. 
+		  </p>
+ 
+		  <p id="GUID-631EDD61-AE53-4DA5-834F-45784D3E5BDB">For the list of FFT transforms that can be threaded, see 
+			 <a href="GUID-2E857767-CF73-4460-A7EA-5A85D21E9431.htm#FFT">Threaded FFT Problems</a>. 
+		  </p>
+ 
+		</li>
+ 
+	 </ul>
+ 
+	 <p id="P_CF_128818738294849"><a name="P_CF_128818738294849"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d9397e126"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d9397e126 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+	 <div class="section" id="LAPACK"><a name="LAPACK"><!-- --></a><h2 class="sectiontitle">Threaded LAPACK Routines</h2> 
+		 
+		<p id="GUID-335FD5F7-706A-417A-A277-8A0C703D1DF3">In the following list, 
+		  <samp class="codeph" id="GUID-870AAADA-2089-4F1E-AE9F-BB1DEB367B31">?</samp> stands for a precision prefix of 
+		  <em id="GUID-A2FBA005-412D-4D6F-A34E-75DB6186CB09">each</em> flavor of the respective routine and may have the value of 
+		  <samp class="codeph" id="GUID-6880C83E-9D50-485C-AC9F-45CFDC45F9E9">s, d, c</samp>, or 
+		  <samp class="codeph" id="GUID-17EE6FA7-3169-4B1E-A867-21A72E006AA0">z</samp>. 
+		</p>
+ 
+		<p id="GUID-C19B0D9C-EEA4-4CB3-8CC5-0A82B15308EF">The following LAPACK routines are threaded: 
+		</p>
+ 
+		<ul type="disc" id="GUID-59639D38-FB2B-4D9D-90E1-A2F30707BE0A"> 
+		  <li id="GUID-5F97C330-B71E-448E-B225-F3DA9E71F5B0">Linear equations, computational routines: 
+			 <ul type="disc" id="GUID-17AE7F88-C887-40C4-8CEF-2338D67FEF2B"> 
+				<li id="GUID-6F5A4763-B515-4CAA-8298-F9B54F09DD0A">Factorization: 
+				  <samp class="codeph" id="GUID-6A5CD380-29F9-4E22-93BE-D33FCAB4CD02">?getrf, ?gbtrf, ?potrf, ?pptrf, ?sytrf, ?hetrf, ?sptrf, ?hptrf</samp> 
+				</li>
+ 
+				<li id="GUID-BEAEEE6F-AFDB-48E0-8102-E358D7E84D0A">Solving: 
+				  <samp class="codeph" id="GUID-A7A98874-78A1-482C-AC47-F0531C7FCB50">?dttrsb, ?gbtrs, ?gttrs, ?pptrs, ?pbtrs, ?pttrs, ?sytrs, ?sptrs, ?hptrs, ?tptrs, ?tbtrs 
+				  </samp> 
+				</li>
+ 
+			 </ul>
+ 
+		  </li>
+ 
+		  <li id="GUID-C9227F03-AD27-4FDB-AA4B-CB60CB23425B">Orthogonal factorization, computational routines: 
+			 <samp class="codeph" id="GUID-F06EEF15-1603-4051-818B-BE08BF29C27A"><br> ?geqrf, ?ormqr, ?unmqr, ?ormlq, ?unmlq, ?ormql, ?unmql, ?ormrq, ?unmrq</samp> 
+		  </li>
+ 
+		  <li id="GUID-FF3D7401-9631-44D5-82D6-3CD20BD416C4">Singular Value Decomposition, computational routines: 
+			 <samp class="codeph" id="GUID-865F1025-8571-42BA-BAFB-CB7C12FEF3D3"><br> ?gebrd, ?bdsqr</samp> 
+		  </li>
+ 
+		  <li id="GUID-F0F9E309-B31D-4543-963B-CA72AFE82E46">Symmetric Eigenvalue Problems, computational routines: 
+			 <samp class="codeph" id="GUID-3AE46AAF-A485-45AF-A903-B024BCCA1AC0"><br> ?sytrd, ?hetrd, ?sptrd, ?hptrd, ?steqr, ?stedc</samp>. 
+		  </li>
+ 
+		  <li id="GUID-9C88B97D-2A72-4F24-BCA3-E98F84EC178E">Generalized Nonsymmetric Eigenvalue Problems, computational routines: 
+			 <samp class="codeph" id="GUID-05417A66-74B1-43CE-8B57-FB201F35A92E"><br> chgeqz/zhgeqz</samp>. 
+		  </li>
+ 
+		</ul>
+ 
+		<p id="GUID-56B90F2C-FE73-4070-876C-5DC9E845D09E">A number of other LAPACK routines, which are based on threaded LAPACK or BLAS routines, make effective use of parallelism: 
+		  <samp class="codeph" id="GUID-B40967BA-4A04-4306-970A-ACED5A5A71CE"><br> ?gesv, ?posv, ?gels, ?gesvd, ?syev, ?heev, cgegs/zgegs, cgegv/zgegv, cgges/zgges, cggesx/zggesx, cggev/zggev, cggevx/zggevx,</samp> and so on. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="BLAS"><a name="BLAS"><!-- --></a><h2 class="sectiontitle">Threaded BLAS Level1 and Level2 Routines</h2> 
+		 
+		<p id="GUID-C9625FEC-B7C0-4FB3-8D43-AFA3415A9F4A">In the following list, 
+		  <samp class="codeph" id="GUID-8A2168E9-CB31-49B8-94A6-FD78660AB922">?</samp> stands for a precision prefix of 
+		  <em id="GUID-15C016DC-9E14-4635-B436-90E9AC56B049">each</em> flavor of the respective routine and may have the value of 
+		  <samp class="codeph" id="GUID-0FE258DC-9AF1-4518-81FD-D2C52647E9A1">s, d, c</samp>, or 
+		  <samp class="codeph" id="GUID-03E1FD3C-D0CC-4B90-BA80-50B23142CEBC">z</samp>. 
+		</p>
+ 
+		<p id="GUID-E4D4E812-7186-46DC-8554-32EBBD114015">The following routines are threaded for Intel&reg; Core&#8482;2 Duo and Intel&reg; Core&#8482; i7 processors: 
+		</p>
+ 
+		<ul type="disc" id="GUID-AB4E298D-8577-48DA-9ED8-7B1015AD3965"> 
+		  <li id="GUID-6289B523-F9D3-43EF-B20C-801E6B0C1B6E">Level1 BLAS: 
+			 <samp class="codeph" id="GUID-D5E74325-863F-43F0-A70B-6101EEB9713B"><br> ?axpy, ?copy, ?swap, ddot/sdot, cdotc, drot/srot</samp> 
+		  </li>
+ 
+		  <li id="GUID-01C7B979-E888-45CE-8F24-484DE2E094C6">Level2 BLAS: 
+			 <samp class="codeph" id="GUID-FAFBB077-4298-4DE5-BC10-47CB662E277C"><br> ?gemv, ?trmv, dsyr/ssyr, dsyr2/ssyr2, dsymv/ssymv</samp> 
+		  </li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="FFT"><a name="FFT"><!-- --></a><h2 class="sectiontitle">Threaded FFT Problems</h2> 
+		 
+		<p id="GUID-F4E67F4C-7A10-48FB-83FD-12550DECCCD3">The following characteristics of a specific problem determine whether your FFT computation may be threaded: 
+		</p>
+ 
+		<ul type="disc" id="GUID-5ADB0B10-196E-4DF3-B995-6CD97CF42EB5"> 
+		  <li id="GUID-D5321D83-D4A5-4CD2-8E37-6795F62DB958">rank 
+		  </li>
+ 
+		  <li id="GUID-0CDF0825-96B4-47AE-A18D-609280C2A98C">domain 
+		  </li>
+ 
+		  <li id="GUID-76E829F4-7A41-4C84-89F9-E6F9DD761F0C">size/length 
+		  </li>
+ 
+		  <li id="GUID-2DB5613E-32FC-4BFA-9255-2002DE91353F">precision (single or double) 
+		  </li>
+ 
+		  <li id="GUID-1C25CEE8-95E0-4638-97A7-0A561D640446">placement (in-place or out-of-place) 
+		  </li>
+ 
+		  <li id="GUID-BE4E0F35-1392-4562-BCF1-FFD9BF3910B0">strides 
+		  </li>
+ 
+		  <li id="GUID-40E44F14-9DC5-4125-A20E-C3F4988A5029">number of transforms 
+		  </li>
+ 
+		  <li id="GUID-80AB48A0-EB82-42F4-B75F-CDD5D54AD015">layout (for example, interleaved or split layout of complex data) 
+		  </li>
+ 
+		</ul>
+ 
+		<p id="GUID-64DF6D7A-3A52-4957-B5F7-78BD68FB019C">Most FFT problems are threaded. In particular, computation of multiple transforms in one call (number of transforms &gt; 1) is threaded. Details of which transforms are threaded follow. 
+		</p>
+ 
+		<p id="GUID-01BA48A2-77FC-4AAD-BC60-5C0C25ABDD35"> 
+		  <strong id="GUID-D4261D01-454E-4A2E-A541-BCD04C0A143C">One-dimensional (1D) transforms</strong> 
+		</p>
+ 
+		<p id="GUID-9E3E167E-F972-41F3-80F7-03DC33454765">1D transforms are threaded in many cases. 
+		</p>
+ 
+		<p id="GUID-B9D1A220-DE20-4174-931B-A9A1E25E10AD">1D complex-to-complex (c2c) transforms of size 
+		  <var>N</var> using interleaved complex data layout are threaded under the following conditions depending on the architecture: 
+		</p>
+ 
+		
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-3902E3C7-F54A-4203-812C-13D69153F572" width="100%" frame="hsides" border="1" rules="all"> 
+			  
+			  
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" valign="top" width="20%" id="d9397e340"> 
+					 <p id="GUID-AB2B21E5-F331-4075-92FE-065E602E7C3E">Architecture 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="row-nocellborder" valign="top" width="80%" id="d9397e346"> 
+					 <p id="GUID-07471AEE-18A6-4EF9-A43E-2257B6266711">Conditions 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="20%" headers="d9397e340 "> 
+					 <p id="GUID-65E86D0E-BFE3-4D17-A8BE-29BCC3F0B0D8">Intel&reg; 64 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="80%" headers="d9397e346 "> 
+					 <p id="GUID-8B0569D2-F1C9-4BA8-968F-B71CEBB9D38B"> 
+						<var>N</var> is a power of 2, 
+						<var>log</var><sub id="GUID-7CBB0DF6-F308-4D3A-90FD-E07D8AF498A6">2</sub>(<var>N</var>) &gt; 9, the transform is double-precision out-of-place, and input/output strides equal 1. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" rowspan="2" colspan="1" valign="top" headers="d9397e340 "> 
+					 <p id="GUID-5C93CF94-B191-4C27-838D-CD62E866BC05">IA-32 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="80%" headers="d9397e346 "> 
+					 <p id="GUID-0A0095FF-333B-4E8C-B978-EC85B8B49C4B"> 
+						<var>N</var> is a power of 2, 
+						<var>log</var><sub id="GUID-BC172250-0D7F-47F8-A587-7146CD293097">2</sub>(<var>N</var>) &gt; 13, and the transform is single-precision. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="row-nocellborder" rowspan="1" colspan="1" valign="top" headers="d9397e346 "> 
+					 <p id="GUID-5EA81BD6-0AD8-4FFD-AF4A-ED704C92B832"> 
+						<var>N</var> is a power of 2, 
+						<var>log</var><sub id="GUID-0F790CCF-5CEB-4E16-AAEF-A3A9DD55C509">2</sub>(<var>N</var>) &gt; 14, and the transform is double-precision. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="20%" headers="d9397e340 "> 
+					 <p id="GUID-5A6DC589-73DB-4583-828E-8D79DC7F814B">Any 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="80%" headers="d9397e346 "> 
+					 <p id="GUID-5EDC4E40-2817-4C1B-9032-76C1F8AC8AEC"> 
+						<var>N</var> is composite, 
+						<var>log</var><sub id="GUID-E22772D1-E000-41A2-84C3-0DA165959F9D">2</sub>(<var>N</var>) &gt; 16, and input/output strides equal 1. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		
+
+		<p id="GUID-AE7D6F45-4AAA-41C5-B665-EBCCFACA1C7C">1D complex-to-complex transforms using split-complex layout are not threaded. 
+		</p>
+ 
+		<p id="GUID-2584E5F6-0FC0-48FB-8B2F-94461A21467A"> 
+		  <strong id="GUID-D647D3FF-E452-4810-890F-3A378BFE610E">Multidimensional transforms</strong> 
+		</p>
+ 
+		<p id="GUID-815D80E5-148F-4F30-AFB0-D067ECC248A3">All multidimensional transforms on large-volume data are threaded. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">Improving Performance with Threading</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

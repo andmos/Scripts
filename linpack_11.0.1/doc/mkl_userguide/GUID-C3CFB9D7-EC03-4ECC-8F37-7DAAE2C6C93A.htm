@@ -1,0 +1,181 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Fortran 95 Interfaces to LAPACK and BLAS">
+<meta name="DC.subject" content="LAPACK, Fortran 95 interface to, BLAS, module, Fortran 95">
+<meta name="keywords" content="LAPACK, Fortran 95 interface to, BLAS, module, Fortran 95">
+<meta name="DC.Relation" scheme="URI" content="GUID-16BF9BCD-1661-4CF9-8001-6691C1347599.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-C3CFB9D7-EC03-4ECC-8F37-7DAAE2C6C93A">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Fortran 95 Interfaces to LAPACK and BLAS</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-C3CFB9D7-EC03-4ECC-8F37-7DAAE2C6C93A">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Fortran 95 Interfaces to LAPACK and BLAS</h1>
+ 
+   
+  <div id="GUID-E1735353-CB3D-49AF-B4B9-BE3A13384D64"> 
+    <p id="GUID-7BAB6674-3D92-434A-A152-C650D2508F3E">Fortran&nbsp;95 interfaces are compiler-dependent. Intel MKL provides the interface libraries and modules precompiled with the Intel&reg; Fortran compiler. Additionally, the Fortran&nbsp;95 interfaces and wrappers are delivered as sources. (For more information, see 
+      <a href="GUID-9DE03643-E10C-456B-8709-E912D851DC49.htm">Compiler-dependent Functions and Fortran&nbsp;90 Modules</a>). If you are using a different compiler, build the appropriate library and modules with your compiler and link the library as a user's library: 
+    </p>
+ 
+    <ol id="GUID-19A60DE8-4B47-4E18-A927-F224AD3ED973"> 
+      <li id="GUID-946C6424-CF96-429F-B62B-E6B0850D94C8">Go to the respective directory 
+        <span class="filepath" id="GUID-2764F023-623B-4AB1-B254-BA16C7900646"><var>&lt;mkl directory&gt;</var></span><span class="filepath" id="GUID-19D3CB56-ABAE-4FB3-8FC1-6E7C763A2C2A">/</span><span class="filepath" id="GUID-D1C6E34A-107B-484E-AFE1-48BAC21E71AD">interfaces</span><span class="filepath" id="GUID-1417B309-1F44-485D-BC4F-A91817CC0B71">/</span><span class="filepath" id="GUID-94ECA9DD-3751-4531-97FA-0D666FE4BF81">blas95</span> or 
+        <span class="filepath" id="GUID-0A4EC609-D6F1-4EBA-BCD1-34CB27410589"><var>&lt;mkl directory&gt;</var></span><span class="filepath" id="GUID-BDBE483C-C422-44AE-893A-7698DB01CD45">/</span><span class="filepath" id="GUID-255E77BE-0FC7-4B86-BFC3-745927963D1D">interfaces</span><span class="filepath" id="GUID-A26F1880-569D-4BC1-8403-DBC6F9C38681">/</span><span class="filepath" id="GUID-C52E1A84-547D-4525-9363-ABDDFD64EB2F">lapack95</span> 
+      </li>
+ 
+      <li id="GUID-95FC8869-EA29-4405-A500-622741F791DA">Type 
+        <span id="GUID-4FA14B74-D099-467E-B3A8-CD8E705361EC">one of 
+        </span>the following command<span id="GUID-5405D45B-846C-4CB1-85D0-11CBF481BC22">s depending on your architecture</span>: 
+        
+        <ul type="disc" id="GUID-8738267E-0D5C-4FF0-A4BD-37795FE61CEB"> 
+          <li> 
+            <p id="GUID-47C2E2B5-6D3E-4C40-A6F7-0A0695BE04AF">For the IA-32 architecture, 
+            </p>
+ 
+            <p id="GUID-CC776C9C-6433-4CC4-B5A9-C5CF98926949"><samp class="codeph" id="GUID-C4E743AA-F36A-4055-91FB-4FCC32A39446">make libia32 
+                <span id="GUID-3FB7BB26-4E76-4146-8A63-8CCF82FD55C8">INSTALL_DIR</span>=<var>&lt;user&nbsp;dir&gt;</var></samp> 
+            </p>
+ 
+          </li>
+ 
+          <li> 
+            <p id="GUID-6246824A-8ADC-47BD-B4C1-EC7200750B5D">For the Intel&reg; 64 architecture, 
+            </p>
+ 
+            <p id="GUID-330275BC-77BB-495F-AF52-C4624CA534B2"><samp class="codeph" id="GUID-B18A404D-DD31-48A2-9208-0CAB4D9FC84D">make libintel64 [interface=lp64|ilp64] 
+                <span id="GUID-2CF0CE4F-CE95-4DC0-BDD2-8542FD0FA7A0">INSTALL_DIR</span>=<var>&lt;user&nbsp;dir&gt;</var></samp> 
+            </p>
+ 
+          </li>
+ 
+          </ul>
+ 
+        <div class="Note"><h3 class="NoteTipHead">
+					Important</h3> 
+          <p>The parameter 
+            <samp class="codeph" id="GUID-70886601-8569-488A-8CAF-FEE5860CBCE7"><span id="GUID-F64B4572-DC28-44A2-B24F-8BABF02CEB69">INSTALL_DIR 
+              </span></samp>is required. 
+          </p>
+ 
+        </div> 
+      </li>
+ 
+    </ol>
+ 
+    <div class="section" id="GUID-85AF197F-3D55-4FB7-9CC0-256FB8632FAA"> 
+      <p id="GUID-9256FDB8-D0CD-4A6D-887B-9157534353EB">As a result, the required library is built and installed in the 
+        <span class="filepath" id="GUID-3858A657-79F4-4CAE-ADFB-6557AC2D2BDC"><var>&lt;user&nbsp;dir&gt;</var></span><span class="filepath" id="GUID-6AAE1617-4E8B-4258-9414-E762E749EFA1">/</span><span class="filepath" id="GUID-CCBE0D8D-48B7-4B91-8D87-DB115544EB0A">lib</span> directory, and the 
+        <span class="filepath" id="GUID-24E186A7-757C-4C1C-9DC5-4ADA1E122E83">.mod</span> files are built and installed in the 
+        <span class="filepath" id="GUID-8C4E69E0-75C5-41A1-A58D-1E3940AE94A3"><var>&lt;user&nbsp;dir&gt;</var></span><span class="filepath" id="GUID-6A131B40-6C0D-4558-864F-34615F282C1B">/</span><span class="filepath" id="GUID-7D21AD84-F197-47C6-8116-5F5A6CBB3593">include</span><span class="filepath" id="GUID-4F01F39D-A193-46AE-8E33-6F83BDCE1BEF">/</span><span class="filepath" id="GUID-3F7C2469-BD9D-47AF-A847-DC6C151ABE6B"><var>&lt;arch&gt;</var></span><span class="filepath" id="GUID-2BD40D3C-6894-4F35-8135-F560647E8651">[</span><span class="filepath" id="GUID-D359C673-CB83-40DC-A4F0-93FE5877F77D">/</span><span class="filepath" id="GUID-4A220292-1314-4C5E-BB5E-13F7C5805153">{lp64|ilp64}</span><span class="filepath" id="GUID-DF69FE1F-581D-4E01-A15D-DA33BF84E66A">]</span> directory, where 
+        <span class="filepath" id="GUID-F0782780-5620-4D30-8728-E425C048ECC2"><var>&lt;arch&gt;</var></span> is one of 
+        <samp class="codeph" id="GUID-5E9DDA00-9208-474D-A70A-20349518D462">{ia32, intel64}</samp>. 
+      </p>
+ 
+      <p id="GUID-2D8A4AA8-8223-4F7E-9B14-F27ABC800FDA">By default, the ifort compiler is assumed. You may change the compiler with an additional parameter of 
+        <samp class="codeph" id="GUID-0F6D0E53-DA2F-47E8-8AA5-D86A17A68AE8">make: 
+          <br>FC=<var>&lt;compiler&gt;</var></samp>. 
+      </p>
+ 
+      <p id="GUID-09BAE121-AAF8-4A9D-A3E2-A23B16221A50">For example, the command 
+      </p>
+ 
+      <p id="GUID-BEDD2156-0878-4272-B508-C06039A26D23"> 
+        <samp class="codeph" id="GUID-4509A6C6-C890-4B0D-8001-D37E029C1765"> 
+          make libintel64 FC=<span id="GUID-A5EB2FEA-01E0-4B72-8AF2-1AB9C00D431B">pg</span>f95 
+          <span id="GUID-37CD3EE5-8874-46CB-B07F-48AC08C73C61">INSTALL_DIR</span>=<em id="GUID-1472738B-3C66-463F-BF61-05D7CD1C66AD">&lt;user</em><em id="GUID-79419CAB-7E3F-453E-8A4F-EAD4376FC958">pg</em><em id="GUID-9899BA8F-62B8-4990-BB17-CF4C80F2CA32">f95&nbsp;dir&gt;</em> interface=lp64</samp> 
+      </p>
+ 
+      <p id="GUID-7EA6BB2C-2AB5-48DC-AA90-DF2CF2FE58F3">builds the required library and 
+        <span class="filepath" id="GUID-CF9F256B-9375-4E1C-A2EE-B90A5F389539">.mod</span> files and installs them in subdirectories of 
+        <samp class="codeph" id="GUID-B934A1D9-855D-4E7A-9ABC-616B64EBB012"><var>&lt;user</var><var>pg</var><var>f95 dir&gt;</var></samp>. 
+      </p>
+ 
+      <p id="GUID-81151694-E830-4F20-A2C3-4AAA47876F53">To delete the library from the building directory, use one of the following commands: 
+      </p>
+ 
+      <ul type="disc" id="GUID-F09F0042-1A65-4675-AA69-39BE6CB60A07"> 
+        <li> 
+          <p id="GUID-0FC4BE22-293E-40A9-8E85-CDB3EDB849A9"> For the IA-32 architecture, 
+          </p>
+ 
+          <p id="GUID-1091D289-9DF7-4643-B299-9857AABBF6CA"> 
+            <samp class="codeph" id="GUID-5B7D9CFB-4694-42DB-9D86-B46B70C96EBC"> 
+              make cleania32 
+              <span id="GUID-A729899E-1893-4807-8CDC-645982D4E1B4">INSTALL_DIR</span>=<var>&lt;user&nbsp;dir&gt;</var></samp> 
+          </p>
+ 
+        </li>
+ 
+        <li> 
+          <p id="GUID-48FB01EB-BAE4-4E7B-8C91-4A423A997520">For the Intel&reg; 64 architecture, 
+          </p>
+ 
+          <p id="GUID-C288F0C4-77D8-460A-8CF9-581EABAA37E8"> 
+            <samp class="codeph" id="GUID-4C836C40-CDCD-42D5-B8C1-C28E69EDAF1E"> 
+              make cleanintel64 [interface=lp64|ilp64] 
+              <span id="GUID-FCA6ABD6-3F22-4E4B-9D6E-7E3D2A416B97">INSTALL_DIR</span>=<var>&lt;user&nbsp;dir&gt;</var></samp> 
+          </p>
+ 
+        </li>
+ 
+        <li> 
+          <p id="GUID-3066F884-03A3-475A-9C6E-1210345473E2">For all the architectures, 
+          </p>
+ 
+          <p id="GUID-C9CA0E32-1EAC-453B-9A38-64062F241657"> 
+            <samp class="codeph" id="GUID-D1F6DE06-C289-40AB-80A3-2801F6E00D34"> 
+              make clean 
+              <span id="GUID-92EF6AE7-BA4A-4F13-AE94-D03EEBF4444B">INSTALL_DIR</span>=<var>&lt;user&nbsp;dir&gt;</var></samp> 
+          </p>
+ 
+        </li>
+ 
+      </ul>
+ 
+    </div>
+ 
+    <div class="section" id="GUID-4F9568D9-6838-4337-9C6A-0429798B0611"> 
+      <div class="Note"><h3 class="NoteTipHead">
+					Caution</h3> 
+        <p>Even if you have administrative rights, avoid setting 
+          <samp class="codeph" id="GUID-A5433FBA-B472-40AE-8A9D-AE385DA2F142"><span id="GUID-1995BF3C-F0DB-4169-8D5A-FC197EC363B0">INSTALL_DIR</span>=..<span class="filepath" id="GUID-6265CADC-02C4-4CE0-BF2D-D45F6B8F0CFF">/</span>.. 
+          </samp> or 
+          <samp class="codeph" id="GUID-DE5A2BF2-E405-4219-ADF3-3F122C42C047"><span id="GUID-6788A7BF-7876-481B-B1CD-D2E875CB8D39">INSTALL_DIR</span>=<var>&lt;mkl directory&gt; 
+            </var></samp>in a build or clean command above because these settings replace or delete the Intel MKL prebuilt Fortran&nbsp;95 library and modules. 
+        </p>
+ 
+      </div> 
+    </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-16BF9BCD-1661-4CF9-8001-6691C1347599.htm">Using Language-Specific Interfaces with Intel&reg; Math Kernel Library</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

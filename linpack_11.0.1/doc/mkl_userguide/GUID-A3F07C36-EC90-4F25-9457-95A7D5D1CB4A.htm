@@ -1,0 +1,183 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Running the Java* Examples">
+<meta name="DC.Relation" scheme="URI" content="GUID-D15E3529-70BC-40C6-9F45-5165328EFA16.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-A3F07C36-EC90-4F25-9457-95A7D5D1CB4A">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Running Java Examples</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-A3F07C36-EC90-4F25-9457-95A7D5D1CB4A">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Running the Java* Examples</h1>
+ 
+   
+   
+  <div id="GUID-B13219A3-22B5-489A-A5E9-E7D49B7B201F"> 
+	 <p id="GUID-B3891C72-2CA1-42E7-8CAC-FF55D2DB905D">The Java examples support all the C and C++ compilers that Intel MKL does. The makefile intended to run the examples also needs the 
+		 make utility, which is typically provided with the 
+		<span id="GUID-0DF46037-160F-47EF-A921-23D369B4ABA4">Linux* OS</span><span id="GUID-79227ECF-F3D0-4AD6-83B4-B6F12F18EA82"> distribution.</span></p>
+ 
+	 <p id="GUID-8694DDD3-6F3A-400B-89A8-208EA0FB0832">To run Java examples, the JDK* developer toolkit is required for compiling and running Java code. A Java implementation must be installed on the computer or available via the network. You may download the JDK from the vendor website. 
+	 </p>
+ 
+	 <p id="GUID-481A5761-2998-4177-898B-4D139DA8CD19">The examples should work for all versions of JDK. However, they were tested only with the following Java implementation 
+		<span id="GUID-2D994FE8-3A17-49EA-A526-CF2E570D5F99">s</span> for all the supported architectures: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-70CC93E4-3E55-4600-8478-F7C39F9D58FF"> 
+		<li id="GUID-D9AFC2BE-1773-47F3-8210-0300DE7FAFAA"> 
+		  <span id="GUID-368E442F-D85C-4BED-ACB6-72B70064FC3B">J2SE* SDK 1.4.2, JDK 5.0 and 6.0 from Sun Microsystems, Inc. (http://sun.com/).</span> 
+		</li>
+ 
+		<li id="GUID-74DB71D9-D23A-4F55-8EAE-8F89C704673A"> 
+		  <span id="GUID-6779D09B-67E4-4355-92B0-A52E6384D69B">JRockit* JDK 1.4.2 and 5.0 from Oracle Corporation (http://oracle.com/).</span> 
+		</li>
+ 
+		</ul>
+ 
+	 <p id="GUID-6140EE1F-1426-43C9-82D4-33D51A48894B">Note that the Java run-time environment* (JRE*) system, which may be pre-installed on your computer, is not enough. You need the JDK* developer toolkit that supports the following set of tools: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-E080DA08-2F71-433F-AC69-B4540E1704F1"> 
+		<li id="GUID-1D089D92-0B2E-4B8F-B12A-E6A67DFEC7D2">java 
+		</li>
+ 
+		<li id="GUID-526E198A-FBE6-46C3-9CB8-210A3BC5F809">javac 
+		</li>
+ 
+		<li id="GUID-90E3A292-4BDD-4706-A976-4CC44CF85309">javah 
+		</li>
+ 
+		<li id="GUID-FB6503D3-8675-42A0-A469-BC840C1B5BD2">javadoc 
+		</li>
+ 
+	 </ul>
+ 
+	 <p id="GUID-4F690673-5372-4C2B-8155-EC41909847A4">To make these tools available for the examples makefile, set the 
+		<samp class="codeph" id="GUID-5B7B03E5-8AD3-4B3C-A57A-A4980D6D9AF7">JAVA_HOME</samp> environment variable and add the JDK binaries directory to the system 
+		<samp class="codeph" id="GUID-D4B1A9CF-2493-4845-B172-C74CEDAD37A4">PATH</samp>, for example 
+		<span id="GUID-EE1D5CDA-F4A2-440B-9F16-EAA439903658">, using the</span><span id="GUID-5624FDD6-1CFB-4F39-9C21-EB62929AC54A">bash shell</span>: 
+	 </p>
+ 
+	 <p id="GUID-5A82E2EF-11E1-4FDC-8E9E-C1384F872B1D"> 
+		</p>
+ 
+	 <p id="GUID-F9E0E566-06D6-41A0-80CF-AED27D83D6DC"> 
+		</p>
+ 
+	 <p id="GUID-FC3B13E9-0007-45E0-A30E-924EFB7BBBAE"> 
+		<span id="GUID-AE6089B1-ACDD-43C5-9F39-7B8E271B71FB"> 
+		  <samp class="codeph" id="GUID-298FD2D1-7C67-47CC-954D-E467A45165D9">export JAVA_HOME=/home/&lt;user name&gt;/jdk1.5.0_09</samp> 
+		</span> 
+	 </p>
+ 
+	 <p id="GUID-613DDC06-287E-46BA-B4FB-1C5C227135E1"> 
+		<span id="GUID-8465397E-6FA7-4BF8-BE9D-E941BB0F1D36"> 
+		  <samp class="codeph" id="GUID-C674CE5C-FAAA-42B1-9772-AF052D09167F">export PATH=${JAVA_HOME}/bin:${PATH}</samp> 
+		</span> 
+	 </p>
+ 
+	 <p id="GUID-3C313AAA-461D-4B1D-82C3-D31DB321DF6E"> 
+		</p>
+ 
+	 <p id="GUID-BAE304F6-CABD-4D43-AD68-8793986A15F0"> 
+		</p>
+ 
+	 <p id="GUID-007006AB-2CBD-49DD-B9AA-5C3F4173B8AB">You may also need to clear the 
+		<samp class="codeph" id="GUID-54439939-D73C-42FF-AC49-613BDFC0B476">JDK_HOME</samp> environment variable, if it is assigned a value: 
+	 </p>
+ 
+	 <p id="GUID-8F5DB5DA-2E1E-40D6-89E2-6B14DDA7A94C"> 
+		</p>
+ 
+	 <p id="GUID-0A23444D-DB2F-4448-9FC0-37879A79C182"> 
+		<span id="GUID-48A9EE02-EDCF-40BE-AF39-E82ED6ED2E85"> 
+		  <samp class="codeph" id="GUID-D4FA8CCE-4D0F-4094-AB3E-3279DB4D6B64">unset JDK_HOME</samp> 
+		</span> 
+	 </p>
+ 
+	 <p id="GUID-96837FC0-FEDA-492D-A1BF-E7E99A36A41F">To start the examples, use the makefile found in the Intel MKL Java examples directory: 
+	 </p>
+ 
+	 <p id="GUID-A3290CE3-6A1F-4285-85C8-1E629B9C9343"> 
+		<samp class="codeph" id="GUID-70F67ECC-A6BD-4CF4-B51E-CC4256C4894D">make {<span id="GUID-DFC08BE4-2C45-44B2-90DC-AD5CA60B0575">soia32|</span>sointel64<span id="GUID-4DE9A6D7-3F1B-4350-9035-9D60325368DD">|libia32</span>|libintel64} [function=...] [compiler=...]</samp> 
+	 </p>
+ 
+	 <p id="GUID-2BDF5FFE-10A8-44EF-81EF-CDBDC5EF49DC"> 
+		</p>
+ 
+	 <p id="GUID-3E21C2C8-2E3F-4FAA-9D18-DE1C492403F5">If you type the make command and omit the target (for example, 
+		<samp class="codeph" id="GUID-5F520119-FD97-483A-B75E-50AFEAC64865"><span id="GUID-09D5CF61-964E-4CFA-8D49-710453E1E504">so</span>ia32</samp>), the makefile prints the help info, which explains the targets and parameters. 
+	 </p>
+ 
+	 <p id="GUID-AA3BCFCD-099D-48EA-A796-DCEF0B102704">For the examples list, see the 
+		<span class="filepath" id="GUID-DB8CF4BC-75C1-48BD-B1AA-4B62A29376FE">examples.lst</span> file in the Java examples directory. 
+	 </p>
+ 
+	 <p id="P_CF_128576781610269"><a name="P_CF_128576781610269"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d49642e193"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d49642e193 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-D15E3529-70BC-40C6-9F45-5165328EFA16.htm">Invoking Intel MKL Functions from Java* Applications</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

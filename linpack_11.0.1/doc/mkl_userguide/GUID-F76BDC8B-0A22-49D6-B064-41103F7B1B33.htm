@@ -1,0 +1,89 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Building the MP LINPACK">
+<meta name="DC.Relation" scheme="URI" content="GUID-10DFCB17-3953-47C6-9971-8C455A925BFE.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-F76BDC8B-0A22-49D6-B064-41103F7B1B33">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Building the MP LINPACK</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-F76BDC8B-0A22-49D6-B064-41103F7B1B33">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Building the MP LINPACK</h1>
+ 
+   
+  <div id="GUID-7F5E96E6-9067-4129-B32F-D072D84A40C3"> 
+	 <p id="GUID-872BADE6-C39E-4466-8B59-C07A8184CFDA">The MP LINPACK Benchmark contains a few sample architecture makefiles. You can edit them to fit your specific configuration. Specifically: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-AA1B4B44-5FD7-43F0-9929-927AA28CAFBC"> 
+		<li>Set 
+		  <samp class="codeph" id="GUID-F4A24ABE-9A49-4F64-9BC1-0EF85CD89909">TOPdir</samp> to the directory that MP LINPACK is being built in. 
+		</li>
+ 
+		<li id="GUID-CA46E9C2-2388-489C-9030-8CCF407F9097"> 
+		  <span id="GUID-132D5BD3-980F-4C5B-BEF9-863864E43EF0">You may s</span><span id="GUID-FC79D34E-ADB5-4BB5-8B20-E1669CCEFF4D">et MPI variables, that is,</span> 
+		  <samp class="codeph" id="GUID-5D05B845-E0B9-49AD-A6FF-909BB4EF911E"> 
+			 <span id="GUID-B27D3A1C-14E4-4682-A7D1-C1701686D3C1">MPdir</span><span id="GUID-9CAA6EB6-46A7-4555-B268-5BDAD3C292E2">, 
+			 </span><span id="GUID-CF078C83-8CB9-421F-8576-4D54F9B828D7">MPinc</span></samp><span id="GUID-832D115A-1396-41BF-AC85-FF2288337690">, and 
+		  </span><span id="GUID-F02E4656-7356-4B51-BE41-EFE73ECD0CA6"><samp class="codeph" id="GUID-43C69F9C-36E8-43F9-8F01-B2FE2DF8F766">MPlib</samp></span><span id="GUID-B78035C5-B86F-48E2-8E5D-2084440D40CF">.</span> 
+		</li>
+ 
+		<li>Specify the location Intel MKL and of files to be used (<samp class="codeph" id="GUID-15C4256E-55B3-491A-9416-28B7340F0E24">LAdir, LAinc, LAlib</samp>). 
+		</li>
+ 
+		<li>Adjust compiler and compiler/linker options. 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-5F674CF0-E4E0-4283-9B4E-7944A0125C02">Specify the version of MP LINPACK you are going to build (hybrid or non-hybrid) by setting the version parameter for the 
+			 <samp class="codeph" id="GUID-DE69C96F-F8A4-4733-978B-EB7EBCA9B4BB"><span id="GUID-868BA10C-3D4D-4BC1-90FA-432121966382">make</span></samp> command. For example: 
+		  </p>
+ 
+		  <p id="GUID-2BEAD824-6A30-4B36-ABC4-82EB0B526441"> 
+			 <samp class="codeph" id="GUID-61C2DE76-235B-4C0B-B4ED-B9A9C4A55153"> 
+				<span id="GUID-165286AD-7214-4488-B530-C108A2926F06">make arch=intel64</span> 
+				<span id="GUID-3DBD7C5D-8713-4B84-9789-3477E1732F75">version=hybrid install</span> 
+			 </samp> 
+		  </p>
+ 
+		</li>
+ 
+	 </ul>
+ 
+	 <p id="GUID-E7F8B55B-A474-4A0E-8256-0C1E4EEFAA2C"> 
+		<span id="GUID-2D15BBD0-C7C9-4A51-B7E0-870F8301018A">For some sample cases,</span> 
+		<span id="GUID-E997615F-C68A-452A-9B9E-74581679C881">like Linux systems based on the Intel&reg; 64 architecture,</span> 
+		<span id="GUID-2F41061F-8458-48C3-891C-72E427646162">the makefiles contain values that must be common. However, you need to be familiar with building an HPL and picking appropriate values for these variables.</span> 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-10DFCB17-3953-47C6-9971-8C455A925BFE.htm">Intel&reg; Optimized MP LINPACK Benchmark for Clusters</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

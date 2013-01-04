@@ -1,0 +1,125 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Sequential Mode of the Library">
+<meta name="DC.subject" content="sequential mode of Intel&reg; MKL">
+<meta name="keywords" content="sequential mode of Intel&reg; MKL">
+<meta name="DC.Relation" scheme="URI" content="GUID-C0722BEE-12B8-4034-8152-35FEE9DB150D.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-E1D65283-7158-47FD-8EF8-F457261BC3AC.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-C2295BC8-DD22-466B-94C9-5FAA79D4F56D.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-C676FE09-339D-4147-BB79-4038A27A6851.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-A9E08D9B-DF4A-478D-BC5F-68FDCBB63FEC">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Sequential Mode of the Library</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-A9E08D9B-DF4A-478D-BC5F-68FDCBB63FEC">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Sequential Mode of the Library</h1>
+ 
+   
+  <div id="GUID-841794D2-9569-4CFF-8B60-DBDF71BE8054"> 
+	 <p id="GUID-77E720DF-B28E-40AD-AA90-84DF2D9565ED">You can use Intel MKL in a sequential (non-threaded) mode. In this mode, Intel MKL runs unthreaded code. However, it is thread-safe (except the LAPACK deprecated routine 
+		<samp class="codeph" id="GUID-2CE310C8-79F0-4BE9-B0CB-58E0037F3FEF">?lacon)</samp>, which means that you can use it in a parallel region in your OpenMP* code. The sequential mode requires no compatibility OpenMP* run-time library and does not respond to the environment variable 
+		<samp class="codeph" id="GUID-3730C9EA-1217-4856-9BA8-5D612C4B63D3">OMP_NUM_THREADS</samp> or its Intel MKL equivalents. 
+	 </p>
+ 
+	 <p id="GUID-5C24F0C1-37E7-4DB6-9B85-AC5864EFA356">You should use the library in the sequential mode only if you have a particular reason not to use Intel MKL threading. The sequential mode may be helpful when using Intel MKL with programs threaded with some non-Intel compilers or in other situations where you need a non-threaded version of the library (for instance, in some MPI cases). To set the sequential mode, in the Threading layer, choose the 
+		<span class="keyword">*sequential.*</span> library. 
+	 </p>
+ 
+	 <p id="GUID-BA480DBD-C0B1-4476-8F70-F684FE86944F"> 
+		<span id="GUID-5BBBF2B5-F276-4D6A-8CA9-63804C0E2491">Add the POSIX threads library</span> 
+		<span id="GUID-365B9E4B-1580-44DF-8DC5-41E1723721DD"> 
+		  <samp class="codeph" id="GUID-4EFE7436-7ADA-45BC-B923-35BDA7042F21">(pthread)</samp> 
+		</span> 
+		<span id="GUID-4B90BD49-62D4-43BF-9E28-E9E4F19D4902">to your link line for the sequential mode because</span> 
+		<span id="GUID-2B2ED3FF-C42A-41F4-A463-F5A234216F5D">the</span> 
+		<span id="GUID-BA712E97-5BCF-4E92-BB27-62141513590B"> 
+		  <span class="filepath" id="GUID-65749363-66C0-4B98-AE53-477C4D843D2D">*sequential.*</span> 
+		</span> 
+		<span id="GUID-3132A543-C01D-4B36-8272-551AABCD4AC1">library depends on</span> 
+		<span id="GUID-9E534722-2C32-4351-9F81-C535D2F86DEF"> 
+		  <samp class="codeph" id="GUID-9DC0B00A-667F-4710-9BD8-024CB3EB99D8">pthread</samp> 
+		</span><span id="GUID-BAA7E571-D331-47C8-BBBD-6ADF4977760F">.</span> 
+	 </p>
+ 
+	 <p> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d51501e95"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d51501e95 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-C0722BEE-12B8-4034-8152-35FEE9DB150D.htm">Linking with Threading Libraries</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-E1D65283-7158-47FD-8EF8-F457261BC3AC.htm">Directory Structure in Detail 
+		  </a>  
+		  </div>
+<div><a href="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">Improving Performance with Threading 
+		  </a>  
+		  </div>
+<div><a href="GUID-C2295BC8-DD22-466B-94C9-5FAA79D4F56D.htm">Avoiding Conflicts in the Execution Environment 
+		  </a>  
+		  </div>
+<div><a href="GUID-C676FE09-339D-4147-BB79-4038A27A6851.htm">Linking Examples 
+		  </a>  
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

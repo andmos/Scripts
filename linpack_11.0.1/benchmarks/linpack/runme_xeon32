@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+
+echo "This is a SAMPLE run script for SMP LINPACK. Change it to reflect"
+echo "the correct number of CPUs/threads, problem input files, etc.."
+
+#    Setting up affinity for better threading performance
+export KMP_AFFINITY=nowarnings,compact,1,0,granularity=fine
+
+arch=xeon32
+{
+  date
+  ./xlinpack_$arch lininput_$arch
+  echo -n "Done: "
+  date
+} | tee lin_$arch.txt
+

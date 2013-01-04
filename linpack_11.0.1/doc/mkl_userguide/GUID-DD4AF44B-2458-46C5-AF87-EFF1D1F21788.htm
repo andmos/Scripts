@@ -1,0 +1,106 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Hardware Configuration Tips">
+<meta name="DC.subject" content="HT technology, configuration tip, Intel&reg; Hyper-Threading Technology, configuration tip">
+<meta name="keywords" content="HT technology, configuration tip, Intel&reg; Hyper-Threading Technology, configuration tip">
+<meta name="DC.Relation" scheme="URI" content="GUID-01C4A8FA-8BEC-4847-B1D5-16E76E6A03F7.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-DD4AF44B-2458-46C5-AF87-EFF1D1F21788">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Hardware Configuration Tips</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-DD4AF44B-2458-46C5-AF87-EFF1D1F21788">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Hardware Configuration Tips</h1>
+ 
+   
+  <div id="GUID-EA857851-7702-43A2-8B01-CD247517A556"> 
+    <p id="P_CF_12857569597140"><a name="P_CF_12857569597140"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d67426e47"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d67426e47 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+    <div class="section" id="GUID-F0F432FF-791C-4FBC-A440-B52C08815FBB"><h2 class="sectiontitle">Dual-Core Intel&reg; Xeon&reg; processor 5100 series systems</h2> 
+       
+      <p id="GUID-108D0484-7351-4D80-81F8-C844AFF34368">To get the best performance with Intel MKL on Dual-Core Intel&reg; Xeon&reg; processor 5100 series systems, enable the Hardware DPL (streaming data) Prefetcher functionality of this processor. To configure this functionality, use the appropriate BIOS settings, as described in your BIOS documentation. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="GUID-BF21546D-9888-4990-8968-945A53404A22"><h2 class="sectiontitle">Intel&reg; Hyper-Threading Technology </h2> 
+       
+      <p id="GUID-6C02DF26-DEA6-4F93-AD3C-A5FB3FBAA7E0">Intel&reg; Hyper-Threading Technology (Intel&reg; HT Technology) is especially effective when each thread performs different types of operations and when there are under-utilized resources on the processor. However, Intel MKL fits neither of these criteria because the threaded portions of the library execute at high efficiencies using most of the available resources and perform identical operations on each thread. You may obtain higher performance by disabling Intel HT Technology. 
+      </p>
+ 
+      <p id="GUID-C9D12023-A62A-4E98-8731-BD7B4ABD321B">If you run with Intel HT Technology enabled, performance may be especially impacted if you run on fewer threads than physical cores. Moreover, if, for example, there are two threads to every physical core, the thread scheduler may assign two threads to some cores and ignore the other cores altogether. If you are using the OpenMP* library of the Intel Compiler, read the respective User Guide on how to best set the thread affinity interface to avoid this situation. For Intel MKL, apply the following setting: 
+      </p>
+ 
+      <pre>set KMP_AFFINITY=granularity=fine,compact,1,0</pre> 
+    </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-01C4A8FA-8BEC-4847-B1D5-16E76E6A03F7.htm">Other Tips and Techniques to Improve Performance</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">Using Parallelism of the Intel&reg; Math Kernel Library 
+        </a>  
+        </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

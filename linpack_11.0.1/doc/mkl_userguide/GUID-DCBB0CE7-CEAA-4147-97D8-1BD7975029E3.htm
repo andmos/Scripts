@@ -1,0 +1,114 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Examples of Compiler Assisted Offload">
+<meta name="DC.subject" content="Compiler Assisted Offload, examples, computations offload to Intel&reg; Xeon Phi&#8482; coprocessors, compiler assisted, examples">
+<meta name="keywords" content="Compiler Assisted Offload, examples, computations offload to Intel&reg; Xeon Phi&#8482; coprocessors, compiler assisted, examples">
+<meta name="DC.Relation" scheme="URI" content="GUID-7B8024BF-49A9-4912-99DB-D8D1ABACA575.htm">
+<meta name="DC.Relation" scheme="URI" content="http://software.intel.com/en-us/articles/intel-software-technical-documentation/">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-DCBB0CE7-CEAA-4147-97D8-1BD7975029E3">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Examples of Compiler Assisted Offload</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-DCBB0CE7-CEAA-4147-97D8-1BD7975029E3">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Examples of Compiler Assisted Offload</h1>
+ 
+   
+  <div id="GUID-289721F5-1B0F-4470-811D-25883A310EB7"> 
+	 <p id="GUID-C5CEEF35-C868-49AA-9DF5-15A1A80B0A0C">The following are examples of Compiler Assisted Offload. Please see 
+		<em>Intel&reg; Compiler User and Reference Guide</em> for more details. 
+	 </p>
+ 
+	 <p> These examples show how to call Intel MKL from offload regions that are executed on coprocessors based on Intel MIC Architecture and how to reuse data that already exists in the memory of the coprocessor and thus minimize data transfer. 
+	 </p>
+ 
+	 <div class="section" id="GUID-A7FA7B20-18A3-46AB-90DA-D3EAB4720A65"><h2 class="sectiontitle">Fortran</h2> 
+		 
+		<pre>c     Upload A and B to the card, and do not deallocate them after the
+c     pragma. C is uploaded and downloaded back, but the allocated memory
+c     is retained
+      !DEC$ ATTRIBUTES OFFLOAD : MIC :: SGEMM
+      !DEC$ OFFLOAD TARGET( MIC:0 ) IN( N ), &amp;
+      !DEC$ IN( A: LENGTH( N * N ) ALLOC_IF(.TRUE.) FREE_IF(.FALSE.)), &amp;
+      !DEC$ IN( B: LENGTH( N * N ) ALLOC_IF(.TRUE.) FREE_IF(.FALSE.)), &amp;
+      !DEC$ INOUT( C: LENGTH( N * N ) ALLOC_IF(.TRUE.) FREE_IF(.FALSE.))
+      CALL SGEMM( 'N', 'N', N, N, N, 1.0, A, N, B, N, 1.0, C, N )
+
+c     Change C here
+
+c     Reuse A and B on the card, and upload the new C. Free all the
+c     memory on the card
+      !DEC$ ATTRIBUTES OFFLOAD : MIC :: SGEMM
+      !DEC$ OFFLOAD TARGET( MIC:0 ) IN( N ), &amp;
+      !DEC$ NOCOPY( A: LENGTH( N * N ) ALLOC_IF(.FALSE.) FREE_IF(.TRUE.)), &amp;
+      !DEC$ NOCOPY( B: LENGTH( N * N ) ALLOC_IF(.FALSE.) FREE_IF(.TRUE.)), &amp;
+      !DEC$ INOUT( C: LENGTH( N * N ) ALLOC_IF(.FALSE.) FREE_IF(.TRUE.))
+      CALL SGEMM( 'N', 'N', N, N, N, 1.0, A, N, B, N, -1.0, C, N )
+</pre> 
+	 </div>
+ 
+	 <div class="section" id="GUID-FD0DB0C0-63B2-4227-B662-D92041E817E8"><h2 class="sectiontitle">C</h2> 
+		 
+		<pre>    /* Upload A and B to the card, and do not deallocate them after the pragma.
+     * C is uploaded and downloaded back, but the allocated memory is retained. */
+#pragma offload target(mic:0) \
+    in(A: length(matrix_elements) alloc_if(1) free_if(0)) \
+    in(B: length(matrix_elements) alloc_if(1) free_if(0)) \
+    in(transa, transb, N, alpha, beta) \
+    inout(C:length(matrix_elements) alloc_if(1) free_if(0))
+    {
+        sgemm(&amp;transa, &amp;transb, &amp;N, &amp;N, &amp;N, &amp;alpha, A, &amp;N, B, &amp;N,
+                &amp;beta, C, &amp;N);
+    }
+
+    /* Change C here */
+
+    /* Reuse A and B on the card, and upload the new C. Free all the memory on
+     * the card. */
+#pragma offload target(mic:0) \
+    nocopy(A: length(matrix_elements) alloc_if(0) free_if(1)) \
+    nocopy(B: length(matrix_elements) alloc_if(0) free_if(1)) \
+    in(transa, transb, N, alpha, beta) \
+    inout(C:length(matrix_elements) alloc_if(0) free_if(1))
+    {
+        sgemm(&amp;transa, &amp;transb, &amp;N, &amp;N, &amp;N, &amp;alpha, A, &amp;N, B, &amp;N,
+                &amp;beta, C, &amp;N);
+    }
+</pre> 
+	 </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-7B8024BF-49A9-4912-99DB-D8D1ABACA575.htm">Compiler Assisted Offload</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="http://software.intel.com/en-us/articles/intel-software-technical-documentation/" target="_blank">Intel&reg; Software Documentation Library 
+		  </a> for Intel&reg; Compiler User and Reference Guides 
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

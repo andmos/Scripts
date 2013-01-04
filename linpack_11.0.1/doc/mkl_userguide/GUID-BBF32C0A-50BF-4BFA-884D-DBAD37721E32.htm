@@ -1,0 +1,187 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Benchmarking a Cluster">
+<meta name="DC.Relation" scheme="URI" content="GUID-10DFCB17-3953-47C6-9971-8C455A925BFE.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-5450EC4E-DB1B-4435-AB9A-B179F6081CC1.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-9870FD98-79EE-4006-8129-C5A0C5285B31.htm#GUID-9870FD98-79EE-4006-8129-C5A0C5285B31">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-BBF32C0A-50BF-4BFA-884D-DBAD37721E32">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Benchmarking a Cluster</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-BBF32C0A-50BF-4BFA-884D-DBAD37721E32">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Benchmarking a Cluster</h1>
+ 
+   
+  <div id="GUID-FD380717-FB85-43BD-9326-783AA2886593"> 
+    <p id="GUID-7423EDB5-FA7B-4A26-AE6D-360398D601D3">To benchmark a cluster, follow the sequence of steps below (some of them are optional). Pay special attention to the iterative steps 
+      <a href="GUID-BBF32C0A-50BF-4BFA-884D-DBAD37721E32.htm#XREF_3_EDIT_HPL_DAT_TO_FIT">3</a> and 
+      <a href="GUID-BBF32C0A-50BF-4BFA-884D-DBAD37721E32.htm#XREF_4_MAKE_AN_HPL_RUN_USING">4</a>. They make a loop that searches for HPL parameters (specified in 
+      <span class="filepath" id="GUID-59A521EB-E4A2-44D6-929F-0DCDE70D5455">HPL.dat</span>) that enable you to reach the top performance of your cluster. 
+    </p>
+ 
+    <ol id="GUID-616ED007-6919-4AA6-8240-113C8FD0437D"> 
+      <li> 
+        <span id="GUID-B58EA805-6B31-4AC1-9F61-4DFB6FC1C4FB">Install HPL and make sure HPL is functional on all the nodes.</span> 
+      </li>
+ 
+      <li> 
+        <p id="GUID-4090C8CF-6999-4512-B5FF-2AF3B2288AF7">You may run 
+          <span class="filepath" id="GUID-B0DB430D-95C2-42F2-84EF-50CF6A4FFBA7">nodeperf.c</span> (included in the distribution) to see the performance of 
+          <samp class="codeph" id="GUID-20518BD3-61E0-4880-945C-080F3220E457">DGEMM</samp> on all the nodes. 
+        </p>
+ 
+        <p id="GUID-961F22F1-61D9-4194-BC59-5BD920C2F1C0"> Compile 
+          <span class="filepath" id="GUID-7C6B33EA-0125-4007-A86D-65D7770252D7">nodeperf.c</span> with your MPI and Intel MKL. For example: 
+        </p>
+ 
+        <pre>
+<span id="GUID-F5717066-BDC5-4955-9920-D32109D9D514">mpiicc -O3 nodeperf.c -L$MKLPATH $MKLPATH/libmkl_intel_lp64.a \ 
+-Wl,--start-group $MKLPATH/libmkl_sequential.a \ 
+$MKLPATH/libmkl_core.a -Wl,--end-group -lpthread .</span>
+                
+                </pre> 
+        <p id="GUID-41BCF0E7-D262-44B5-A591-A0C9AC0C4C2D"> 
+          <span id="GUID-C4A3DF8E-B01C-44CB-83F3-273A5A41DA92">Launching 
+            <span class="filepath" id="GUID-65846553-7104-4533-A7E2-3F7E77FED881">nodeperf.c</span> on all the nodes is especially helpful in a very large cluster.</span> 
+          <samp class="codeph" id="GUID-F240AD83-D90F-47E3-9730-68F65511C6CF">nodeperf</samp> enables quick identification of the potential problem spot without numerous small MP LINPACK runs around the cluster in search of the bad node. It goes through all the nodes, one at a time, and reports the performance of 
+          <samp class="codeph" id="GUID-F26FEF97-8C73-43E5-A0EE-1967009250FD">DGEMM</samp> followed by some host identifier. Therefore, the higher the 
+          <samp class="codeph" id="GUID-07CBE9CC-08DE-4A2F-BD4F-4B690E2181BA">DGEMM</samp> performance, the faster that node was performing. 
+        </p>
+ 
+      </li>
+ 
+      <li> 
+        <p id="XREF_3_EDIT_HPL_DAT_TO_FIT"><a name="XREF_3_EDIT_HPL_DAT_TO_FIT"><!-- --></a>Edit 
+          <span class="filepath" id="GUID-EA7338B8-CE02-47F3-924D-28B52FB8FA2B">HPL.dat</span> to fit your cluster needs. 
+          <br> Read through the HPL documentation for ideas on this. Note, however, that you should use at least 4 nodes. 
+        </p>
+ 
+      </li>
+ 
+      <li> 
+        <p id="XREF_4_MAKE_AN_HPL_RUN_USING"><a name="XREF_4_MAKE_AN_HPL_RUN_USING"><!-- --></a>Make an HPL run, using compile options such as 
+          <samp class="codeph" id="GUID-6EE32F88-91C8-4269-B9F9-DA0763A29888">ASYOUGO</samp>, 
+          <samp class="codeph" id="GUID-3B02CAF0-5A9F-402A-A516-9D2AD7E80422">ASYOUGO2</samp>, or 
+          <samp class="codeph" id="GUID-B20665DA-2310-4EDD-BCE6-73F79A768B59">ENDEARLY</samp> to aid in your search. These options enable you to gain insight into the performance sooner than HPL would normally give this insight. 
+        </p>
+ 
+        <p id="GUID-DD9FEEE5-4D0B-48A4-AD49-C88D2A93AAD1">When doing so, follow these recommendations: 
+        </p>
+ 
+        <ul type="disc" id="GUID-5A46B4C0-5A5A-413E-A44B-44286E40CC71"> 
+          <li> 
+            <p id="GUID-0DBE363F-5544-4239-ADCC-A6CE6AA2B850">Use MP LINPACK, which is a patched version of HPL, to save time in the search. 
+            </p>
+ 
+            <p id="GUID-DC66E44F-1A0B-47B1-986D-CB47B6CBD7E7">All performance intrusive features are compile-optional in MP LINPACK. That is, if you do not use the new options to reduce search time, these features are disabled. The primary purpose of the additions is to assist you in finding solutions. 
+            </p>
+ 
+            <p id="GUID-46A0DBF7-3D69-4056-8F39-BD00A740E850">HPL requires a long time to search for many different parameters. In MP LINPACK, the goal is to get the best possible number. 
+            </p>
+ 
+            <p id="GUID-060DB6FF-B7B2-48E4-BCAC-A4ECB92E5EA9">Given that the input is not fixed, there is a large parameter space you must search over. An exhaustive search of all possible inputs is improbably large even for a powerful cluster. MP LINPACK optionally prints information on performance as it proceeds. You can also terminate early. 
+            </p>
+ 
+          </li>
+ 
+          <li> 
+            <p id="GUID-C0EBD72F-1DD3-4C0C-9F65-0B8A74E2516B">Save time by compiling with 
+              <samp class="codeph" id="GUID-CF379FC4-8EB7-428D-864A-B6D0964B40B2">-DENDEARLY -DASYOUGO2</samp> and using a negative threshold (do not use a negative threshold on the final run that you intend to submit as a Top500 entry). Set the threshold in line 13 of the HPL 2.0 input file 
+              <span class="filepath" id="GUID-D3931A3D-5FD7-4729-92C1-B7F3EB030D66">HPL.dat</span> 
+            </p>
+ 
+          </li>
+ 
+          <li> 
+            <p id="GUID-D733F253-E0FB-4787-A3A6-C9FEC27F2CF2">If you are going to run a problem to completion, do it with 
+              <samp class="codeph" id="GUID-C0501637-81E3-410A-8440-15FD345E55EE">-DASYOUGO</samp>. 
+            </p>
+ 
+          </li>
+ 
+        </ul>
+ 
+      </li>
+ 
+      <li> 
+        <p id="GUID-FC978D54-44CF-4492-98FE-956C01ACAB1F"> 
+          <span id="GUID-2E5569C3-B5D9-479B-A52A-0BCF604F85B9">Using the quick performance feedback, return to step 3 and iterate until you are sure that the performance is as good as possible.</span> 
+        </p>
+ 
+      </li>
+ 
+    </ol>
+ 
+    <p id="P_CF_128576740344664"><a name="P_CF_128576740344664"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d55590e187"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d55590e187 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-10DFCB17-3953-47C6-9971-8C455A925BFE.htm">Intel&reg; Optimized MP LINPACK Benchmark for Clusters</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-5450EC4E-DB1B-4435-AB9A-B179F6081CC1.htm">Options to Reduce Search Time 
+        </a>  
+        </div>
+<div><a href="GUID-9870FD98-79EE-4006-8129-C5A0C5285B31.htm#GUID-9870FD98-79EE-4006-8129-C5A0C5285B31">Notational Conventions</a></div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

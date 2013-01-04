@@ -1,0 +1,116 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Configuring the Eclipse* IDE CDT to Link with Intel MKL">
+<meta name="DC.subject" content="configuring Eclipse* CDT, Eclipse* CDT, configuring">
+<meta name="keywords" content="configuring Eclipse* CDT, Eclipse* CDT, configuring">
+<meta name="DC.Relation" scheme="URI" content="GUID-D922FB77-62CD-47C7-80AB-FE0E953274F4.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-5FE64872-8340-46CB-A763-BFF2CD227CB5.htm#GUID-5FE64872-8340-46CB-A763-BFF2CD227CB5">
+<meta name="DC.Relation" scheme="URI" content="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm#GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-CECACEC6-8B3A-459C-9F5F-FED0563E69F4">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Configuring the Eclipse* IDE CDT to Link with Intel MKL</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-CECACEC6-8B3A-459C-9F5F-FED0563E69F4">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1"> Configuring the Eclipse* IDE CDT to Link with Intel MKL </h1>
+ 
+   
+  <div id="GUID-7F693AB5-0C25-4940-B484-1344C1423F20"> 
+	 <p id="GUID-77995037-B023-43A5-971E-6CA93199F189">This section explains how to configure the Eclipse* Integrated Development Environment (IDE) C/C++ Development Tools (CDT) to link with Intel&reg; Math Kernel Library (Intel&reg; MKL). 
+	 </p>
+ 
+	 <div class="Note"><h3 class="NoteTipHead">
+					Tip</h3> 
+		<p> After configuring your CDT, you can benefit from the Eclipse-provided 
+		  <samp class="codeph" id="GUID-B2204DD8-DCE3-4D26-B3C0-68AC07248AC4"><em id="GUID-31FB8A65-72CC-4422-B7BD-69C4965198A8">code assist</em></samp> feature. See Code/Context Assist description in the CDT Help for details. 
+		</p>
+ 
+	 </div> 
+	 <p id="GUID-9023922F-F095-45EF-B28C-D4D73F40816A"> To configure your Eclipse IDE CDT to link with Intel MKL, you need to perform the steps explained below. The specific instructions for performing these steps depend on your version of the CDT and on the tool-chain/compiler integration. Refer to the CDT Help for more details. 
+	 </p>
+ 
+	 <p id="GUID-3FC2BAFD-B067-489F-A043-D53444C10C4F">To configure your Eclipse IDE CDT, do the following: 
+	 </p>
+ 
+	 <ol id="GUID-5869A12D-0AAC-4234-93A0-45ABC10DE2B0"> 
+		<li> 
+		  <p id="GUID-143DB528-AB04-4856-9364-73D206FF9876">Open 
+			 <strong id="GUID-51F1C340-7734-44EA-9175-53C2FE5862EC">Project Properties</strong> for your project. 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-265D7B7A-A638-49B4-873A-433AE8E771DA">Add the Intel MKL include path, that is, 
+			 <span class="filepath" id="GUID-DCC5023C-7140-4300-B7B7-F80417096891"><var>&lt;mkl directory&gt;</var>/include</span>, to the project's include paths. 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-F1CD9CD3-208A-4239-ADF3-F7EE55A5A91F">Add the Intel MKL library path for the target architecture to the project's library paths. For example, for the Intel&reg; 64 architecture, add 
+			 <span class="filepath" id="GUID-6F34389C-0E48-4F4E-BB4C-F2A84C3C9E19"><var>&lt;mkl directory&gt;</var>/lib/intel64</span>. 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-72F95D90-D356-4EAA-8F47-DD92847387AD">Specify the names of the Intel MKL libraries to link with your application. For example, you may need the following libraries: 
+			 <span class="filepath" id="GUID-F4752971-5516-4577-BD02-B095C840F342">mkl_intel_lp64</span>, 
+			 <span class="filepath" id="GUID-B0C95B5A-DABF-41BB-8458-AC7915E90B23">mkl_intel_thread</span>, 
+			 <span class="filepath" id="GUID-418C5408-42A8-4CED-873B-83B502A80052">mkl_core</span>, and 
+			 <span class="filepath" id="GUID-5CE725C0-ABE8-42CA-BD68-DA1266F9FD34">iomp5</span>. 
+		  </p>
+ 
+		  <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+			 <p>Because compilers typically require library names rather than file names, omit the "<span class="filepath" id="GUID-B8F6A95F-DDA3-40E1-AC5C-9EA00DE584A1">lib</span>" prefix and "<span class="filepath" id="GUID-32D422A6-852E-49BD-A87D-C02CC2F3CDF2">a</span>" or 
+				<span class="filepath" id="GUID-637B28A3-166D-4BB7-B86C-D88739417A20">"so"</span> extension. 
+			 </p>
+ 
+		  </div> 
+		</li>
+ 
+	 </ol>
+ 
+	 <p id="GUID-3516C56B-C1CA-4A67-BF5C-92A62E102EF4"> 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-D922FB77-62CD-47C7-80AB-FE0E953274F4.htm">Programming with Intel&reg; Math Kernel Library in the Eclipse* Integrated Development Environment (IDE)</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-5FE64872-8340-46CB-A763-BFF2CD227CB5.htm#GUID-5FE64872-8340-46CB-A763-BFF2CD227CB5">Intel&reg; MKL Libraries to Link with 
+		  </a>  
+		  </div>
+<div><a href="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm#GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA">Linking in Detail 
+		  </a>  
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Linking with System Libraries">
+<meta name="DC.subject" content="linking with, system libraries, libraries to link with, system libraries, linking with">
+<meta name="keywords" content="linking with, system libraries, libraries to link with, system libraries, linking with">
+<meta name="DC.Relation" scheme="URI" content="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-C676FE09-339D-4147-BB79-4038A27A6851.htm#GUID-C676FE09-339D-4147-BB79-4038A27A6851">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-549011AB-1324-4694-B8DD-AFBE81397B8C">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Linking with System Libraries</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-549011AB-1324-4694-B8DD-AFBE81397B8C">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Linking with System Libraries</h1>
+ 
+   
+  <div id="GUID-7B75396E-B343-4CBA-A793-28648A0658D2"> 
+    <p id="GUID-F9FCD1C5-3224-48C0-A2C1-ED614FA2CA9C"> 
+      <span id="GUID-5B75FF01-B4B2-4106-84AA-D4D06E6C8128">To use the Intel MKL FFT, Trigonometric Transform, or Poisson, Laplace, and Helmholtz</span> 
+      <span id="GUID-DBFEE51A-DC38-4C6A-9170-E75DB07A51D2">Solver routines, link also the math support system library by adding "</span> 
+      <span id="GUID-E082D509-7F5C-46D1-9FB9-4F7B036B11B3"> 
+        <samp class="codeph" id="GUID-8505F799-9608-4B41-A1E2-95DEBD6BB740">-lm</samp> 
+      </span> 
+      <span id="GUID-E175F4DD-0F9A-49BF-AD2B-2C5D2402E3BB">" to the link line.</span> 
+    </p>
+ 
+    <p id="GUID-6F5E307C-F0EB-414A-B97D-23770510A81B"> 
+      <span id="GUID-FC359087-392F-476D-9960-03C410BC0FAA">On</span> 
+      <span id="GUID-2674A42D-C226-4D76-8347-B5E21E377B38">Linux OS</span><span id="GUID-81ED98E8-3762-4133-B420-675F11FEFFF7">, the 
+        <samp class="codeph" id="GUID-774C442C-CEB6-4F98-B08E-194A8379D21A">libiomp5</samp> library relies on the native 
+        <samp class="codeph" id="GUID-58C08568-6001-4854-B00A-E6A41934F3C9">pthread</samp> library for multi-threading. Any time 
+        <samp class="codeph" id="GUID-6D9A5D4E-A7CE-42F3-A20C-6380EBB5C1D4">libiomp5</samp> is required, add 
+        <samp class="codeph" id="GUID-4CF1C4D8-35A0-4631-92EC-F74FB9FA08A6">-lpthread</samp></span> 
+      <span id="GUID-37C0E517-5F05-4EA2-BFC6-7316530B0646">to your link line afterwards (the order of listing libraries is important).</span> 
+    </p>
+ 
+    <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+      <p> To link with Intel MKL statically using a GNU or PGI compiler, link also the system library 
+        <span class="filepath">libdl</span> by adding 
+        <span class="filepath">-ldl</span> to your link line. The Intel compiler always passes 
+        <span class="filepath">-ldl</span> to the linker. 
+      </p>
+ 
+    </div> 
+    <p id="GUID-B5A3DB41-8DAE-489B-BC40-550C8DBA9B98"> 
+      </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm">Linking in Detail</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-C676FE09-339D-4147-BB79-4038A27A6851.htm#GUID-C676FE09-339D-4147-BB79-4038A27A6851">Linking Examples 
+        </a></div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

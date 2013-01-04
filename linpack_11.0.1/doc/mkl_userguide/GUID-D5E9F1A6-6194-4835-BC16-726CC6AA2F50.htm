@@ -1,0 +1,105 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Example of Data Alignment">
+<meta name="DC.subject" content="aligning data, example, data alignment, example">
+<meta name="keywords" content="aligning data, example, data alignment, example">
+<meta name="DC.Relation" scheme="URI" content="GUID-D102F7CC-8FDD-4273-82B7-3ED462C0AAEE.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-D5E9F1A6-6194-4835-BC16-726CC6AA2F50">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Example of Data Alignment</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-D5E9F1A6-6194-4835-BC16-726CC6AA2F50">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1"><span>Example of Data Alignment</span></h1>
+ 
+   
+  <div id="GUID-6885C2FC-B843-4FA7-9394-DDC05C6F7EF6"> 
+	 <p><span>Needs for best performance with Intel MKL or for reproducible results from run to run of Intel MKL functions require alignment of data arrays. The following example shows how to align an array on 64-byte boundaries. To do this</span>, use 
+		<samp class="codeph" id="GUID-C094DE68-99C4-49EB-8365-99995E09EE4F">mkl_malloc()</samp> in place of system provided memory allocators, as shown in the code example below. 
+		</p>
+ 
+	 <div class="section" id="ALIGNING_CODE"><a name="ALIGNING_CODE"><!-- --></a><h2 class="sectiontitle">Aligning Addresses on 
+		  <span>64</span>-byte Boundaries</h2> 
+		 
+		<pre>            
+            // ******* C language *******
+            ...
+            #include &lt;stdlib.h&gt;
+            #include &lt;mkl.h&gt;
+            ...
+            void *darray;
+            int workspace;    
+            // Set value of alignment
+            int alignment=<span>64</span>;
+            ...
+            // Allocate aligned workspace
+            darray = mkl_malloc( sizeof(double)*workspace, alignment );
+            ...
+            // call the program using MKL
+            mkl_app( darray );
+            ...
+            // Free workspace
+            mkl_free( darray );
+            </pre> 
+		<p></p>
+ 
+		<pre>            ! ******* Fortran language *******
+            ...
+            ! Set value of alignment
+            integer    alignment
+            parameter (alignment=<span>64</span>)
+            ...
+            ! Declare Intel MKL routines
+            #ifdef _IA32
+            integer mkl_malloc
+            #else
+            integer*8 mkl_malloc
+            #endif
+            external mkl_malloc, mkl_free, mkl_app
+            ...
+            double precision darray
+            pointer (p_wrk,darray(1))
+            integer workspace
+            ...
+            ! Allocate aligned workspace
+            p_wrk = mkl_malloc( %val(8*workspace), %val(alignment) )
+            ...
+            ! call the program using Intel MKL
+            call mkl_app( darray )
+            ...
+            ! Free workspace
+            call mkl_free(p_wrk)
+</pre> 
+	 </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-D102F7CC-8FDD-4273-82B7-3ED462C0AAEE.htm">Coding Tips</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

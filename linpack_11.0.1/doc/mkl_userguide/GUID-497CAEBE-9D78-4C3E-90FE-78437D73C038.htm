@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Obtaining Numerically Reproducible Results">
+<meta name="DC.subject" content="numerically reproducible results, consistent results, results, numerically reproducible, obtaining, results, consistent, obtaining, computation results, consistency, unstable output, getting rid of">
+<meta name="keywords" content="numerically reproducible results, consistent results, results, numerically reproducible, obtaining, results, consistent, obtaining, computation results, consistency, unstable output, getting rid of">
+<meta name="DC.Relation" scheme="URI" content="GUID-3179B9D1-C3C3-47E5-B8DE-DE97E78E78CA.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-507796B7-306A-4A67-8BF6-87174B89CBC0.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-DCB010F6-DDBF-4A00-8BB3-049BEFDC2ED2.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-8196F5C0-26B6-476F-81C0-6C01A533EB26.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-70536038-C295-4763-921C-9B9816185631.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-4AA9082D-F781-4145-950F-091994B2A3A7.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-497CAEBE-9D78-4C3E-90FE-78437D73C038">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Obtaining Numerically Reproducible Results</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-497CAEBE-9D78-4C3E-90FE-78437D73C038">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Obtaining Numerically Reproducible Results</h1>
+ 
+   
+  <div id="GUID-215C93CA-79E2-4583-883F-C3D8240AA20D"> 
+    <p> Intel&reg; Math Kernel Library (Intel&reg; MKL) offers functions and environment variables that help you obtain Conditional Numerical Reproducibility (CNR) of floating-point results when calling the library functions from your application. These new controls enable Intel MKL to run in a special mode, when functions return bitwise reproducible floating-point results from run to run under the following conditions:
+    </p>
+ 
+    <ul type="disc" id="GUID-88CC6109-293A-42FD-8AC2-E9F9A111E19C"> 
+      <li> Calls to Intel MKL occur in a single executable 
+      </li>
+ 
+      <li>Input and output arrays in function calls are properly aligned 
+      </li>
+ 
+      <li>The number of computational threads used by the library does not change in the run 
+      </li>
+ 
+    </ul>
+ 
+    <p> It is well known that for general single and double precision IEEE floating-point numbers, the associative property does not always hold, meaning (a+b)+c may not equal a +(b+c). Let's consider a specific example. In infinite precision arithmetic 2<sup>-63</sup> + 1 + -1 = 2<sup>-63</sup>. If this same computation is done on a computer using double precision floating-point numbers, a rounding error is introduced, and the order of operations becomes important: 
+    </p>
+ 
+    <p> (2<sup>-63</sup> + 1) + (-1) 
+      <span class="eqsymbol">≃</span> 1 + (-1) = 0 
+    </p>
+ 
+    <p>versus 
+    </p>
+ 
+    <p> 2<sup>-63</sup> + (1 + (-1)) 
+      <span class="eqsymbol">≃</span> 2<sup>-63</sup> + 0 = 2<sup>-63</sup> 
+    </p>
+ 
+    <p> This inconsistency in results due to order of operations is precisely what the new functionality addresses. 
+    </p>
+ 
+    <p> The application related factors that affect the order of floating-point operations within a single executable program include selection of a code path based on run-time processor dispatching, alignment of data arrays, variation in number of threads, threaded algorithms and internal floating-point control settings. You can control most of these factors by controlling the number of threads and floating-point settings and by taking steps to align memory when it is allocated (see the 
+      <a href="http://software.intel.com/en-us/articles/getting-reproducible-results-with-intel-mkl/" target="_blank">Getting Reproducible Results with Intel&reg; MKL</a> knowledge base article for details). However, run-time dispatching and certain threaded algorithms did not allow users to make changes that can ensure the same order of operations from run to run. 
+    </p>
+ 
+    <p> Intel MKL does run-time processor dispatching in order to identify the appropriate internal code paths to traverse for the Intel MKL functions called by the application. The code paths chosen may differ across a wide range of Intel processors and Intel architecture compatible processors and may provide differing levels of performance. For example, an Intel MKL function running on an Intel&reg; Pentium&reg; 4 processor may run one code path, while on the latest Intel&reg; Xeon&reg; processor it will run another code path. This happens because each unique code path has been optimized to match the features available on the underlying processor. One key way that the new features of a processor are exposed to the programmer is through the instruction set architecture (ISA). Because of this, code branches in Intel MKL are designated by the latest ISA they use for optimizations: from the Intel&reg; Streaming SIMD Extensions 2 (Intel&reg; SSE2) to the Intel&reg; Advanced Vector Extensions (Intel&reg; AVX). The feature-based approach introduces a challenge: if any of the internal floating-point operations are done in a different order or are re-associated, the computed results may differ. 
+    </p>
+ 
+    <p> Dispatching optimized code paths based on the capabilities of the processor on which the code is running is central to the optimization approach used by Intel MKL. So it is natural that consistent results require some performance trade-offs. If limited to a particular code path, performance of Intel MKL can in some circumstances degrade by more than a half. To understand this, note that matrix-multiply performance nearly doubled with the introduction of new processors supporting Intel AVX instructions. Even if the code branch is not restricted, performance can degrade by 10-20% because the new functionality restricts algorithms to maintain the order of operations. 
+    </p>
+ 
+    <p id="P_CF_12869800235462"><a name="P_CF_12869800235462"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d19839e128"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d19839e128 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-3179B9D1-C3C3-47E5-B8DE-DE97E78E78CA.htm">Intel&reg; Math Kernel Library for Linux* OS User's Guide</a></div>
+</div>
+<div>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="GUID-507796B7-306A-4A67-8BF6-87174B89CBC0.htm">Getting Started with Conditional Numerical Reproducibility</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-DCB010F6-DDBF-4A00-8BB3-049BEFDC2ED2.htm">Specifying the Code Branches</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-8196F5C0-26B6-476F-81C0-6C01A533EB26.htm">Reproducibility Conditions</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-70536038-C295-4763-921C-9B9816185631.htm">Setting the Environment Variable for Conditional Numerical Reproducibility</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-4AA9082D-F781-4145-950F-091994B2A3A7.htm">Code Examples</a><br>
+</li>
+</ul>
+<br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

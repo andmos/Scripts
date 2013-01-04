@@ -1,0 +1,215 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Using Predefined Preprocessor Symbols for Intel&reg; MKL Version-Dependent Compilation">
+<meta name="DC.subject" content="conditional compilation, compilation, Intel&reg; MKL version-dependent">
+<meta name="keywords" content="conditional compilation, compilation, Intel&reg; MKL version-dependent">
+<meta name="DC.Relation" scheme="URI" content="GUID-D102F7CC-8FDD-4273-82B7-3ED462C0AAEE.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-E9D1623E-C85F-4D10-A1E2-9CAA258E30BC">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Using Predefined Preprocessor Symbols for Intel&reg; MKL Version-Dependent Compilation</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-E9D1623E-C85F-4D10-A1E2-9CAA258E30BC">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Using Predefined Preprocessor Symbols for Intel&reg; MKL Version-Dependent Compilation</h1>
+ 
+   
+  <div id="GUID-81387021-9638-4049-BCEA-F9A38586FB5F"> 
+	 <p id="GUID-8862352C-F223-43ED-A2DF-BE053A6A3031"> Preprocessor symbols (macros) substitute values in a program before it is compiled. The substitution is performed in the preprocessing phase. 
+	 </p>
+ 
+	 <p id="GUID-9E5F6EA9-9957-406A-B4B5-12BD423EDB0C">The following preprocessor symbols are available: 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-1CA24F92-98D9-4309-90D5-51BCF43958A9" width="100%" frame="hsides" border="1" rules="all"> 
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" valign="top" width="42.857142857142854%" id="d68524e46"> 
+				  <p id="GUID-8C4F5542-5B9F-40D7-908F-5AD52EA6712C">Predefined Preprocessor Symbol 
+				  </p>
+ 
+				</th>
+ 
+				<th class="row-nocellborder" valign="top" width="57.14285714285714%" id="d68524e52"> 
+				  <p id="GUID-844B0EB7-34E1-4BF4-80DA-21DC33CF8B0A">Description 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="42.857142857142854%" headers="d68524e46 "> 
+				  <p id="GUID-64D96F1E-8C58-4E60-8641-F68F33596E3D"><samp class="codeph" id="GUID-1CF9128B-88F8-4C49-8110-D33DA859DE1A">__INTEL_MKL__</samp> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="57.14285714285714%" headers="d68524e52 "> 
+				  <p id="GUID-FBEA6900-9F23-42C2-9CE4-A86BC5E6366C">Intel MKL major version 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="42.857142857142854%" headers="d68524e46 "> 
+				  <p id="GUID-CA315AC7-68DE-49E8-A4F9-3D7B7FDC542B"><samp class="codeph" id="GUID-BB4601E9-956C-4882-AD71-2039B39B2615">__INTEL_MKL_MINOR__</samp> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="57.14285714285714%" headers="d68524e52 "> 
+				  <p id="GUID-FE1F2F57-AA91-4656-9797-6C687E3C39A5"> Intel MKL minor version 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="42.857142857142854%" headers="d68524e46 "> 
+				  <p id="GUID-219E67BC-81A0-4458-A9B9-8951BF9687E6"><samp class="codeph" id="GUID-B11B2CCF-5944-4CDA-9954-681CE15BDDDB">__INTEL_MKL_UPDATE__</samp> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="57.14285714285714%" headers="d68524e52 "> 
+				  <p id="GUID-7B447457-770D-49D6-8BA9-9546B639E5A8"> Intel MKL update number 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="42.857142857142854%" headers="d68524e46 "> 
+				  <p id="GUID-BC553669-0836-425A-976B-181D396FBF94"><samp class="codeph" id="GUID-F35FF690-4C82-4E34-85B6-1DB4EBD86966">INTEL_MKL_VERSION</samp> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="57.14285714285714%" headers="d68524e52 "> 
+				  <p id="GUID-115AC0F9-268E-45BB-83BF-DA443EB97AA9"> Intel MKL full version in the following format: 
+				  </p>
+ 
+				  <p id="GUID-98F745B9-46CB-4D29-8BF8-443CCD4C8006"><samp class="codeph" id="GUID-CF21A1A8-19B4-4AF5-99FD-6216CA796420">INTEL_MKL_VERSION</samp> = (<samp class="codeph" id="GUID-4206EB47-38EE-47EC-9E0D-6BFB82A6AC83">__INTEL_MKL__</samp>*100+<samp class="codeph" id="GUID-4C01C7F0-C08C-4E00-B40F-B4E22D75F88C">__INTEL_MKL_MINOR__</samp>)*100+<samp class="codeph" id="GUID-69B2EFD2-6B5B-4801-B91D-7F17CB35AC8E">__INTEL_MKL_UPDATE__</samp> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 <p id="GUID-4B553A5F-0B1A-4AC6-9763-94D91861D157">These symbols enable conditional compilation of code that uses new features introduced in a particular version of the library.
+	 </p>
+ 
+	 <p id="GUID-E2AD93C6-15A4-4E14-ACE8-5A54E145AB15">To perform conditional compilation: 
+	 </p>
+ 
+	 <ol id="GUID-A87B8502-0E6A-48AF-B00F-8815FD4F07FA"> 
+		<li id="GUID-9084C950-222B-436D-862A-000460E8C066">Include in your code the file where the macros are defined: 
+		  <ul type="disc" id="GUID-12AD69B8-BD61-4507-819E-DA77843D8606"> 
+			 <li id="GUID-481E0875-5948-4B6D-B5FC-02511E6C1A56"><span class="filepath" id="GUID-5A29F47E-6147-43E4-8D87-A61B6A7F2C68">mkl.h</span> for C/C++ 
+			 </li>
+ 
+			 <li id="GUID-E6B0CE96-C43B-4570-8107-FA0869B8E2CF"><span class="filepath" id="GUID-532D3214-178C-4DF4-9B8E-299C51F6B280">mkl.fi</span> for Fortran 
+			 </li>
+ 
+		  </ul>
+ 
+		</li>
+ 
+		<li id="GUID-B18EC599-05EA-47CF-A574-EFB8BB047C39">[Optionally] Use the following preprocessor directives to check whether the macro is defined: 
+		  <ul type="disc" id="GUID-67C8EE75-3740-4A5D-80B3-BB37527832E6"> 
+			 <li id="GUID-CB116EE0-DAD9-4B5E-AEEF-C4D4BFB466CD"><samp class="codeph" id="GUID-E945538F-1756-4DA9-9A44-EC4DCAA6079F">#ifdef, #endif</samp> for C/C++ 
+			 </li>
+ 
+			 <li id="GUID-01A9E09E-8B81-49BC-90B9-AEBB5A594579"><samp class="codeph" id="GUID-4EDF5B13-CAB6-4057-B1E1-482E2E1CC6F5">!DEC$IF DEFINED, !DEC$ENDIF</samp> for Fortran 
+			 </li>
+ 
+		  </ul>
+ 
+		</li>
+ 
+		<li id="GUID-045DAB8D-530A-4595-A985-79242BB5BEE8">Use preprocessor directives for conditional inclusion of code: 
+		  <ul type="disc" id="GUID-69320CAA-7E85-41D2-97B7-540C8BEFEC66"> 
+			 <li id="GUID-47131C6E-C222-4C09-B1C0-ECC47875C587"><samp class="codeph" id="GUID-376D61AE-DCF7-4F24-8566-F29CE347DC20">#if, #endif</samp> for C/C++ 
+			 </li>
+ 
+			 <li id="GUID-D67F5429-2D44-4207-BBB9-6EDA98685E6A"><samp class="codeph" id="GUID-4262CA2A-0936-47C2-BA3A-9F0AD96AE52E">!DEC$IF, !DEC$ENDIF</samp> for Fortran 
+			 </li>
+ 
+		  </ul>
+ 
+		</li>
+ 
+	 </ol>
+ 
+	 <p id="GUID-61B3187F-3C0C-4E6F-9C9F-4E62E37A0C6A"><strong id="GUID-E2D561C1-5D5D-4D84-AC9C-4D8B50E7626B">Example</strong> 
+	 </p>
+ 
+	 <p id="GUID-E72B40B5-DEA6-435A-B75B-FCC32C30EA1F">This example shows how to compile a code segment conditionally for a specific version of Intel MKL. In this case, the version is 10.3 Update 4: 
+	 </p>
+ 
+	 <p id="GUID-F165A4CF-387D-4576-A4E8-F02026AAF71E"><strong id="GUID-4E0646E7-BDDB-4F26-AD8B-4F4B95DB43C8">C/C++:</strong> 
+	 </p>
+ 
+	 <pre>#include "mkl.h"
+#ifdef INTEL_MKL_VERSION
+#if INTEL_MKL_VERSION ==  100304
+// 	Code to be conditionally compiled
+#endif
+#endif
+</pre> 
+	 <p id="GUID-B66B5D54-3112-4AEB-9C59-E48F117DE679"><strong id="GUID-A103705B-BE88-4A29-B607-1B21C06A3F22">Fortran:</strong> 
+	 </p>
+ 
+	 <pre>    include "mkl.fi"
+!DEC$IF DEFINED INTEL_MKL_VERSION
+!DEC$IF INTEL_MKL_VERSION .EQ. 100304
+* 	Code to be conditionally compiled 
+!DEC$ENDIF
+!DEC$ENDIF
+</pre> 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-D102F7CC-8FDD-4273-82B7-3ED462C0AAEE.htm">Coding Tips</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

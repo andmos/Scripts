@@ -1,0 +1,334 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Dynamically Selecting the Interface and Threading Layer">
+<meta name="DC.subject" content="Single Dynamic Library, SDL">
+<meta name="keywords" content="Single Dynamic Library, SDL">
+<meta name="DC.Relation" scheme="URI" content="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-7091CAB6-0506-443A-ABA0-CCE2245A1A1C.htm#GUID-7091CAB6-0506-443A-ABA0-CCE2245A1A1C">
+<meta name="DC.Relation" scheme="URI" content="GUID-45FE75D8-E55C-44A4-BE8F-9CC0F1805F46.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-E1D65283-7158-47FD-8EF8-F457261BC3AC.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-ACFFDA19-8914-4F20-9815-5C18DC6BE1C2">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Dynamically Selecting the Interface and Threading Layer</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+<MSHelp:Keyword Index="F" Term="mkl_set_interface_layer"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="mkl_set_threading_layer"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="mkl_set_xerbla"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="mkl_set_progress"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.for.mkl_set_interface_layer"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.for.mkl_set_threading_layer"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.for.mkl_set_xerbla"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.for.mkl_set_progress"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.cpp.mkl_set_interface_layer"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.cpp.mkl_set_threading_layer"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.cpp.mkl_set_xerbla"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.cpp.mkl_set_progress"></MSHelp:Keyword>
+</xml>
+</head>
+<body id="GUID-ACFFDA19-8914-4F20-9815-5C18DC6BE1C2">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Dynamically Selecting the Interface and Threading Layer</h1>
+ 
+   
+  <div id="GUID-000CC2B1-668C-44C1-B429-044746D56401"> 
+	 <p id="GUID-92BC21F0-35EC-4E46-A173-9377D992048C">The Single Dynamic Library (SDL) enables you to dynamically select the interface and threading layer for Intel MKL. 
+	 </p>
+ 
+	 <div class="section" id="GUID-B745FAB6-C05E-47EB-ADC6-C8F63C358CD2"><h2 class="sectiontitle">Setting the Interface Layer</h2> 
+		 
+		<p id="GUID-C88127DF-875A-4B87-962F-E315D6DE2088">Available interfaces depend on the architecture of your system. 
+		</p>
+ 
+		<p id="GUID-216D1142-D728-44FB-8758-BD862D589331">On systems based on the Intel&reg; 64 architecture, LP64 and ILP64 interfaces are available. To set one of these interfaces at run time, use the 
+		  <samp class="codeph" id="GUID-EB914B1A-88B4-4718-BB2F-762128E260F7">mkl_set_interface_layer</samp> function or the 
+		  <samp class="codeph" id="GUID-E88C6F32-7385-4DB5-A668-F9FF7725FC2A">MKL_INTERFACE_LAYER</samp> environment variable. The following table provides values to be used to set each interface. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-F6291D30-371E-4E85-8145-281896A00611" width="100%" frame="hsides" border="1" rules="all"> 
+			  
+			  
+			  
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" valign="top" width="20%" id="d52195e95"> 
+					 <p id="GUID-8B705934-4D47-4322-8C22-8979C65157C3">Interface Layer 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" rowspan="1" colspan="1" valign="top" id="d52195e101"> 
+					 <p id="GUID-5D8AC599-D01C-4F7D-B723-142042699747">Value of 
+						<samp class="codeph" id="GUID-7F7E0E16-02D0-4E94-B33B-F1A59DABF1F3">MKL_INTERFACE_LAYER</samp> 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="row-nocellborder" valign="top" width="40%" id="d52195e110"> 
+					 <p id="GUID-BF521A49-C13D-47D7-BBF7-EB3C6C0ED435">Value of the Parameter of 
+						<samp class="codeph" id="GUID-12D7D539-6A5F-4DEE-BA2A-196043AF509F">mkl_set_interface_layer</samp> 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="20%" headers="d52195e95 "> 
+					 <p id="GUID-4360C668-90A7-403E-A63E-520D831E875D">LP64 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d52195e101 "> 
+					 <p id="GUID-E64E80FB-1D27-49E4-A29D-C0005E1839E4"> 
+						<samp class="codeph" id="GUID-50FCC5A0-8B9D-46F8-A64B-CD263B847C23">LP64</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="40%" headers="d52195e110 "> 
+					 <p id="GUID-BEF7DC9D-C5E4-4BC4-BD20-B36682837E81"> 
+						<samp class="codeph" id="GUID-2AB5265D-4CD1-4A28-B728-91EA919E9B77">MKL_INTERFACE_LP64</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="20%" headers="d52195e95 "> 
+					 <p id="GUID-E7729969-19D5-4AF0-B077-1D302454F430">ILP64 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d52195e101 "> 
+					 <p id="GUID-118BA158-C826-4144-95AE-A6958987B940"> 
+						<samp class="codeph" id="GUID-1B120522-EA16-44D9-8CFB-1041426ACEC5">ILP64</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="40%" headers="d52195e110 "> 
+					 <p id="GUID-72A993C8-0991-410D-9997-49F6EA8317ED"> 
+						<samp class="codeph" id="GUID-8480379F-7C20-4A73-BE46-D7E5962B0E45">MKL_INTERFACE_ILP64</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p id="GUID-DDB16B16-F1EC-46AF-A763-B01A290D1817">If the 
+		  <samp class="codeph" id="GUID-7890DBB3-8C8A-4DFE-83F3-8AD2F39D16AC">mkl_set_interface_layer</samp> function is called, the environment variable 
+		  <samp class="codeph" id="GUID-16882033-D71D-44CF-948E-A821AE037523">MKL_INTERFACE_LAYER</samp> is ignored. 
+		</p>
+ 
+		<p id="GUID-CA58C8F3-04A5-41EE-9032-1EC04BB7D9B2">By default the LP64 interface is used. 
+		</p>
+ 
+		<p id="GUID-5FB57B6E-98D4-462B-9446-988B3668DCB7">See the 
+		  <em id="GUID-69A50807-5963-4CBA-BA14-5C6CE4948D29">Intel MKL Reference Manual</em> for details of the 
+		  <samp class="codeph" id="GUID-A17B065E-DCD7-454D-B7D5-E48695E0CC75">mkl_set_interface_layer</samp> function. 
+		</p>
+ 
+		</div>
+ 
+	 <div class="section" id="GUID-4BCAA027-AC31-4671-85EB-E5DC39AC4B44"><h2 class="sectiontitle">Setting the Threading Layer</h2> 
+		 
+		<p id="GUID-A49E110C-4D4F-4D5D-BC42-B1D0F06E05EA">To set the threading layer at run time, use the 
+		  <samp class="codeph" id="GUID-7C00D4C8-ACA4-4E3B-B531-0D7301DC367C">mkl_set_threading_layer</samp> function or the 
+		  <samp class="codeph" id="GUID-58213254-8A35-44E1-A882-2B830394D54C">MKL_THREADING_LAYER</samp> environment variable. The following table lists available threading layers along with the values to be used to set each layer. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-2CD278E3-D4C1-49FB-9246-D1B87727EE9A" width="100%" frame="hsides" border="1" rules="all"> 
+			  
+			  
+			  
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" valign="top" width="20%" id="d52195e231"> 
+					 <p id="GUID-A0ECC1B8-D03F-423D-953E-6B1C6B65C58E">Threading Layer 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" rowspan="1" colspan="1" valign="top" id="d52195e237"> 
+					 <p id="GUID-636B2142-32EB-4242-A8FB-25EB9245DC7B">Value of 
+						<samp class="codeph" id="GUID-9B0CCA2B-B1C9-4728-A707-E0B78C930C81">MKL_THREADING_LAYER</samp> 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="row-nocellborder" valign="top" width="50%" id="d52195e246"> 
+					 <p id="GUID-5CB4A345-0EC2-4023-BA62-023968D9739B">Value of the Parameter of 
+						<samp class="codeph" id="GUID-0D26D9C3-4FB7-4B94-8EED-66AF0EBCDF82">mkl_set_threading_layer</samp> 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="20%" headers="d52195e231 "> 
+					 <p id="GUID-9B9C4931-FD0F-4D39-8F1E-5E896D54E651">Intel threading 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d52195e237 "> 
+					 <p id="GUID-F28221C0-50AC-427A-9707-E75AF6F78B5B"> 
+						<samp class="codeph" id="GUID-983A52E7-F259-4495-96AB-F556044D67BD">INTEL</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="50%" headers="d52195e246 "> 
+					 <p id="GUID-7754BFFD-6CB7-44BB-8891-9F2D79685285"> 
+						<samp class="codeph" id="GUID-E0B33293-90C6-444A-B6C6-2AA35AEE107C">MKL_THREADING_INTEL</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="20%" headers="d52195e231 "> 
+					 <p id="GUID-E73E04D3-4358-489B-ABCB-586499A5094D">Sequential mode of Intel MKL 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d52195e237 "> 
+					 <p id="GUID-CCC13224-9AAB-4088-9E6F-BF29D56EF557"> 
+						<samp class="codeph" id="GUID-44B588F6-5351-4A70-A8B0-2786BF98802B">SEQUENTIAL</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="50%" headers="d52195e246 "> 
+					 <p id="GUID-0AB45B6B-0A69-4E0A-B348-9998D1D47ADD"> 
+						<samp class="codeph" id="GUID-E78807CE-A1CB-4CEB-B519-2BC61AABCC9D">MKL_THREADING_SEQUENTIAL</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="20%" headers="d52195e231 "> 
+					 <p id="GUID-0CA92CE7-E48E-4D8D-8E79-50617B4BFE21">GNU threading 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="30%" headers="d52195e237 "> 
+					 <p id="GUID-7ADC8A40-F97F-463D-AE22-3A8D9652DA09"> 
+						<samp class="codeph" id="GUID-FF3D8120-C0C6-4253-9B3A-AC20F7456DF5">GNU</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="50%" headers="d52195e246 "> 
+					 <p id="GUID-4D39E0BD-4F0B-48B9-AB1E-29C30210D4B3"> 
+						<samp class="codeph" id="GUID-C652AC92-1383-4F8F-BFAC-7D9EE7D8D7B6">MKL_THREADING_GNU</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d52195e231 "> 
+					 <p id="GUID-84674038-25C7-4D52-A6DF-9040EB11110F">PGI threading 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d52195e237 "> 
+					 <p id="GUID-A09C439E-277E-488D-BF86-472F8202025D"> 
+						<samp class="codeph" id="GUID-8CE97827-2531-44FD-BBE0-EECCC0B69035">PGI</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" rowspan="1" colspan="1" valign="top" headers="d52195e246 "> 
+					 <p id="GUID-491513C9-C27B-4C8F-8D26-151834F9394C"> 
+						<samp class="codeph" id="GUID-E294B283-1BD7-402B-BB80-CFA576D1696C">MKL_THREADING_PGI</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p id="GUID-FE610942-EE0F-462A-B522-1FA20194EBB7">If the 
+		  <samp class="codeph" id="GUID-511218BD-40CB-4D85-9584-2BDFCC6C9AB2">mkl_set_threading_layer</samp> function is called, the environment variable 
+		  <samp class="codeph" id="GUID-0DF46AC3-46AE-4AC6-BC2E-D539FFD65CE5">MKL_THREADING_LAYER</samp> is ignored. 
+		</p>
+ 
+		<p id="GUID-2FE7BA14-5D96-4467-BB56-29208C72B980">By default Intel threading is used. 
+		</p>
+ 
+		<p id="GUID-A82BD519-0EB1-437D-AB13-5D508D242FF9">See the 
+		  <em id="GUID-F4B7369E-2813-4D2B-A07F-554BE920DF70">Intel MKL Reference Manual</em> for details of the 
+		  <samp class="codeph" id="GUID-4821ED24-A980-4DD9-9571-8C23007F2464">mkl_set_threading_layer</samp> function. 
+		</p>
+ 
+	 </div>
+ 
+	 </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm">Linking in Detail</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-7091CAB6-0506-443A-ABA0-CCE2245A1A1C.htm#GUID-7091CAB6-0506-443A-ABA0-CCE2245A1A1C">Using the Single Dynamic Library 
+		  </a>  
+		  </div>
+<div><a href="GUID-45FE75D8-E55C-44A4-BE8F-9CC0F1805F46.htm">Layered Model Concept 
+		  </a>  
+		  </div>
+<div><a href="GUID-E1D65283-7158-47FD-8EF8-F457261BC3AC.htm">Directory Structure in Detail 
+		  </a>  
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

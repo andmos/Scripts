@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Selecting Libraries to Link with">
+<meta name="DC.subject" content="libraries to link with">
+<meta name="keywords" content="libraries to link with">
+<meta name="DC.Relation" scheme="URI" content="GUID-899861D3-2186-445B-B5D0-FEFDC39D41AC.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-45FE75D8-E55C-44A4-BE8F-9CC0F1805F46.htm#GUID-45FE75D8-E55C-44A4-BE8F-9CC0F1805F46">
+<meta name="DC.Relation" scheme="URI" content="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-4CD563F6-40A0-41E7-89C9-9F30B80DA693.htm#GUID-4CD563F6-40A0-41E7-89C9-9F30B80DA693">
+<meta name="DC.Relation" scheme="URI" content="GUID-961566D0-E177-467A-96F6-E0D6541430A0.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-8B7FF103-0319-4D33-B36F-503917E847B4.htm#GUID-8B7FF103-0319-4D33-B36F-503917E847B4">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-5FE64872-8340-46CB-A763-BFF2CD227CB5">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Selecting Libraries to Link with</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-5FE64872-8340-46CB-A763-BFF2CD227CB5">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Selecting Libraries to Link with</h1>
+ 
+   
+  <div id="GUID-4CA00BA1-9FA1-470A-9143-E160A87FEC26"> 
+	 <p id="GUID-1F815B70-985F-4E6D-A67E-EBE2C37D38DC">To link with Intel MKL: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-9951447C-2A81-4B83-ADA5-BFA2D5049B07"> 
+		<li id="LI_95669F0EBDC94CA098827F405AAC9609"><a name="LI_95669F0EBDC94CA098827F405AAC9609"><!-- --></a>Choose one library from the Interface layer and one library from the Threading layer 
+		</li>
+ 
+		<li id="LI_C850DAB6786241C08353734301A2A47D"><a name="LI_C850DAB6786241C08353734301A2A47D"><!-- --></a>Add the only library from the Computational layer and run-time libraries (RTL) 
+		</li>
+ 
+	 </ul>
+ 
+	 <p>The following table lists Intel MKL libraries to link with your application. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-24D4D3ED-F71C-47D8-9854-9DF500E17CCD" width="100%" frame="hsides" border="1" rules="all"> 
+		   
+		   
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" valign="top" width="20%" id="d24049e66"> 
+				</th>
+ 
+				<th class="cellrowborder" valign="top" width="20%" id="d24049e69"> 
+				  <p id="GUID-3812A39C-1EC2-4437-993B-E2D6D447EE22">Interface layer 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" valign="top" width="20%" id="d24049e75"> 
+				  <p id="GUID-8AAC1563-6066-41FD-885E-1B58BBB4D0F6">Threading layer 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" valign="top" width="20%" id="d24049e81"> 
+				  <p id="GUID-8412D053-2CFB-41DF-BB4D-515C9A1BF18D">Computational layer 
+				  </p>
+ 
+				</th>
+ 
+				<th class="row-nocellborder" valign="top" width="20%" id="d24049e87"> 
+				  <p id="GUID-9E946512-9C83-46FA-87E5-DDA7CF81E6BE">RTL 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e66 "> 
+				  <p id="GUID-A1A541C9-B000-4420-8871-44A3CD30B9DF"> 
+					 <span id="GUID-2A491768-F81B-444F-89DA-8A4FCA18F720"> 
+						<strong id="GUID-F4A40E4C-217D-4B4C-8E80-E8A7B94029B8">IA-32 architecture,</strong> 
+					 </span> 
+					 <br> 
+					 <span id="GUID-B27E74E4-62BF-459B-9D1F-35383138F318"> 
+						<strong id="GUID-050F45AC-33BA-45C2-8E0A-FFA38DA7B9EA">static linking</strong> 
+					 </span> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e69 "> 
+				  <p id="GUID-6D8B6CC3-F5E2-449E-8D04-7E9A4EE3E0F8"> 
+					 <span class="filepath" id="GUID-AAFA0F97-1852-4F22-9DCC-9811E26A8544">lib</span><span class="filepath" id="GUID-D30AFB0D-272E-464E-BAF1-E5DCCA15A011">mkl_intel</span>.<span class="filepath" id="GUID-D1231F7B-CE1D-4092-A1DA-CBBD46B87AED">a</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e75 "> 
+				  <p><span class="filepath">lib</span><span class="filepath">mkl_intel_</span><span class="filepath">thread.</span><span class="filepath">a</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e81 "> 
+				  <p id="GUID-E8037B70-91A2-43C9-A9A4-5B823769EC6E"> 
+					 <span class="filepath" id="GUID-C5AF0BFB-FD07-465C-ABAD-78CFA531324C">lib</span><span class="filepath" id="GUID-45951B40-2269-4B33-B360-BDB85014C3C0">mkl_core.</span><span class="filepath" id="GUID-BB2C98FA-D6C3-4853-A4BA-CBCF58220089">a</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="20%" headers="d24049e87 "> 
+				  <p id="GUID-151CDCA9-B931-4864-89D8-5C0D6F41263D"> 
+					 <span class="filepath" id="GUID-D500E24C-7274-4B4E-9BAF-72DF05A96ECF">libiomp5</span>.<span class="filepath" id="GUID-CD89FD62-611F-4B07-99C2-7D03E452B8BA">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+
+			 <tr> 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d24049e66 "> 
+				  <p id="GUID-A8A2D52E-4656-468C-B20D-0F2B2B7F2C5C"> 
+					 <span> 
+						<strong>IA-32 architecture,</strong> 
+					 </span> 
+					 <br> 
+					 <strong id="GUID-54807383-6CB3-4B41-B99F-22DC47CF1962">dynamic linking</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" rowspan="1" valign="top" width="20%" headers="d24049e69 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_intel</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e75 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_intel_</span><span class="filepath">thread</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e81 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="20%" headers="d24049e87 "> 
+				  <p> 
+					 <span class="filepath">libiomp5</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e66 "> 
+				  <p id="GUID-B2B675EC-90F9-47DE-845D-DA2040DAC49D"> 
+					 <span id="GUID-238C1BC0-7358-4731-A1F3-D4FDE330E2B2"> 
+						<strong id="GUID-4837740E-26D8-4985-9B07-098E1A8180AA">Intel&reg; 64 
+						</strong></span><span id="GUID-55DA682A-6C97-40C0-B597-0825D3EA068D"><strong id="GUID-1E364BFA-EB4B-4731-A88C-295489DD3B8E">architecture</strong></span><span id="GUID-75D41570-EA50-4B96-8A91-78D311DF08A1"><strong id="GUID-95E7E899-6C27-4DBE-A896-E80DF5970E32">, 
+						</strong></span><br><span id="GUID-D8A46DAF-D874-4332-A984-A83DCCB23F9B"><strong id="GUID-962C1E87-5164-410D-8CF7-79A195EEB08E">static linking</strong></span> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e69 "> 
+				  <p id="GUID-C36062F0-4BD3-4F1C-815D-AB74F55B9DDC"><span class="filepath" id="GUID-4F3CCD83-99B7-488A-8BF7-A21A87953518">lib</span><span class="filepath" id="GUID-0EA3CE8C-10B7-470C-98E7-2A3EBD72CF36">mkl_intel_</span><span class="filepath">lp64.</span><span class="filepath" id="GUID-7B924648-1645-4F4F-B6A3-580ABD4518A2">a</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e75 "> 
+				  <p><span class="filepath">lib</span><span class="filepath">mkl_intel_</span><span class="filepath">thread.</span><span class="filepath">a</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e81 "> 
+				  <p id="GUID-267DFFEC-0383-46B6-98D4-5261EC87D70E"><span class="filepath" id="GUID-CFBCDAB6-A9C1-4FB0-A97A-B8E4D83510E6">lib</span><span class="filepath" id="GUID-3DA62445-F590-4D1C-A0AC-F40EE33E49DD">mkl_core.</span><span class="filepath" id="GUID-4F571E9F-B343-4872-B609-56A645DE71B3">a</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="20%" headers="d24049e87 "> 
+				  <p id="GUID-0EE80268-CE38-4C18-B7BB-8692D6B89063"><span class="filepath" id="GUID-597445ED-C3C1-4C77-BAD6-1F268B93EB88">libiomp5</span><span class="filepath" id="GUID-47D80604-7ECE-4EC1-A888-9F748A5272A3">.</span><span class="filepath" id="GUID-8F0476FA-A40F-4A9E-9CD9-D3AEFAB105CB">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+
+			 <tr> 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d24049e66 "> 
+				  <p id="GUID-C81E5398-7033-419F-BF69-FB8878221420"> 
+					 <span id="GUID-B755AFDB-24B4-4E9C-9F44-A195EB5C708F"> 
+						<strong id="GUID-4EE2F0C5-D3CB-45E7-97F6-8B9312FFC099">Intel&reg; 64 architecture,</strong> 
+					 </span> 
+					 <br> 
+					 <strong id="GUID-A11A590E-2BBD-4DD7-812C-977589FFADE9">dynamic linking</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" rowspan="1" valign="top" width="20%" headers="d24049e69 "> 
+				  <p><span class="filepath">lib</span><span class="filepath">mkl_intel_</span><span class="filepath">lp64</span>.<span class="filepath">so</span> 
+					 </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e75 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_intel_</span><span class="filepath">thread</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e81 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="20%" headers="d24049e87 "> 
+				  <p> 
+					 <span class="filepath">libiomp5</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" colspan="1" valign="top" headers="d24049e66 "> 
+				  <p id="GUID-D3051275-7609-48E3-A4C5-EA13DB0CA69D"><strong>Intel&reg; Many Integrated Core (Intel&reg; MIC) Architecture, 
+						<br>static linking</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" colspan="1" valign="top" headers="d24049e69 "> 
+				  <p><span class="filepath">lib</span><span class="filepath">mkl_intel_</span><span class="filepath">lp64.</span><span class="filepath">a</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" colspan="1" valign="top" headers="d24049e75 "> 
+				  <p><span class="filepath">lib</span><span class="filepath">mkl_intel_</span><span class="filepath">thread.</span><span class="filepath">a</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" colspan="1" valign="top" headers="d24049e81 "> 
+				  <p id="GUID-8BB8985B-B85D-4174-BBB2-87BB6FFAD2C5"> 
+					 <span class="filepath" id="GUID-6CAB4747-EF00-4FB7-82A9-CE40705E036B">libmkl_core.a</span> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" colspan="1" valign="top" headers="d24049e87 "> 
+				  <p id="GUID-6066BA0A-FEC5-433A-8962-5F4E39A40905"> 
+					 <span class="filepath" id="GUID-24C7441E-2D35-4FC9-BF6D-11BBA952520D">libiomp5.so</span> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d24049e66 "> 
+				  <p id="GUID-C81E5398-7033-419F-BF69-FB8878221420"> 
+					 <span id="GUID-B755AFDB-24B4-4E9C-9F44-A195EB5C708F"> 
+						<strong id="GUID-4EE2F0C5-D3CB-45E7-97F6-8B9312FFC099">Intel MIC Architecture,</strong> 
+					 </span> 
+					 <br> 
+					 <strong id="GUID-A11A590E-2BBD-4DD7-812C-977589FFADE9">dynamic linking</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" rowspan="1" valign="top" width="20%" headers="d24049e69 "> 
+				  <p><span class="filepath">lib</span><span class="filepath">mkl_intel_</span><span class="filepath">lp64</span>.<span class="filepath">so</span> 
+					 </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e75 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_intel_</span><span class="filepath">thread</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="20%" headers="d24049e81 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="20%" headers="d24049e87 "> 
+				  <p> 
+					 <span class="filepath">libiomp5</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 <p id="GUID-36DFA3AB-DF16-4E70-A7FD-ACD2F9159C01">The Single Dynamic Library (SDL) automatically links interface, threading, and computational libraries and thus simplifies linking. The following table lists Intel MKL libraries for dynamic linking using SDL. See 
+		<a href="GUID-ACFFDA19-8914-4F20-9815-5C18DC6BE1C2.htm">Dynamically Selecting the Interface and Threading Layer</a> for how to set the interface and threading layers at run time through function calls or environment settings. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-DFA51927-18BC-45B9-B004-130CB672C219" width="100%" frame="hsides" border="1" rules="all"> 
+		   
+		   
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" valign="top" width="25%" id="d24049e549"> 
+				</th>
+ 
+				<th class="cellrowborder" colspan="3" valign="top" id="d24049e552"> 
+				  <p>SDL 
+				  </p>
+ 
+				</th>
+ 
+				<th class="row-nocellborder" valign="top" width="37.5%" id="d24049e558"> 
+				  <p>RTL 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+           
+           
+
+			 <tr> 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d24049e549 "> 
+				  <p> 
+					 <strong>IA-32 and Intel&reg; 64 architectures</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" rowspan="1" colspan="3" valign="top" headers="d24049e552 "> 
+				  <p><span class="filepath">lib</span><span class="filepath">mkl_rt.</span><span class="filepath">so</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="37.5%" headers="d24049e558 "> 
+				  <p> 
+					 <span class="filepath">libiomp5</span>.<span class="filepath">so</span><a href="GUID-5FE64872-8340-46CB-A763-BFF2CD227CB5.htm#SDL_FOOTNOTE"><sup>†<span>†</span></sup></a> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+          
+          
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 <p id="SDL_FOOTNOTE"><a name="SDL_FOOTNOTE"><!-- --></a> 
+		<sup>†<span>†</span></sup> 
+		<span>Use the Link-line Advisor to check whether you need to explicitly link the 
+		  <span class="filepath">libiomp5</span>.<span class="filepath">so 
+		  </span>RTL</span>. 
+	 </p>
+ 
+	 <p>For exceptions and alternatives to the libraries listed above, see 
+		<a href="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm">Linking in Detail</a>. 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-899861D3-2186-445B-B5D0-FEFDC39D41AC.htm">Linking Quick Start</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-45FE75D8-E55C-44A4-BE8F-9CC0F1805F46.htm#GUID-45FE75D8-E55C-44A4-BE8F-9CC0F1805F46">Layered Model Concept 
+		  </a>  
+		  </div>
+<div><a href="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm">Using the Link-line Advisor 
+		  </a>  
+		  </div>
+<div><a href="GUID-4CD563F6-40A0-41E7-89C9-9F30B80DA693.htm#GUID-4CD563F6-40A0-41E7-89C9-9F30B80DA693">Using the 
+			 <samp class="codeph"><span>-</span>mkl</samp> Compiler Option 
+		  </a></div>
+<div><a href="GUID-961566D0-E177-467A-96F6-E0D6541430A0.htm">Working with the Cluster Software 
+		  </a>  
+		  </div>
+<div><a href="GUID-8B7FF103-0319-4D33-B36F-503917E847B4.htm#GUID-8B7FF103-0319-4D33-B36F-503917E847B4">Linking on Intel&reg; Xeon Phi&#8482; Coprocessors 
+		  </a> For special linking needed for Compiler Assisted Offload 
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Changing the Number of Threads at Run Time">
+<meta name="DC.subject" content="number of threads, changing at run time">
+<meta name="keywords" content="number of threads, changing at run time">
+<meta name="DC.Relation" scheme="URI" content="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-91DB3E62-A6D9-4060-9A51-F4CA181410A1">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Changing the Number of Threads at Run Time</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-91DB3E62-A6D9-4060-9A51-F4CA181410A1">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Changing the Number of Threads at Run Time</h1>
+ 
+   
+  <div id="GUID-8F64F2E5-630B-4B6B-ACC0-5ADB1DCC56EA"> 
+    <p id="GUID-7CCEC684-47B7-4A2A-8929-F4646DB18CDD">You cannot change the number of threads during run time using environment variables. However, you can call OpenMP API functions from your program to change the number of threads during run time. The following sample code shows how to change the number of threads during run time using the 
+      <samp class="codeph" id="GUID-0A113DA3-2044-4A8C-8155-8316618880C6">omp_set_num_threads()</samp> routine. See also 
+      <a href="GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040.htm"><span id="GUID-071DED76-8126-4CEA-A151-099258F6F7BB">Techniques to Set the Number of Threads</span></a>. 
+    </p>
+ 
+    <p id="GUID-09E92E73-7D04-4715-8396-6FC53E387B95">The following example shows both C and Fortran code examples. To run this example in the C language, use the 
+      <span class="filepath" id="GUID-C6326546-D5DF-4EF6-8E5A-B3970392666C">omp.h</span> header file from the Intel&reg; compiler package. If you do not have the Intel compiler but wish to explore the functionality in the example, use Fortran API for 
+      <samp class="codeph" id="GUID-75E1D0DA-4E73-466A-9EE4-2CCD7D867944">omp_set_num_threads()</samp> rather than the C version. For example, 
+      <samp class="codeph" id="GUID-65C9DF1D-3F1D-4E6F-88D9-1DE4CC273DC1">omp_set_num_threads_( &amp;i_one );</samp>
+    </p>
+ 
+    <pre>
+// ******* C language *******
+#include "omp.h"
+#include "mkl.h"
+#include &lt;stdio.h&gt;
+#define SIZE 1000
+int main(int args, char *argv[]){
+double *a, *b, *c;
+a = (double*)malloc(sizeof(double)*SIZE*SIZE);
+b = (double*)malloc(sizeof(double)*SIZE*SIZE);
+c = (double*)malloc(sizeof(double)*SIZE*SIZE);
+double alpha=1, beta=1;
+int m=SIZE, n=SIZE, k=SIZE, lda=SIZE, ldb=SIZE, ldc=SIZE, i=0, j=0;
+char transa='n', transb='n';
+for( i=0; i&lt;SIZE; i++){
+for( j=0; j&lt;SIZE; j++){
+a[i*SIZE+j]= (double)(i+j);
+b[i*SIZE+j]= (double)(i*j);
+c[i*SIZE+j]= (double)0;
+}
+}
+cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
+m, n, k, alpha, a, lda, b, ldb, beta, c, ldc);
+printf("row\ta\tc\n");
+for ( i=0;i&lt;10;i++){
+printf("%d:\t%f\t%f\n", i, a[i*SIZE], c[i*SIZE]);
+}
+omp_set_num_threads(1);
+for( i=0; i&lt;SIZE; i++){
+for( j=0; j&lt;SIZE; j++){
+a[i*SIZE+j]= (double)(i+j);
+b[i*SIZE+j]= (double)(i*j);
+c[i*SIZE+j]= (double)0;
+}
+}
+cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
+m, n, k, alpha, a, lda, b, ldb, beta, c, ldc);
+printf("row\ta\tc\n");
+for ( i=0;i&lt;10;i++){
+printf("%d:\t%f\t%f\n", i, a[i*SIZE], c[i*SIZE]);
+}
+omp_set_num_threads(2);
+for( i=0; i&lt;SIZE; i++){
+for( j=0; j&lt;SIZE; j++){
+a[i*SIZE+j]= (double)(i+j);
+b[i*SIZE+j]= (double)(i*j);
+c[i*SIZE+j]= (double)0;
+}
+}
+cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
+m, n, k, alpha, a, lda, b, ldb, beta, c, ldc);
+printf("row\ta\tc\n");
+for ( i=0;i&lt;10;i++){
+printf("%d:\t%f\t%f\n", i, a[i*SIZE],
+c[i*SIZE]);
+}
+free (a);
+free (b);
+free (c);
+return 0;
+}
+        </pre> 
+    <p id="GUID-B8197B61-C0D4-47C0-A448-4FB935154E9E"></p>
+ 
+    <pre>        
+// ******* Fortran language *******
+PROGRAM DGEMM_DIFF_THREADS
+INTEGER N, I, J
+PARAMETER (N=100)
+REAL*8 A(N,N),B(N,N),C(N,N)
+REAL*8 ALPHA, BETA
+
+ALPHA = 1.1
+BETA = -1.2
+DO I=1,N
+DO J=1,N
+A(I,J) = I+J
+B(I,J) = I*j
+C(I,J) = 0.0
+END DO
+END DO
+CALL DGEMM('N','N',N,N,N,ALPHA,A,N,B,N,BETA,C,N)
+print *,'Row A C'
+DO i=1,10
+write(*,'(I4,F20.8,F20.8)') I, A(1,I),C(1,I)
+END DO
+CALL OMP_SET_NUM_THREADS(1);
+DO I=1,N
+DO J=1,N
+A(I,J) = I+J
+B(I,J) = I*j
+C(I,J) = 0.0
+END DO
+END DO
+CALL DGEMM('N','N',N,N,N,ALPHA,A,N,B,N,BETA,C,N)
+print *,'Row A C'
+DO i=1,10
+write(*,'(I4,F20.8,F20.8)') I, A(1,I),C(1,I)
+END DO
+CALL OMP_SET_NUM_THREADS(2);
+DO I=1,N
+DO J=1,N
+A(I,J) = I+J
+B(I,J) = I*j
+C(I,J) = 0.0
+END DO
+END DO
+CALL DGEMM('N','N',N,N,N,ALPHA,A,N,B,N,BETA,C,N)
+print *,'Row A C'
+DO i=1,10
+write(*,'(I4,F20.8,F20.8)') I, A(1,I),C(1,I)
+END DO
+STOP
+END
+        </pre> 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">Improving Performance with Threading</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Overview of the Intel&reg; Optimized MP LINPACK Benchmark for Clusters">
+<meta name="DC.subject" content="hybrid, version, of MP LINPACK">
+<meta name="keywords" content="hybrid, version, of MP LINPACK">
+<meta name="DC.Relation" scheme="URI" content="GUID-10DFCB17-3953-47C6-9971-8C455A925BFE.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-B8B2E43B-31AE-43BA-919E-D7C26961FACC">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Overview of the Intel&reg; Optimized MP LINPACK Benchmark for Clusters</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-B8B2E43B-31AE-43BA-919E-D7C26961FACC">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Overview of the Intel&reg; Optimized MP LINPACK Benchmark for Clusters</h1>
+ 
+   
+  <div id="GUID-240BE772-FA10-4AD6-8FBD-ACED570702B6"> 
+    <p id="GUID-90B3A385-F4A4-4593-BBAF-41870D11BDE9"> The Intel&reg; Optimized MP LINPACK Benchmark for Clusters is based on modifications and additions to HPL 2.0 from Innovative Computing Laboratories (ICL) at the University of Tennessee, Knoxville (UTK). The Intel Optimized MP LINPACK Benchmark for Clusters can be used for Top 500 runs (see http://www.top500.org). To use the benchmark you need be intimately familiar with the HPL distribution and usage. The Intel Optimized MP LINPACK Benchmark for Clusters provides some additional enhancements and bug fixes designed to make the HPL usage more convenient, as well as explain Intel&reg; Message-Passing Interface (MPI) settings that may enhance performance. The 
+      <span class="filepath" id="GUID-8C90BFCE-4525-4638-9EC7-E7AEB9D22239">.</span><span class="filepath" id="GUID-A7D8DBA6-A45B-4B70-B2CF-7DEB9A5A88FD">/</span><span class="filepath" id="GUID-DFD3A385-38B7-41A4-90BB-8479549B2AE1">benchmarks</span><span class="filepath" id="GUID-C4E3D8D6-20A4-41E1-9C77-AC233F65F9A5">/</span><span class="filepath" id="GUID-481DBADF-E740-44ED-8BBC-FCADE97FAAE4">mp_linpack</span><span id="GUID-893A7518-2762-463D-8829-5E23C0FEFC06"> directory adds techniques to minimize search times frequently associated with long runs.</span> 
+    </p>
+ 
+    <p id="GUID-1023DE47-F311-43D3-B88F-720AE5528E72">The Intel&reg; Optimized MP LINPACK Benchmark for Clusters is an implementation of the Massively Parallel MP LINPACK benchmark by means of HPL code. It solves a random dense (<samp class="codeph" id="GUID-D2F1D90F-88A6-4990-92AA-4EEF51DBE72C">real</samp>*8) system of linear equations (<var>Ax=b</var>), measures the amount of time it takes to factor and solve the system, converts that time into a performance rate, and tests the results for accuracy. You can solve any size (<var>N</var>) system of equations that fit into memory. The benchmark uses full row pivoting to ensure the accuracy of the results. 
+    </p>
+ 
+    <p id="GUID-5F7C42AF-E768-42BA-BFCA-2F7D4D2CBBE6"> 
+      <span id="GUID-98E294DD-F386-42FF-8E6B-B4FFCC98A8F6">Use the Intel Optimized MP LINPACK Benchmark for Clusters on a distributed memory</span> 
+      <span id="GUID-B064E525-95B6-47AE-BBAA-3190731FA56A">machine. On a shared memory machine, use the Intel Optimized LINPACK Benchmark.</span> 
+    </p>
+ 
+    <p id="GUID-02E6C4B7-323E-4080-A41A-5F0BCF55DAE5"> Intel provides optimized versions of the LINPACK benchmarks to help you obtain high LINPACK benchmark results on your systems based on genuine Intel processors more easily than with the HPL benchmark. Use the Intel Optimized MP LINPACK Benchmark to benchmark your cluster. The prebuilt binaries require Intel&reg; MPI be installed on the cluster. The run-time version of Intel MPI is free and can be downloaded from 
+      <a href="http://www.intel.com/software/products/" target="_blank"> www.intel.com/software/products/ 
+      </a>. 
+    </p>
+ 
+    <p id="GUID-D31DA075-0290-4F47-B2A3-45D3EBE45E4F"> 
+      <span id="GUID-835955DC-15BC-464E-8216-C42F19983111">The Intel package includes software developed at the University of Tennessee, Knoxville,</span> 
+      <span id="GUID-9F70DB4F-09E0-453B-BF06-0A64C0FB22D1">Innovative Computing Laboratories and neither the University nor ICL endorse or promote</span> 
+      <span id="GUID-75A8857E-69DF-4C68-B7E8-F9F3D4F3437D">this product. Although HPL 2.0 is redistributable under certain conditions, this particular</span> 
+      <span id="GUID-BE5F37CA-EA9B-4C4A-A9A5-F13559D44F3F">package is subject to the Intel MKL license.</span> 
+    </p>
+ 
+    <p id="GUID-84E1F5F2-CB1C-4208-968D-D79B75FDF029"> Intel MKL has introduced a new functionality into MP LINPACK, which is called a 
+      <em id="GUID-19DCA8D8-673C-4276-9BE4-3B09FE2158EA">hybrid</em> build, while continuing to support the older version. The term 
+      <em id="GUID-A4ABC840-3701-4199-934A-7896D5472319">hybrid</em> refers to special optimizations added to take advantage of mixed OpenMP*/MPI parallelism.
+    </p>
+ 
+    <p id="GUID-60CCCA15-72A9-4C62-93AD-2AEC4632C0DF"> 
+      <span id="GUID-BEF10D07-F112-40D4-AD1E-52B83BC7284E">If you want to use one MPI process per node and to achieve further parallelism by means</span> 
+      <span id="GUID-7F2C7579-B958-469D-B818-690F09CA3DDB">of OpenMP, use the hybrid build. In general, the hybrid build is useful when the number of</span> 
+      <span id="GUID-F1DB1B33-BFBF-427F-B179-CC355DE939CD">MPI processes per core is less than one. If you want to rely exclusively on MPI for</span> 
+      <span id="GUID-6A631D9B-61B6-4940-9C9F-54944E2FDE08">parallelism and use one MPI per core, use the non-hybrid build.</span> 
+    </p>
+ 
+    <p id="GUID-6786FF4C-614F-4436-BD64-3DC2134A1E7F"> 
+      <span id="GUID-3328C500-181A-4704-ACE9-6DA31DE097F6">In addition to supplying certain hybrid prebuilt binaries, Intel MKL supplies some hybrid</span> 
+      <span id="GUID-B57A32B7-E29B-4B9A-A5A4-889D4DB99182">prebuilt libraries for</span> 
+      <span id="GUID-7680B708-7B26-4AB4-9773-1D987E99990E">Intel&reg; MPI</span> 
+      <span id="GUID-9C81A066-E489-4774-A3F8-7AE81A13F70E">to take advantage of the additional OpenMP*</span> 
+      <span id="GUID-3866750A-F1A6-43E5-BDF7-30DEB2A5964C">optimizations.</span> 
+    </p>
+ 
+    <p id="GUID-4AA5A28C-B08D-4E8E-97D0-F444747C3CA0"> 
+      <span id="GUID-6C67CBF4-3601-47F5-A78F-57E457303EC9">If you wish to use an MPI version other than Intel MPI, you can do so by using the MP</span> 
+      <span id="GUID-060786DF-E283-4221-8308-95912E19D662">LINPACK source provided. You can use the source to build a non-hybrid version that may</span> 
+      <span id="GUID-50DC71A6-0BFC-43E5-9E4F-E09220360B66">be used in a hybrid mode, but it would be missing some of the optimizations added to the</span> 
+      <span id="GUID-4AD93223-323C-416A-8348-E6CF0559C8E6">hybrid version.</span> 
+    </p>
+ 
+    <p id="GUID-2A8A7076-897B-47B1-AF81-BFABDA53978C"> 
+      <span id="GUID-6D54BAF5-B2E0-428D-9426-30FE58588E29">Non-hybrid builds are the default of the source code makefiles provided. In some cases,</span> 
+      <span id="GUID-FF5FD198-FAB1-4029-A134-74CB43B1B380">the use of the hybrid mode is required for external reasons. If there is a choice, the</span> 
+      <span id="GUID-F2AB19A4-C0BD-4694-85F0-78F7F7E12520">non-hybrid code may be faster. To use the non-hybrid code in a hybrid mode, use the</span> 
+      <span id="GUID-664CE2A5-6157-48F0-B314-CB4F2E99A678">threaded version of Intel MKL BLAS, link with a thread-safe MPI, and call function</span> 
+      <span id="GUID-13C3441A-B0B3-4BB3-B9A8-F54F32D0B837"> 
+        <samp class="codeph" id="GUID-AF23D9AE-27E3-4BF6-9339-7930A82337F2">MPI_init_thread()</samp> 
+      </span> 
+      <span id="GUID-CA232C0A-6DDE-4EAD-9FAD-0704B61FAD05">so as to indicate a need for MPI to be thread-safe.</span> 
+    </p>
+ 
+    <p id="GUID-F0B556E8-C3D5-4388-A3C4-7BC1DC0BC445"> 
+      <span id="GUID-A5A07B1C-7174-4599-8F9E-19CF4283D3EE">Intel MKL also provides prebuilt binaries that are dynamically linked against Intel MPI</span> 
+      <span id="GUID-6C207111-EC29-48CD-9E2E-A46D50A3C618">libraries.</span> 
+    </p>
+ 
+    <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+      <p>Performance of statically and dynamically linked prebuilt binaries may be different. The performance of both depends on the version of Intel MPI you are using. 
+        <br> You can build binaries statically linked against a particular version of Intel MPI by yourself. 
+      </p>
+ 
+    </div> 
+    <p id="P_CF_12894904934934"><a name="P_CF_12894904934934"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d55127e204"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d55127e204 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-10DFCB17-3953-47C6-9971-8C455A925BFE.htm">Intel&reg; Optimized MP LINPACK Benchmark for Clusters</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

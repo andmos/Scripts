@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Linking with Computational Libraries">
+<meta name="DC.subject" content="linking with, computational libraries, computational libraries, linking with, libraries to link with, computational">
+<meta name="keywords" content="linking with, computational libraries, computational libraries, linking with, libraries to link with, computational">
+<meta name="DC.Relation" scheme="URI" content="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-75CABA2D-272A-4E55-BE10-30D8EF592752.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-87821148-338B-4022-8C90-F24C866F2878.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-78BA2832-2DC5-4F72-BC6E-06D646B7547E">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Linking with Computational Libraries</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-78BA2832-2DC5-4F72-BC6E-06D646B7547E">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Linking with Computational Libraries</h1>
+ 
+   
+  <div id="GUID-84A16838-9E8D-4D3F-8961-1BDF11BBBFB6"> 
+	 <p id="GUID-1971E1DB-67DE-45D9-A365-E6CC43625C3E">If you are not using the Intel MKL cluster software, you need to link your application with only one computational library, depending on the linking method: 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-C377820D-76BC-496C-9FFD-9529E4EA12A5" width="100%" frame="hsides" border="1" rules="all"> 
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" valign="top" width="50%" id="d31407e57"> 
+				  <p id="GUID-CB820751-A83D-4375-A31D-C13E3970605F"> Static Linking 
+				  </p>
+ 
+				</th>
+ 
+				<th class="row-nocellborder" valign="top" width="50%" id="d31407e63"> 
+				  <p id="GUID-954AB703-7A62-49EB-B0AC-8CE9815C5836">Dynamic Linking 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="50%" headers="d31407e57 "> 
+				  <p id="GUID-4D863F74-16E0-4411-AA9F-5B6611B3C4E1"> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core.</span><span class="filepath">a</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="50%" headers="d31407e63 "> 
+				  <p id="GUID-380DC4FC-29DB-461C-BBEF-403CE6405A85"> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core</span><span class="filepath">.</span><span class="filepath">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 <div class="section" id="GUID-861C045D-7B1C-473F-B53A-E86082144583"><h2 class="sectiontitle">Computational Libraries for Applications that Use the Intel MKL Cluster Software</h2> 
+		 
+		<p id="GUID-67DBC9BA-37A7-4FCA-AA97-92210247CC89">ScaLAPACK and Cluster Fourier Transform Functions (Cluster FFTs) require more computational libraries, which may depend on your architecture. 
+		</p>
+ 
+		<p>The following table lists computational libraries for IA-32 architecture applications that use ScaLAPACK or Cluster FFTs. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-F59F1CE9-3BC2-429E-88B0-5204296BCA66" width="100%" frame="hsides" border="1" rules="all"><caption><span class="tablecap">Computational Libraries for IA-32 Architecture</span></caption> 
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" valign="top" width="21.428571428571427%" id="d31407e133"> 
+				  <p>Function domain 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" valign="top" width="39.285714285714285%" id="d31407e139"> 
+				  <p> Static Linking 
+				  </p>
+ 
+				</th>
+ 
+				<th class="row-nocellborder" valign="top" width="39.285714285714285%" id="d31407e145"> 
+				  <p>Dynamic Linking 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="21.428571428571427%" headers="d31407e133 "> 
+				  <p> ScaLAPACK 
+					 <sup><a href="GUID-78BA2832-2DC5-4F72-BC6E-06D646B7547E.htm#BLACS_LIBS">†</a></sup> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="39.285714285714285%" headers="d31407e139 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_scalapack_core.</span><span class="filepath">a</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core.</span><span class="filepath">a</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="39.285714285714285%" headers="d31407e145 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_scalapack_core</span>.<span class="filepath">so</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="21.428571428571427%" headers="d31407e133 "> 
+				  <p>Cluster Fourier Transform Functions<sup><a href="GUID-78BA2832-2DC5-4F72-BC6E-06D646B7547E.htm#BLACS_LIBS">†</a></sup> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="39.285714285714285%" headers="d31407e139 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_cdft_core.</span><span class="filepath">a</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core.</span><span class="filepath">a</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="39.285714285714285%" headers="d31407e145 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_cdft_core</span>.<span class="filepath">so</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		<p class="footnote" id="BLACS_LIBS"><a name="BLACS_LIBS"><!-- --></a><sup id="GUID-D3B4B744-D8A7-44F2-B080-2C4E07CA310E"> 
+			 <span id="GUID-B5244C97-8345-448F-AE9D-2AA30D083E1E">†</span> 
+		  </sup> Also add the library with BLACS routines corresponding to the MPI used. 
+		</p>
+ 
+		<p>The following table lists computational libraries for Intel&reg; 64 architecture applications that use ScaLAPACK or Cluster FFTs. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-2DA34861-0E4F-4A58-8846-4EEA0BBD55DC" width="100%" frame="hsides" border="1" rules="all"><caption><span class="tablecap">Computational Libraries for the Intel&reg; 64 
+		  <span>or Intel&reg; Many Integrated Core 
+		  </span>Architecture</span></caption> 
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" valign="top" width="21.428571428571427%" id="d31407e306"> 
+				  <p>Function domain 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" valign="top" width="39.285714285714285%" id="d31407e312"> 
+				  <p> Static Linking 
+				  </p>
+ 
+				</th>
+ 
+				<th class="row-nocellborder" valign="top" width="39.285714285714285%" id="d31407e318"> 
+				  <p> Dynamic Linking 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="21.428571428571427%" headers="d31407e306 "> 
+				  <p>ScaLAPACK, LP64 interface<sup><a href="GUID-78BA2832-2DC5-4F72-BC6E-06D646B7547E.htm#BLACS_LIBS2">‡</a> 
+					 </sup> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="39.285714285714285%" headers="d31407e312 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_scalapack_lp64.</span><span class="filepath">a</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core.</span><span class="filepath">a</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="39.285714285714285%" headers="d31407e318 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_scalapack_lp64</span>.<span class="filepath">so</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="21.428571428571427%" headers="d31407e306 "> 
+				  <p>ScaLAPACK, ILP64 interface<sup><a href="GUID-78BA2832-2DC5-4F72-BC6E-06D646B7547E.htm#BLACS_LIBS2">‡</a> 
+					 </sup> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="39.285714285714285%" headers="d31407e312 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_scalapack_ilp64</span>.<span class="filepath">a</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core.</span><span class="filepath">a</span> 
+					 </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="39.285714285714285%" headers="d31407e318 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_scalapack_ilp64</span>.<span class="filepath">so</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="21.428571428571427%" headers="d31407e306 "> 
+				  <p>Cluster Fourier Transform Functions<sup><a href="GUID-78BA2832-2DC5-4F72-BC6E-06D646B7547E.htm#BLACS_LIBS2">‡</a> 
+					 </sup> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="39.285714285714285%" headers="d31407e312 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_cdft_core.</span><span class="filepath">a</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core.</span><span class="filepath">a</span></p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="39.285714285714285%" headers="d31407e318 "> 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_cdft_core</span>.<span class="filepath">so</span></p>
+ 
+				  <p> 
+					 <span class="filepath">lib</span><span class="filepath">mkl_core</span>.<span class="filepath">so</span></p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		<p class="footnote" id="BLACS_LIBS2"><a name="BLACS_LIBS2"><!-- --></a><sup> 
+			 <span>‡</span> 
+		  </sup> Also add the library with BLACS routines corresponding to the MPI used. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm">Linking in Detail</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-75CABA2D-272A-4E55-BE10-30D8EF592752.htm">Linking with ScaLAPACK and Cluster FFTs 
+		  </a>  
+		  </div>
+<div><a href="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm">Using the Link-line Advisor 
+		  </a>  
+		  </div>
+<div><a href="GUID-87821148-338B-4022-8C90-F24C866F2878.htm">Using the ILP64 Interface vs. LP64 Interface 
+		  </a>  
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

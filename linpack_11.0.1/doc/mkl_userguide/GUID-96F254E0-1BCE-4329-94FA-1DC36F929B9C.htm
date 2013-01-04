@@ -1,0 +1,166 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Specifying Function Names">
+<meta name="DC.subject" content="custom shared object, specifying function names">
+<meta name="keywords" content="custom shared object, specifying function names">
+<meta name="DC.Relation" scheme="URI" content="GUID-48717119-DEB8-4010-B3CC-EC5A0CD48269.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-96F254E0-1BCE-4329-94FA-1DC36F929B9C">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Specifying Function Names for Your Custom Dynamically Linked Library/Shared Object</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-96F254E0-1BCE-4329-94FA-1DC36F929B9C">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Specifying Function Names</h1>
+ 
+   
+   
+  <div id="GUID-4B2AD7D3-FD25-402D-98D2-F25E49CF3C7D"> 
+	 <p id="GUID-5EA4C45D-CD3A-477D-A105-91B19321D8AB">In the file with the list of functions for your custom 
+		<span id="GUID-EC790EE9-368C-40D2-AC08-3F4608D125DD">shared object</span>, adjust function names to the required interface. For example, 
+		<span id="GUID-02CA18EB-6C9E-4070-9C50-869E3C65B356">for Fortran functions append an underscore character "_" to the names as a suffix:</span></p>
+ 
+	 <p> 
+		<samp class="codeph"> dgemm_</samp> 
+	 </p>
+ 
+	 <p> 
+		<samp class="codeph"> ddot_</samp> 
+	 </p>
+ 
+	 <p> 
+		<samp class="codeph"> dgetrf_</samp> 
+	 </p>
+ 
+	 <p id="GUID-FF454E69-400A-4282-A2E3-66983E6F373E">For more examples, see domain-specific lists of function<span>s</span> in the 
+		<span class="filepath"><var>&lt;mkl directory&gt;</var></span><span class="filepath">/</span><span class="filepath">tools</span><span class="filepath">/</span><span class="filepath">builder</span> folder.</p>
+ 
+	 <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+		<p>The lists of function<span>s</span> are provided in the 
+		  <span class="filepath"><var>&lt;mkl directory&gt;</var></span><span class="filepath">/</span><span class="filepath">tools</span><span class="filepath">/</span><span class="filepath">builder</span> folder merely as examples. See 
+		  <a href="GUID-5F50588C-636F-4B37-AA34-4D3DF1ED6A44.htm">Composing a List of Functions</a> for how to compose lists of functions for your custom 
+		  <span>shared object</span>. 
+		</p>
+ 
+	 </div> 
+	 <p id="TIP"><a name="TIP"><!-- --></a> 
+		<div class="Note"><h3 class="NoteTipHead">
+					Tip</h3> 
+		  <p>Names of Fortran-style routines (BLAS, LAPACK, etc.) can be both upper-case or lower-case, with or without the trailing underscore. For example, these names are equivalent: 
+			 <br> BLAS: 
+			 <samp class="codeph" id="GUID-9EC8D34E-EAF3-4845-9298-622930E70DDE">dgemm</samp>, 
+			 <samp class="codeph">DGEMM</samp>, 
+			 <samp class="codeph">dgemm_</samp>, 
+			 <samp class="codeph">DGEMM_</samp><br> LAPACK: 
+			 <samp class="codeph">dgetrf</samp>, 
+			 <samp class="codeph">DGETRF</samp>, 
+			 <samp class="codeph">dgetrf_</samp>, 
+			 <samp class="codeph">DGETRF_.</samp> 
+		  </p>
+ 
+		</div> 
+	 </p>
+ 
+	 <p>Properly capitalize names of C support functions in the function list. To do this, follow the guidelines below: 
+	 </p>
+ 
+	 <ol id="GUID-C67A7045-1C77-45D4-97EB-E34DD6FAB437"> 
+		<li>In the 
+		  <span class="filepath">mkl_service.h</span> include file, look up a 
+		  <samp class="codeph">#define</samp> directive for your function 
+		  <br>(<span class="filepath">mkl_service.h</span> is included in the 
+		  <span class="filepath">mkl.h</span> header file).
+		</li>
+ 
+		<li>Take the function name from the replacement part of that directive. 
+		</li>
+ 
+	 </ol>
+ 
+	 <p>For example, the 
+		<samp class="codeph">#define</samp> directive for the 
+  <span class="option">mkl_disable_fast_mm</span> function is 
+  <br><samp class="codeph">#define mkl_disable_fast_mm MKL_Disable_Fast_MM</samp>. 
+  </p>
+ 
+  <p>Capitalize the name of this function in the list like this: 
+  <span class="option">MKL_Disable_Fast_MM</span>. 
+  </p>
+ 
+  <p>For the names of the Fortran support functions, see the 
+	 <a href="GUID-96F254E0-1BCE-4329-94FA-1DC36F929B9C.htm#TIP">tip</a>. 
+  </p>
+ 
+  <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+	 <p> If selected functions have several processor-specific versions, the builder automatically includes them all in the custom library and the dispatcher manages them. 
+	 </p>
+ 
+  </div> 
+  <p id="P_CF_12857569597140"><a name="P_CF_12857569597140"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d43216e221"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d43216e221 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-48717119-DEB8-4010-B3CC-EC5A0CD48269.htm">Building Custom Shared Objects</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

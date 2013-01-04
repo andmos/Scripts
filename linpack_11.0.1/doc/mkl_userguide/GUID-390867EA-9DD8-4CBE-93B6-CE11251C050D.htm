@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Scripts to Set Environment Variables">
+<meta name="DC.subject" content="environment variables, setting">
+<meta name="keywords" content="environment variables, setting">
+<meta name="DC.Relation" scheme="URI" content="GUID-606E75D0-884E-427B-8F3D-6D1C233E0235.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-BD893FFC-2036-4202-8A3E-F2F1C91058D8.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-0AB6F4F6-D756-4AC0-B4C8-1D1BF85B025D.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-C3CFB9D7-EC03-4ECC-8F37-7DAAE2C6C93A.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-B13E207A-FC51-4973-9676-B40545599272.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-390867EA-9DD8-4CBE-93B6-CE11251C050D">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Setting Environment Variables</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-390867EA-9DD8-4CBE-93B6-CE11251C050D">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1"> 
+	 <span id="GUID-587CE898-FBF6-41F0-9A7A-4AA0E191F4EA">Scripts to Set Environment Variables</span> 
+	 </h1>
+ 
+   
+   
+  <div id="GUID-9468A83B-35EA-4F52-AF97-A20FED0FFB4A"> 
+	 <p id="GUID-5C0C023C-F5F9-4EBA-9CF6-CE1733E75C73">When the installation of Intel MKL for 
+		<span id="GUID-28A76B2C-B7C7-4141-973B-43F5A2FD7B68">Linux* 
+		</span><span id="GUID-E3BC2D8F-F57E-4980-9787-4059B084E367">OS 
+		</span>is complete, set the 
+		<samp class="codeph" id="GUID-42BA9751-C3AD-4B76-BB94-A766C4132A1E"></samp><samp class="codeph" id="GUID-F98E01C7-93D5-437D-80D0-557594637441">INCLUDE<span id="GUID-C9CC2F5F-4530-47A1-A4EB-EFB5FD1D0F39">, MKLROOT, 
+		  </span><span id="GUID-C3C5B778-F067-4428-8BC2-D904211CB32F">LD_LIBRARY_PATH, 
+		  </span><span id="GUID-0162B5FF-1C93-4EE5-B57F-29376C86EA1E">MIC_LD_LIBRARY_PATH, 
+		  </span><span id="GUID-3FC41458-5EE5-4D1E-B7B5-2E59D92DB6BE">MANPATH, LIBRARY_PATH, CPATH</span></samp><span id="GUID-0C401B41-594D-45CB-9B86-1DC5660DAF52">, and 
+		  <samp class="codeph" id="GUID-E8D142C2-2280-437C-9B44-F63C3FFB87DC">NLSPATH</samp></span> environment variables in the command shell using one of the script files in the 
+		<span class="filepath" id="GUID-87A0F2CC-7BD0-4D7E-8891-EF2C74CEFB8D">bin</span> subdirectory of the Intel MKL installation directory<span id="GUID-22C80EEF-A0A0-40A3-81B2-68A8DEFF856D">.</span><span id="GUID-5997F01F-AA7D-444E-B1DC-E53AC1EC4F94"> The environment variable 
+		  <samp class="codeph" id="GUID-01181C80-9FD2-48F0-8536-EB1AB480F310">MIC_LD_LIBRARY_PATH</samp> specifies locations of shared objects for Intel&reg; MIC Architecture.</span> 
+	 </p>
+ 
+	 <p id="GUID-E92A889C-8FAE-4C8D-B48E-7D793454463A">Choose 
+      the script corresponding to your system architecture and command shell as explained in the following table: 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-6C303AC5-6CA4-42B5-A989-DA2AAD68183D" width="100%" frame="hsides" border="1" rules="all"> 
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" valign="top" width="27.27272727272727%" id="d12582e94"> 
+				  <p id="GUID-E5F7A0C6-B8B5-4715-8532-E43FBBF33869">Architecture 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" valign="top" width="36.36363636363637%" id="d12582e100"> 
+				  <p id="GUID-CF454B6C-A598-4FB6-8000-3394B6F560FB">Shell 
+				  </p>
+ 
+				</th>
+ 
+				<th class="row-nocellborder" valign="top" width="36.36363636363637%" id="d12582e106"> 
+				  <p id="GUID-B7B228E0-6423-48BC-929F-CE4B937C5A0E">Script File 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="d12582e94 "> 
+				  <p id="GUID-EFF1143F-8214-44A7-9DB5-58EC23A37915">IA-32 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="36.36363636363637%" headers="d12582e100 "> 
+				  <p id="GUID-41EF5E68-3794-49E7-903C-66582A853CFA">C 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="36.36363636363637%" headers="d12582e106 "> 
+				  <p id="GUID-78AB3E21-2D60-456D-B6ED-82C885C85982"> 
+					 <span class="filepath" id="GUID-653EE0AC-53E5-45E5-A945-D8C584C92AD0">ia32/mklvars_ia32.csh</span> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="d12582e94 "> 
+				  <p id="GUID-68348082-7E5D-437A-A0C1-0F0BE9481E5E">IA-32 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="36.36363636363637%" headers="d12582e100 "> 
+				  <p id="GUID-1505ADA1-DF15-4201-BAFA-EDDDF1EAA130">Bash 
+					 <span id="GUID-F93A547A-AED4-41A3-B78B-453CAB275F57">and Bourne (sh)</span> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="36.36363636363637%" headers="d12582e106 "> 
+				  <p id="GUID-8EAB2767-F964-4461-A089-B7967A9815A6"> 
+					 <span class="filepath" id="GUID-A199A08B-EF64-408B-BD60-C4A340BA7694">ia32/mklvars_ia32.sh</span> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="d12582e94 "> 
+				  <p id="GUID-EE2690A5-A261-4D09-9AC5-E757D53EF592">Intel&reg; 64 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="36.36363636363637%" headers="d12582e100 "> 
+				  <p id="GUID-84144B17-B365-46DB-8CC7-25FE453DE9C3">C 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="36.36363636363637%" headers="d12582e106 "> 
+				  <p id="GUID-E813E7F1-92E2-4BE1-AC47-41F757E7BBC4"> 
+					 <span class="filepath" id="GUID-CBCB89D4-DEAA-431D-A969-A4EAB410D371">intel64/mklvars_intel64.csh</span> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="d12582e94 "> 
+				  <p id="GUID-E59E5738-368B-479C-AFCF-9BB3A299CBBD">Intel&reg; 64 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="36.36363636363637%" headers="d12582e100 "> 
+				  <p id="GUID-07DC5BC5-C315-4784-A8AF-A1BA816A742D">Bash 
+					 <span id="GUID-B54EB3C3-CE22-4922-A79B-AAD9FDE05B0B">and Bourne (sh)</span> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="36.36363636363637%" headers="d12582e106 "> 
+				  <p id="GUID-6FADF56A-A996-42DA-8D72-852EA8D3D58E"> 
+					 <span class="filepath" id="GUID-3FE3C045-A14C-455C-8D99-5478A027EB6D">intel64/mklvars_intel64.sh</span> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e94 "> 
+				  <p id="GUID-C745E0A3-A35E-412B-AB23-CA48AEB54996">IA-32 and Intel&reg; 64 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e100 "> 
+				  <p id="GUID-F09FD8C9-050D-45D8-8975-7A4AFD4F966C">C 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" rowspan="1" colspan="1" valign="top" headers="d12582e106 "> 
+				  <p id="GUID-379F8D2D-36B5-45B7-A1B7-091A1FED1978"> 
+					 <span class="filepath" id="GUID-F2D2FF78-35DE-4215-A764-D8AE75E26768">mklvars.csh</span> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e94 "> 
+				  <p id="GUID-EB88052C-FF90-414D-B812-5AB6B4460CB1">IA-32 and Intel&reg; 64 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e100 "> 
+				  <p id="GUID-E86BCCD4-BE92-444A-995A-1B0A1E127263">Bash 
+					 <span id="GUID-489A7465-5F99-4972-922E-59049F21291D">and Bourne (sh)</span> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" rowspan="1" colspan="1" valign="top" headers="d12582e106 "> 
+				  <p id="GUID-E0449C59-1658-47FA-973F-C80E8E443B92"> 
+					 <span class="filepath" id="GUID-8481F8BC-6806-4D9D-B422-1AD66B3A4D16">mklvars.sh</span> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 </tbody>
+ 
+		</table>
+</div>
+ 
+	 <div class="section" id="GUID-9FEEB7C4-4FC2-4DBE-9D05-54EF76B9590D"><h2 class="sectiontitle">Running the Scripts</h2> 
+		 
+		<p id="GUID-932D6EF6-7E48-4DB8-8A62-CB795D1417AF">The parameters of the scripts specify the following: 
+		</p>
+ 
+		<ul type="disc" id="GUID-AEE6C5D7-4F2D-48B7-8BD9-4BE94D8878B2"> 
+		  <li id="GUID-4CFBC4E2-C02D-4C0A-913E-763F2AE9845C">Architecture. 
+		  </li>
+ 
+		  <li id="GUID-A519943D-8A1E-4EDC-AA83-9448F7734D0C"> Use of Intel MKL Fortran modules precompiled with the Intel&reg; 
+			 Fortran compiler. Supply this parameter only if you are using this compiler. 
+		  </li>
+ 
+		  <li id="GUID-7F5B46FB-7A41-4BE5-81ED-CFE8905108AB">Programming interface (LP64 or ILP64). 
+		  </li>
+ 
+		</ul>
+ 
+		<p id="GUID-35E7BDE7-A91E-4FF7-9AC2-C980E83473F0">Usage and values of these parameters depend on the 
+		  <span>name of the 
+		  </span>script<span id="GUID-D0BAC77B-024A-4E2D-93E8-EB88E5B5B115"> (regardless of the extension).</span> The following table lists values of the script parameters. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-A39D0CD8-A70A-49B2-B9BC-138055B26958" width="100%" frame="hsides" border="1" rules="all"> 
+			  
+			  
+			  
+			  
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" rowspan="1" colspan="1" valign="top" id="d12582e318"> 
+					 <p id="GUID-01CCB7F4-6A91-4C15-B5EA-AF6C9B5FE67D">Script 
+						<br> &nbsp; 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" valign="top" width="25%" id="d12582e326"> 
+					 <p id="GUID-101B428A-B9B5-431D-8B35-6BA3AB6099DB">Architecture 
+						<br> (required, 
+						<br> when applicable) 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" rowspan="1" colspan="1" valign="top" id="d12582e336"> 
+					 <p id="GUID-DC716219-A645-4303-9125-C9499CEF270F">Use of Fortran 
+						<br> Modules (optional) 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="row-nocellborder" valign="top" width="25%" id="d12582e344"> 
+					 <p id="GUID-337BBC11-94C8-459B-BCAF-7D0D558B4226">Interface 
+						<br> (optional) 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e318 "> 
+					 <p id="GUID-BB36AF8F-8F2C-4A1C-9964-3F3BBA5A5E09"> 
+						<samp class="codeph" id="GUID-694D2D3E-FB32-42F7-A651-CBBBA8407C15">mklvars_ia32</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="25%" headers="d12582e326 "> 
+					 <p id="GUID-1DCF2FA4-A1FE-49B3-B692-D1CAA6D13D73">n/a<sup id="GUID-4A5E1891-5A0D-488E-BB2F-01847529A597"><a href="GUID-390867EA-9DD8-4CBE-93B6-CE11251C050D.htm#NOT_APPL">†</a></sup> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e336 "> 
+					 <p id="GUID-A028735A-1FAC-4F51-AB1D-A3B8DE499062"> 
+						<samp class="codeph" id="GUID-750A54AA-36A4-4525-B3B7-8D07600DABE7">mod</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="25%" headers="d12582e344 "> 
+					 <p id="GUID-1DBEFEB1-DB7E-4899-A03C-6BC16FCF6F23">n/a 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e318 "> 
+					 <p id="GUID-C0522330-A47B-41D2-AED3-FCA40C5536AE"> 
+						<samp class="codeph" id="GUID-DB527D50-C406-48C8-AA07-3B567246F76D">mklvars_intel64</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="25%" headers="d12582e326 "> 
+					 <p id="GUID-22090195-09DF-4C43-B9A4-50598E9492B8">n/a 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e336 "> 
+					 <p id="GUID-1ED2A117-8DA5-4A27-B83B-26A47A940671"> 
+						<samp class="codeph" id="GUID-C4CB0B8F-8605-464B-B3ED-1CF37AAE8A2F">mod</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="25%" headers="d12582e344 "> 
+					 <p id="GUID-096C0F98-BF61-4AC0-BDE9-E641C0D6A525"> 
+						<samp class="codeph" id="GUID-5C8768B1-D161-4F0A-A575-9A53066DE445">lp64</samp>, default 
+						<samp class="codeph" id="GUID-3577A10C-8365-4A21-87E2-27A55CB22630"><br> ilp64</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e318 "> 
+					 <p id="GUID-97781771-FE30-45D7-8F69-70767E2EF91D"> 
+						<samp class="codeph" id="GUID-F1E5B96E-114C-492E-82B4-7F98EDADF601">mklvars</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="25%" headers="d12582e326 "> 
+					 <p id="GUID-E2653B3C-7497-412D-8008-DD6A14F27ADB"> 
+						<samp class="codeph" id="GUID-5E692221-B2FB-464B-B86F-74D8A4F20CCE">ia32</samp> 
+						<samp class="codeph" id="GUID-1D34DB9D-EC28-4D01-A68C-54B5B29CB869"> 
+						  <br> intel64</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d12582e336 "> 
+					 <p id="GUID-B5459FB6-40D0-473A-BA64-FB6297D21D63"> 
+						<samp class="codeph" id="GUID-AB859456-4C37-4B1E-8C45-0745298E7E0C">mod</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="row-nocellborder" valign="top" width="25%" headers="d12582e344 "> 
+					 <p id="GUID-6AAFDC53-BF73-4664-B3CB-3905774EBBEB"> 
+						<samp class="codeph" id="GUID-6D663F7B-801C-462B-A9D2-7FA89FAB1D8D">lp64</samp>, default 
+						<samp class="codeph" id="GUID-061626D8-A0F6-4893-9659-984F25ECD713"><br> ilp64</samp> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p id="NOT_APPL"><a name="NOT_APPL"><!-- --></a> 
+		  <sup id="GUID-0F8551D7-54D9-4B73-8AA7-D32508F86391">†</sup> Not applicable. 
+		</p>
+ 
+		<p id="GUID-F96F9232-A166-4092-BC6C-16D9B29C4878">For example: 
+		</p>
+ 
+		<ul type="disc" id="GUID-9ACA7C66-F119-4574-8369-C96653117F8C"> 
+		  <li id="GUID-71A2BEEB-034E-49B9-9031-D7B28E9229E3">The command 
+			 <br><samp class="codeph" id="GUID-3F597624-DAF8-4CA0-AD7A-DE6EF7D1E3C8">mklvars<span id="GUID-26F1A5F9-600A-4BF8-A22E-D27409D039C5">.sh</span> ia32</samp> 
+			 <br>sets the environment for Intel MKL to use the IA-32 architecture. 
+		  </li>
+ 
+		  <li id="GUID-AAA02245-E120-4E78-A074-1CD60142865A">The command 
+			 <br><samp class="codeph" id="GUID-856B5944-8156-4D81-801F-4CEC1384F0C8">mklvars<span id="GUID-1F5492BA-4A74-4054-AC42-9A13FA06CD85">.sh</span> intel64 mod ilp64</samp> 
+			 <br>sets the environment for Intel MKL to use the Intel&reg; 64 architecture, ILP64 programming interface, and Fortran modules. 
+		  </li>
+ 
+		  <li id="GUID-4184593E-D903-498A-A3A2-CD7AD028543D">The command 
+			 <br><samp class="codeph" id="GUID-120626F9-1073-48F1-8DFF-6EE565CFA89E">mklvars<span id="GUID-890B676D-3CA9-4531-B112-485006838583">.sh</span> intel64 mod</samp> 
+			 <br>sets the environment for Intel MKL to use the Intel&reg; 64 architecture, LP64 interface, and Fortran modules. 
+		  </li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="GUID-0AB1E8C3-EB89-4B8C-AF9D-5B160867CE25"> 
+		<div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+		  <p>Supply the parameter specifying the architecture first, if it is needed. Values of the other two parameters can be listed in any order. 
+		  </p>
+ 
+		</div> 
+	 </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-606E75D0-884E-427B-8F3D-6D1C233E0235.htm">Setting Environment Variables</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-BD893FFC-2036-4202-8A3E-F2F1C91058D8.htm">High-level Directory Structure 
+		  </a>  
+		  </div>
+<div><a href="GUID-0AB6F4F6-D756-4AC0-B4C8-1D1BF85B025D.htm">Intel&reg; MKL Interface Libraries and Modules 
+		  </a>  
+		  </div>
+<div><a href="GUID-C3CFB9D7-EC03-4ECC-8F37-7DAAE2C6C93A.htm">Fortran&nbsp;95 Interfaces to LAPACK and BLAS 
+		  </a>  
+		  </div>
+<div><a href="GUID-B13E207A-FC51-4973-9676-B40545599272.htm">Setting the Number of Threads Using an OpenMP* Environment Variable 
+		  </a>  
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

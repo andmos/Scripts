@@ -1,0 +1,106 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Redefining Memory Functions">
+<meta name="DC.subject" content="memory functions, redefining, memory renaming">
+<meta name="keywords" content="memory functions, redefining, memory renaming">
+<meta name="DC.Relation" scheme="URI" content="GUID-5E240159-8AE3-4507-91FE-43BA6DBAF6F2.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-751CE7F1-BA6A-475F-8B59-CB801F9F1AC3">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Redefining Memory Functions</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-751CE7F1-BA6A-475F-8B59-CB801F9F1AC3">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+
+  <h1 class="topictitle1">Redefining Memory Functions</h1>
+
+  
+  <div id="GUID-68A39FBF-CBF1-4CC1-9E1E-F502AF6BEF4D">
+    <p id="GUID-833D341A-1426-4CA1-8C98-1DFA36DB6874">In C/C++ programs, you can replace Intel MKL memory functions that the library uses by default with your own functions. To do this, use the 
+<em id="GUID-EB51CB2F-E6FC-4798-B51E-7F4DBA973CBE">memory renaming</em>
+        feature.</p>
+
+    <div class="section" id="GUID-ABB1D9E1-A80C-4D2D-B1C9-6E48CE251793"><h2 class="sectiontitle">Memory Renaming</h2>
+      
+      <p id="GUID-C724783B-D1E2-42C8-8050-65D6C00BE193">Intel MKL memory management by default uses standard C run-time memory functions to allocate or free memory. These functions can be replaced using memory renaming.</p>
+
+      <p id="GUID-3E7DEC68-B080-45B7-A190-F216323B5482">Intel MKL accesses the memory functions by pointers 
+            <samp class="codeph" id="GUID-F97DAF58-BD92-48E4-B90B-AF747AC15CE4">i_malloc, i_free, i_calloc</samp>,
+             and 
+            <samp class="codeph" id="GUID-E6BB5F0D-AFA8-4454-B56E-7B45AE9849FA">i_realloc</samp>,
+             which are visible at the application level. These pointers initially hold addresses of the standard C run-time memory functions 
+            <samp class="codeph" id="GUID-BF0F107E-EC18-4CDF-8A67-EADDE021CE97">malloc, free, calloc</samp>,
+             and 
+            <samp class="codeph" id="GUID-A3FAF5F2-D69B-4569-B863-79F2DB97FB45">realloc,</samp>
+            respectively. You can programmatically redefine values of these pointers to the addresses of your application's memory management functions.</p>
+
+      <p id="GUID-DF08EA08-ACB1-477C-9009-21AEDC11DCA4">Redirecting the pointers is the only correct way to use your own set of memory management functions. If you call your own memory functions without redirecting the pointers, the memory will get managed by two independent memory management packages, which may cause unexpected memory issues.</p>
+
+    </div>
+
+    <div class="section" id="GUID-17ECC19F-54F2-4384-898E-E430EE7B01E7"><h2 class="sectiontitle">How to Redefine Memory Functions</h2>
+      
+      <p id="GUID-73548F70-5284-405E-BB3D-B5C680946DD0">To redefine memory functions, use the following procedure:</p>
+
+      <p id="GUID-677720BE-F852-46F9-8C13-AB8D86436EAB">
+        </p>
+
+      <ol id="GUID-4682337B-3835-4DDE-B0CF-80AF97E41608">
+        <li id="GUID-ABA3B1DD-AF82-4EBF-B119-6511F7F09296">Include the 
+                <span class="filepath" id="GUID-40190350-9AD6-4792-9A09-7314E84C7073">i_malloc.h</span>
+                header file in your code. <br>
+                This header file contains all declarations required for replacing the memory allocation functions. The header file also describes how memory allocation can be replaced in those Intel libraries that support this feature.</li>
+
+        <li id="GUID-6EB72092-3B72-4E61-9128-1FB47EA93CBF">Redefine values of pointers 
+                <samp class="codeph" id="GUID-71F49B96-BCE6-40DB-9924-BAEF72E324E3">i_malloc, i_free, i_calloc</samp>,
+                 and 
+                <samp class="codeph" id="GUID-809ADA5F-1C77-4986-B8BA-87D3CEDF7835">i_realloc</samp>
+                prior to the first call to MKL functions, as shown in the following example:</li>
+
+      </ol>
+
+      <pre>
+                    
+            #include "i_malloc.h"
+            &nbsp;&nbsp;. . .
+            &nbsp;&nbsp;i_malloc &nbsp;= my_malloc;
+            &nbsp;&nbsp;i_calloc &nbsp;= my_calloc;
+            &nbsp;&nbsp;i_realloc = my_realloc;
+            &nbsp;&nbsp;i_free &nbsp;&nbsp;&nbsp;= my_free;
+            &nbsp;&nbsp;. . .
+            // Now you may call Intel MKL functions
+            </pre>
+      <p id="GUID-E6694A64-FCCC-4A14-BDDF-FAFF43802ECE">
+        </p>
+
+      </div>
+
+  </div>
+
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-5E240159-8AE3-4507-91FE-43BA6DBAF6F2.htm">Using Memory Management</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div>
+
+</body>
+</html>

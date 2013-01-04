@@ -1,0 +1,214 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Managing Multi-core Performance">
+<meta name="DC.subject" content="affinity mask, multi-core performance, performance, multi-core">
+<meta name="keywords" content="affinity mask, multi-core performance, performance, multi-core">
+<meta name="DC.Relation" scheme="URI" content="GUID-01C4A8FA-8BEC-4847-B1D5-16E76E6A03F7.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-0902790E-A4E0-4C1F-BE78-176AD178E18B">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Managing Multi-core Performance</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-0902790E-A4E0-4C1F-BE78-176AD178E18B">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Managing Multi-core Performance</h1>
+ 
+   
+  <div id="GUID-86A7B103-FD28-4426-AEBB-F1DD8C3BBF8C"> 
+	 <p id="GUID-12F1B4D7-EACF-404C-B26A-4421AECCC5D0"> 
+		<span id="GUID-3C8E171B-A08D-46A6-8A2F-17584BB72808">You can obtain best performance on systems with multi-core processors by requiring that</span> 
+		<span id="GUID-7FE53779-2B6A-4F4D-8F65-CEE7662416A0">threads do not migrate from core to core. To do this, bind threads to the CPU cores by</span> 
+		<span id="GUID-472E1BA8-EED4-42AC-94F0-E8E52C9F5280">setting an affinity mask to threads. Use one of the following options:</span> 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-99A1FF35-F0E7-4F45-826E-BE8685E4B7F8"> 
+		<li id="GUID-86AAD310-F120-4335-8922-CB55651480E8"> 
+		  <span id="GUID-81ADEFC1-7EE8-4716-BC3B-B5E4900B1D04">OpenMP facilities (recommended, if available), for example, the</span> 
+		  <span id="GUID-E42E4FCE-A583-474B-A48B-D63B9EBFF44C"> 
+			 <samp class="codeph" id="GUID-9563A606-2806-45B4-91EB-E9743528DC05">KMP_AFFINITY</samp> 
+		  </span> 
+		  <span id="GUID-AE4C87B8-D959-4104-A326-A5E0DCAA04C7">environment variable using the Intel OpenMP library</span> 
+		</li>
+ 
+		<li id="GUID-010CECB9-71DE-47AD-BEAB-410263903A58"> 
+		  <span id="GUID-A14B7939-5BE4-48F3-AF7D-57BB6B3989D6">A system function, as explained below</span> 
+		</li>
+ 
+	 </ul>
+ 
+	 <p id="GUID-AA8E4E3F-D93E-41DA-810A-2E3AC3442CFE"> 
+		<span id="GUID-70A75129-3055-47B2-8C1F-4152310ED459">Consider the following performance issue:</span> 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-59ABFA2D-08BF-4AFB-AAAF-F64FC9C839F7"> 
+		<li id="GUID-87104E11-3B18-4DCF-A4F7-45442DF82C69"> 
+		  <span id="GUID-2BFEA95F-3047-46B7-A668-5478F007CC30">The system has two sockets with two cores each, for a total of four cores (CPUs)</span> 
+		</li>
+ 
+		<li id="GUID-345327B8-72FE-47A0-A871-88B9551BB6AD"> 
+		  <span id="GUID-5AF63245-9634-44F6-89AC-305B486083D0">T</span><span id="GUID-906104BA-ACE8-4A20-A731-DF9CBC97F785">he</span> 
+		  <span id="GUID-FB136AB8-6C9B-4CCF-9EEC-418316AB2D91">two</span><span id="GUID-14FBEBDC-51D0-43A9-8247-24EFFDC2815F">-thread parallel application</span> 
+		  <span id="GUID-70D71352-8990-48BB-9673-F6A1C222F9FD">that calls the Intel MKL FFT</span> 
+		  <span id="GUID-CFC0062B-AD8D-4EB6-831B-D20475141D3A">happens to run faster than in four threads, but the performance in two threads</span> 
+		  <span id="GUID-CB4E1A3C-AF19-4E80-9B16-198DE3430779">is</span> 
+		  <span id="GUID-7E620BCB-09BF-4A21-9B7E-7740BD15BDD9">very</span> 
+		  <span id="GUID-769B9894-4512-4044-93B7-9F4B36777468">unstable</span> 
+		</li>
+ 
+	 </ul>
+ 
+	 <p id="GUID-83C69C37-9DE4-45FE-9A8E-7A8B77CE1709"> 
+		<span id="GUID-4BE105C9-E9DA-4954-80B1-83A83EC6C852">The following code example shows how to resolve this issue by setting an affinity mask by operating system means using the Intel compiler. The code calls the system function</span> 
+		<samp class="codeph" id="GUID-77610F69-B7D1-4FAD-8C27-B69164CACDFD"> 
+		  <span id="GUID-CEE44AC4-0F15-47AB-8215-6444BF98C928">sched_setaffinity</span> 
+		</samp> 
+		<span id="GUID-6469FCD0-ED59-46D5-9025-F9A38A940F6C">to bind the threads to</span> 
+		<span id="GUID-85658649-223F-4182-AAC2-9AF622006E40">the</span> 
+		<span id="GUID-8813C5D0-53DD-44DB-AA6C-30E062D857AD">cores</span> 
+		<span id="GUID-F8FD8D71-B9D0-4930-A7B6-3230CF6B9636">on different sockets</span><span id="GUID-7CD72D5A-69E1-44BD-8A89-AB2DEC65CA32">. Then the Intel MKL</span> 
+		<span id="GUID-C6C2ACEB-3A06-4C63-ACB2-35F460AB9EE6">FFT function</span> 
+		<span id="GUID-4CE45172-302B-441F-BED2-1AFDE97B7FE2">is called:</span> 
+	 </p>
+ 
+	 <pre>        
+#define _GNU_SOURCE //for using the GNU CPU affinity
+// (works with the appropriate kernel and glibc)
+// Set affinity mask
+#include &lt;sched.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;omp.h&gt;
+int main(void) {
+	int NCPUs = sysconf(_SC_NPROCESSORS_CONF);
+	printf("Using thread affinity on %i NCPUs\n", NCPUs);
+#pragma omp parallel default(shared)
+	{
+		cpu_set_t new_mask;
+		cpu_set_t was_mask;
+		int tid = omp_get_thread_num();
+		
+		CPU_ZERO(&amp;new_mask);
+		
+		// 2 packages x 2 cores/pkg x 1 threads/core (4 total cores)
+		CPU_SET(tid==0 ? 0 : 2, &amp;new_mask);
+		
+		if (sched_getaffinity(0, sizeof(was_mask), &amp;was_mask) == -1) {
+			printf("Error: sched_getaffinity(%d, sizeof(was_mask), &amp;was_mask)\n", tid);
+		}
+		if (sched_setaffinity(0, sizeof(new_mask), &amp;new_mask) == -1) {
+			printf("Error: sched_setaffinity(%d, sizeof(new_mask), &amp;new_mask)\n", tid);
+		}
+		printf("tid=%d new_mask=%08X was_mask=%08X\n", tid,
+						*(unsigned int*)(&amp;new_mask), *(unsigned int*)(&amp;was_mask));
+	}
+	// Call Intel MKL FFT function
+	return 0;
+}
+&nbsp;
+        </pre> 
+	 <p id="GUID-A892910B-349D-42F0-A220-60AF64E4F13C"> 
+		<span id="GUID-42A80A8E-E8AA-4964-950E-C4194894E479">Compile the application with the Intel compiler using the following command:</span> 
+	 </p>
+ 
+	 <pre>icc test_application.c -openmp&nbsp;</pre> 
+	 <p id="GUID-B684A599-9CB4-4C0B-8D24-8D526A49A2E1">&nbsp; 
+	 </p>
+ 
+	 <p id="GUID-F04E7AA6-CCB3-4CB9-8B1F-8B3CC2BCFDDE"> 
+		<span id="GUID-EE6B8107-FD2F-4841-A9A7-CFF21AFD2E9F">where</span> 
+		<span id="GUID-142221B1-1796-4318-B4F9-06521B569B53"> 
+		  <span class="filepath" id="GUID-0984B607-DD41-42A8-B849-DEA1110603F5">test_application.c</span> 
+		</span> 
+		<span id="GUID-BCA93420-138D-48C9-8119-DADF948F39C2">is the filename for the application.</span> 
+	 </p>
+ 
+	 <p id="GUID-CF6219C6-F855-406C-9F08-6B554E6BC47F"> 
+		<span id="GUID-C8172EB3-2278-4ECB-9356-21B3840B8CC5">Build the application. Run it in</span> 
+		<span id="GUID-5272C26E-AE28-47D8-9D6B-6E5E3FB0A78F">two</span> 
+		<span id="GUID-150E4A6F-EB38-4AF3-A071-ABDAA7ED91F3">threads, for example, by using the environment</span> 
+		<span id="GUID-223DEE2C-744E-4ADE-A5E0-F01F352B62F6">variable to set the number of threads:</span> 
+	 </p>
+ 
+	 <pre>env OMP_NUM_THREADS=2 ./a.out</pre> 
+	 <p id="GUID-6FAFFB1C-D156-43FB-8679-0B9D4FE2DCD7"> 
+		<span id="GUID-3F723443-E2FD-4E3A-8373-5207A5525D32">See</span> 
+		<span id="GUID-CE90DEFA-4538-4422-B031-1C6332E28F18">the</span> 
+		<em id="GUID-77E1A3A4-09B5-48B1-83C5-2B30BA25D5EA">Linux Programmer's Manual</em> 
+		<span id="GUID-27A03149-85E1-4072-80E6-FE619FB76656">(in man pages format)</span> 
+		<span id="GUID-1E0ADB9D-AE8F-4AF4-B8A7-043E44EC22D6">for</span> 
+		<span id="GUID-772B3003-40AB-4EB5-A94E-DE4738341DE4">particulars of the</span> 
+		<span id="GUID-69AD7035-F8EC-4107-9266-85B08FDF8779"> 
+		  <samp class="codeph" id="GUID-C7D6509D-936D-4FEC-A67F-C46A7E3978BD">sched_setaffinity</samp> 
+		</span> 
+		<span id="GUID-50DA9C96-6422-4A12-A6BA-945DA9EB4538">function used in the above example.</span> 
+	 </p>
+ 
+	 <p id="GUID-BF77E117-F611-4F2E-A0A1-7121C0C97469"> 
+		</p>
+ 
+	 <p> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d874e317"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d874e317 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-01C4A8FA-8BEC-4847-B1D5-16E76E6A03F7.htm">Other Tips and Techniques to Improve Performance</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

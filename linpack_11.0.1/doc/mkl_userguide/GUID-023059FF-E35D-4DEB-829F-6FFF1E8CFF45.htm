@@ -1,0 +1,107 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Automatic Offload">
+<meta name="abstract" content="">
+<meta name="description" content="">
+<meta name="DC.subject" content="Automatic Offload Mode, concept, computations offload to Intel&reg; Xeon Phi&#8482; coprocessors, automatic">
+<meta name="keywords" content="Automatic Offload Mode, concept, computations offload to Intel&reg; Xeon Phi&#8482; coprocessors, automatic">
+<meta name="DC.Relation" scheme="URI" content="GUID-108D4F3E-D299-4D35-BAED-ECC5B48DA57E.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-3DC4FC7D-A1E4-423D-9C0C-06AB265FFA86.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-8879E25D-3D54-4B60-BE84-ADAA5656A950.htm">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-023059FF-E35D-4DEB-829F-6FFF1E8CFF45">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Automatic Offload</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-023059FF-E35D-4DEB-829F-6FFF1E8CFF45">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Automatic Offload</h1>
+ 
+  <!-- 
+  --> 
+   
+  <div id="GUID-83254C6B-F050-4AF2-88B3-4BEF1022C84B"><p> 
+  </p>
+ 
+	 <p id="GUID-BEE96FE4-6659-4303-8929-468E7F5F0F49">Automatic Offload provides performance improvements with fewer changes to the code than Compiler Assisted Offload. If you are executing a function on the host CPU, Intel MKL running in the Automatic Offload mode may offload part of the computations to one or multiple Intel Xeon Phi coprocessors without you explicitly offloading computations. By default, Intel MKL determines the best division of the work between the host CPU and coprocessors. However, you can specify a custom work division. 
+	 </p>
+ 
+	 <p id="GUID-71A136B2-AE49-4EC9-A0CE-C5AB88ADAFA4">To enable Automatic Offload and control the division of work, use environment variables or support functions. See the 
+		<em id="GUID-9DD14F18-2F2A-434D-AFCC-AB3F42A06229">Intel MKL Reference Manual</em> for detailed descriptions of the support functions. 
+	 </p>
+ 
+	 <div class="Note"><h3 class="NoteTipHead">
+					Important</h3> 
+		<p>Use of Automatic Offload does not require changes in your link line. 
+		</p>
+ 
+	 </div> 
+	 <p> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d271e67"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d271e67 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-108D4F3E-D299-4D35-BAED-ECC5B48DA57E.htm">Using Intel&reg; Math Kernel Library on Intel&reg; Xeon Phi&#8482; Coprocessors</a></div>
+</div>
+<div>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="GUID-3DC4FC7D-A1E4-423D-9C0C-06AB265FFA86.htm">Automatic Offload Controls</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-8879E25D-3D54-4B60-BE84-ADAA5656A950.htm">Setting Environment Variables for Automatic Offload</a><br>
+</li>
+</ul>
+</div>
+
+</body>
+</html>

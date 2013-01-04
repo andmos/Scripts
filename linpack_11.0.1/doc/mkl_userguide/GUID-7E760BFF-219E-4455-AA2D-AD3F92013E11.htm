@@ -1,0 +1,227 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Automating the Process of Setting Environment Variables">
+<meta name="DC.Relation" scheme="URI" content="GUID-606E75D0-884E-427B-8F3D-6D1C233E0235.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-390867EA-9DD8-4CBE-93B6-CE11251C050D.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-7E760BFF-219E-4455-AA2D-AD3F92013E11">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Automating Setting of Environment Variables</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-7E760BFF-219E-4455-AA2D-AD3F92013E11">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Automating the Process of Setting Environment Variables</h1>
+ 
+   
+   
+  <div id="GUID-F6FDB855-5237-4947-9C6A-9FA0A53355A4"> 
+	 <p id="GUID-384148EA-A3BF-4685-833B-36DC4D49CD08"> 
+		<span id="GUID-1DF09E3B-83F9-4CE0-BB34-5A52D6A25EA0">To automate setting of the 
+		  <samp class="codeph" id="GUID-68372D3C-312B-4E90-BBA6-7DE78DD79677">INCLUDE, MKLROOT, LD_LIBRARY_PATH, MANPATH, LIBRARY_PATH, CPATH</samp>, and 
+		  <samp class="codeph" id="GUID-5909D9B8-E92C-4CB9-A743-B8D82F9AB734">NLSPATH</samp> environment variables, add 
+		  <samp class="codeph" id="GUID-FC51E1E4-C03B-4045-829C-368558C9FBF0">mklvars*.*sh</samp> to your shell profile so that each time you login, the script automatically executes and sets the paths to the appropriate Intel MKL directories. To do this, with a local user account, edit the following files by adding the appropriate script to the path manipulation section right before exporting variables:</span> 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-F6E926EF-83FE-4A6C-B25E-8E223A2F88F8" width="100%" frame="hsides" border="1" rules="all"> 
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" valign="top" width="10%" id="d32807e64"> 
+				  <p id="GUID-B2B50131-7850-44D8-A75D-D3D262F524ED">Shell 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" valign="top" width="40%" id="d32807e70"> 
+				  <p id="GUID-715E93F0-8612-47F1-BF51-945975356192">Files 
+				  </p>
+ 
+				</th>
+ 
+				<th class="row-nocellborder" valign="top" width="50%" id="d32807e76"> 
+				  <p id="GUID-02F5DB98-C4E6-434E-8EAB-FCE5B33CF947">Commands 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d32807e64 "> 
+				  <p id="GUID-39537BEB-DF8E-428A-ABA1-E973F6D7F96D">bash 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d32807e70 "> 
+				  <p id="GUID-DA7D948C-DFFD-49A9-8712-EA5FD958CB5C"> 
+					 <samp class="codeph" id="GUID-74AF1E86-8859-4E4A-9B64-F41DC4174852">~/.bash_profile,<br> ~/.bash_login</samp> 
+					 <br> or 
+					 <samp class="codeph" id="GUID-9497F9C9-EBD2-49FA-B9B7-88C4A6C89DF2">~/.profile</samp> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" rowspan="1" colspan="1" valign="top" headers="d32807e76 "> 
+				  <p id="GUID-C0DE5328-41EB-4C4A-AE5D-996786469948"> 
+					 <span id="GUID-D83188A3-F333-4267-8A3F-7E4E93715AA4"> 
+						<samp class="codeph" id="GUID-76B90548-7FE4-44E3-9137-D2826FF1D2CF"># setting up MKL environment for bash</samp> 
+					 </span> 
+				  </p>
+ 
+				  <p id="GUID-FFA54EED-29BC-48DA-8E30-BBD02C270739"> 
+					 <samp class="codeph" id="GUID-5321955B-2DC9-495D-B194-E504AE5CB6DD">. 
+						<var>&lt;absolute_path_to_installed_MKL&gt;</var>/bin 
+						<br> [/<var>&lt;arch&gt;</var>]/mklvars[<var>&lt;arch&gt;</var>].sh [<var>&lt;arch&gt;</var>] [mod] [lp64|ilp64] 
+					 </samp> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d32807e64 "> 
+				  <p id="GUID-3D54BFCD-B877-4FDD-AA10-D86B89A3E192">sh 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" rowspan="1" colspan="1" valign="top" headers="d32807e70 "> 
+				  <p id="GUID-D6A6DEF3-98CA-45D0-A6BB-4F39A7986764"> 
+					 <samp class="codeph" id="GUID-0BABD1C3-B988-44A2-8407-B900DEB808D0">~/.profile</samp> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" rowspan="1" colspan="1" valign="top" headers="d32807e76 "> 
+				  <p id="GUID-F080B1F2-F4D7-4E4F-ADBF-88A0308FD3A9"> 
+					 <span id="GUID-0192D8CD-4E04-4888-8E75-EA3901C0CF4F"> 
+						<span id="GUID-54CBCF5B-BF64-473A-8975-1D26050E05D5"> 
+						  <samp class="codeph" id="GUID-DC3E8885-517D-4D45-890E-B9F7183CF5A4"># setting up MKL environment for sh</samp> 
+						</span> 
+					 </span> 
+				  </p>
+ 
+				  <p id="GUID-5D08FCB3-43EB-4759-B1E0-6C4581872B8A"> 
+					 <samp class="codeph" id="GUID-07414B96-8FC5-4424-828E-2BF23F5444D4">. 
+						<var>&lt;absolute_path_to_installed_MKL&gt;</var>/bin 
+						<br> [/<var>&lt;arch&gt;</var>]/mklvars[<var>&lt;arch&gt;</var>].sh [<var>&lt;arch&gt;</var>] [mod] [lp64|ilp64] 
+					 </samp> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" valign="top" width="10%" headers="d32807e64 "> 
+				  <p id="GUID-B8E4806A-695B-4D0B-8B4A-092B5EDFFCD9">csh 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" valign="top" width="40%" headers="d32807e70 "> 
+				  <p id="GUID-09247835-D8AA-4D55-92A9-AB1673A2B2B4"> 
+					 <samp class="codeph" id="GUID-6C68A34F-3178-443C-B2D0-F8F5CD5027FC">~/.login</samp> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="row-nocellborder" valign="top" width="50%" headers="d32807e76 "> 
+				  <p id="GUID-FE2965C4-4F29-4C85-A26A-D0E998670DBB"> 
+					 <span id="GUID-23D5DB19-8291-4ED4-A039-337697C03301"> 
+						<span id="GUID-A54C7040-960E-4CDF-9049-56A07EA6477C"> 
+						  <span id="GUID-9017B850-5EE8-4A88-8436-FEA8E7C5182A"> 
+							 <samp class="codeph" id="GUID-A876CAF4-0D7D-43E2-9FA5-C41B58BC0AA5"># setting up MKL environment for sh</samp> 
+						  </span> 
+						</span> 
+					 </span> 
+				  </p>
+ 
+				  <p id="GUID-0E7EAAB2-A628-42FC-AE2D-E12F18D3E177"> 
+					 <samp class="codeph" id="GUID-2E4AE213-497E-4E54-9776-0DD0046EA7C8">. 
+						<var>&lt;absolute_path_to_installed_MKL&gt;</var>/bin 
+						<br> [/<var>&lt;arch&gt;</var>]/mklvars[<var>&lt;arch&gt;</var>].csh [<var>&lt;arch&gt;</var>] [mod] [lp64|ilp64] 
+					 </samp> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 <p id="GUID-EE158D46-AF6C-4AA7-8326-55945003891D">In the above commands, replace 
+		<samp class="codeph" id="GUID-180627AD-BAA9-4D88-80A6-6AB309B42BDF"><var>&lt;arch&gt;</var></samp> with 
+		<span id="GUID-11990930-9C60-434A-9BED-2E642CCE858A"><samp class="codeph" id="GUID-0189911D-05E5-4074-9DA5-8654C73AE4E1">ia32</samp> or 
+		</span><samp class="codeph" id="GUID-4FDD96E6-5DDF-4A0D-91AB-3F76237BDC03">intel64</samp>. 
+	 </p>
+ 
+	 <p id="GUID-BBF09A76-B446-4D26-828F-FC5349852245"> 
+		<span id="GUID-42B022BB-8C3A-4EC9-9B37-AEB5C3685698"> 
+		  <span id="GUID-994AB5F0-FE2A-4EA1-82BD-67B7AE9543D9">If you have super user permissions, add the same commands to a general-system</span> 
+		  <span id="GUID-9A3A6DCC-03E4-490B-897B-D0F6F10EED97">file in</span> 
+		  <span id="GUID-6CF66EF6-EEE8-4601-A0B8-91A64C9C69CD"> 
+			 <span class="filepath" id="GUID-F3A66D6F-6A3F-4341-A199-33791A030682">/etc/profile</span> 
+		  </span> 
+		  <span id="GUID-9C5B1C7B-DCA3-4FB8-8661-3CC0DA88BEB8">(for bash and sh) or in</span> 
+		  <span id="GUID-0C6058ED-50C2-428E-B81C-E1438812ACCD"> 
+			 <span class="filepath" id="GUID-4981296F-A5E7-4647-B3D3-6BA224C99AE3">/etc/csh.login</span> 
+		  </span> 
+		  <span id="GUID-3E40260D-282E-487F-9DCF-5EE30656D9D3">(for csh).</span> 
+		</span> 
+	 </p>
+ 
+	 <div class="section" id="GUID-370BF2FD-A991-4E67-9475-5D502640D92F"> 
+		<div class="Note"><h3 class="NoteTipHead">
+					Caution</h3> 
+		  <p>Before uninstalling Intel MKL, remove the above commands from all profile files where the script execution was added. Otherwise you may experience problems logging in. 
+		  </p>
+ 
+		</div> 
+	 </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-606E75D0-884E-427B-8F3D-6D1C233E0235.htm">Setting Environment Variables</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-390867EA-9DD8-4CBE-93B6-CE11251C050D.htm">Scripts to Set Environment Variables 
+		  </a>  
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

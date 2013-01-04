@@ -1,0 +1,125 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Improving Performance with Threading">
+<meta name="DC.subject" content="parallelism, of Intel&reg; MKL, thread safety, of Intel&reg; MKL">
+<meta name="keywords" content="parallelism, of Intel&reg; MKL, thread safety, of Intel&reg; MKL">
+<meta name="DC.Relation" scheme="URI" content="GUID-7214C4EB-62E3-4BA2-A5FE-947F252EB8D9.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-2E857767-CF73-4460-A7EA-5A85D21E9431.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-C2295BC8-DD22-466B-94C9-5FAA79D4F56D.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-B13E207A-FC51-4973-9676-B40545599272.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-91DB3E62-A6D9-4060-9A51-F4CA181410A1.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-0073DDBD-3239-44B2-AD92-87A533733E11.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-0902790E-A4E0-4C1F-BE78-176AD178E18B.htm">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Improving Performance with Threading</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Improving Performance with Threading</h1>
+ 
+   
+  <div id="GUID-D8F7B717-D1F5-49A7-BF30-755696A4A720"> 
+	 <p id="GUID-CCF506EA-AC05-485C-B167-958333FECCE5">Intel MKL is extensively parallelized. See 
+		<span id="GUID-930A20A1-3730-4A51-8AAF-E9237838A642"><a href="GUID-2E857767-CF73-4460-A7EA-5A85D21E9431.htm">Threaded Functions and Problems</a></span> for lists of threaded functions and problems that can be threaded. 
+	 </p>
+ 
+	 <p id="GUID-CAD82E90-C30A-4666-874A-2117FB339B7F">Intel MKL is 
+		<em id="GUID-920FC052-BAA8-46EC-B55C-A205AACF9347">thread-safe</em>, which means that all Intel MKL functions (except the LAPACK deprecated routine 
+		<samp class="codeph" id="GUID-44390C6E-2EFB-4968-AA6F-18B70525565D">?lacon)</samp> work correctly during simultaneous execution by multiple threads. In particular, any chunk of threaded Intel MKL code provides access for multiple threads to the same shared data, while permitting only one thread at any given time to access a shared piece of data. Therefore, you can call Intel MKL from multiple threads and not worry about the function instances interfering with each other. 
+	 </p>
+ 
+	 <p id="GUID-EFDD2D89-7E3E-41C8-A3D4-22E18B29F982">The library uses OpenMP* threading software, so you can use the environment variable 
+		<samp class="codeph" id="GUID-AA039141-4CC5-43BF-ABA6-DF29F7862670">OMP_NUM_THREADS</samp> to specify the number of threads or the equivalent OpenMP run-time function calls. Intel MKL also offers variables that are independent of OpenMP, such as 
+		<samp class="codeph" id="GUID-D2E24A20-2F1F-4792-BE39-3B85C8B44009">MKL_NUM_THREADS</samp>, and equivalent Intel MKL functions for thread management. The Intel MKL variables are always inspected first, then the OpenMP variables are examined, and if neither is used, the OpenMP software chooses the default number of threads. 
+	 </p>
+ 
+	 <p id="GUID-C28E8E2C-C975-4DED-ACA8-6D513D6C5CBD"> By default, Intel MKL uses the number of threads equal to the number of physical cores on the system. 
+	 </p>
+ 
+	 <p id="GUID-243A8493-B104-47F6-85E4-F125D1C814A4">To achieve higher performance, set the number of threads to the number of real processors or physical cores, as summarized in 
+		<a href="GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040.htm">Techniques to Set the Number of Threads</a>. 
+	 </p>
+ 
+	 <p id="P_CF_12857569597140"><a name="P_CF_12857569597140"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d47167e84"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d47167e84 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-7214C4EB-62E3-4BA2-A5FE-947F252EB8D9.htm">Managing Performance and Memory</a></div>
+</div>
+<div class="See Also">
+<ul class="ullinks">
+<li class="ulchildlink"><a href="GUID-2E857767-CF73-4460-A7EA-5A85D21E9431.htm">Threaded Functions and Problems</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-C2295BC8-DD22-466B-94C9-5FAA79D4F56D.htm">Avoiding Conflicts in the Execution Environment</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040.htm">Techniques to Set the Number of Threads</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-B13E207A-FC51-4973-9676-B40545599272.htm">Setting the Number of Threads Using an OpenMP* Environment Variable</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-91DB3E62-A6D9-4060-9A51-F4CA181410A1.htm">Changing the Number of Threads at Run Time</a><br>
+</li>
+<li class="ulchildlink"><a href="GUID-0073DDBD-3239-44B2-AD92-87A533733E11.htm">Using Additional Threading Control</a><br>
+</li>
+</ul>
+<h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-0902790E-A4E0-4C1F-BE78-176AD178E18B.htm">Managing Multi-core Performance 
+		  </a></div></div></div> 
+
+</body>
+</html>

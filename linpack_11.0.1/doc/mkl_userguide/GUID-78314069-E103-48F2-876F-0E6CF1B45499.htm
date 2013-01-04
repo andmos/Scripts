@@ -1,0 +1,122 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="New Features of Intel&reg; Optimized MP LINPACK Benchmark">
+<meta name="DC.Relation" scheme="URI" content="GUID-10DFCB17-3953-47C6-9971-8C455A925BFE.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-78314069-E103-48F2-876F-0E6CF1B45499">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>New Features of the Intel&reg; Optimized MP LINPACK Benchmark for Clusters</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-78314069-E103-48F2-876F-0E6CF1B45499">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">New Features of Intel&reg; Optimized MP LINPACK Benchmark</h1>
+ 
+   
+   
+  <div id="GUID-BDE2B19F-A60A-4D09-8168-BC38362194CF"> 
+    <p id="GUID-093BF0A4-5106-430A-A3E9-59624B774EE9"> 
+      <span id="GUID-43018D8B-1275-4634-B2D6-59B08FA4FF5C">The toolset is basically identical with the HPL 2.0 distribution. There are a few changes that</span> 
+      <span id="GUID-60D92FEE-8950-4D91-AAA6-1AE6060AB625">are optionally compiled in and disabled until you specifically request them. These new</span> 
+      <span id="GUID-13D9A6D9-0F17-4CBF-99BB-C4001A24B560">features are:</span> 
+    </p>
+ 
+    <p id="GUID-5AC40ED4-BF01-4313-B6CE-29CFA339391C"> 
+      <strong id="GUID-80801B60-C9F1-41FB-B037-BB69B3288CFD">ASYOUGO:</strong> Provides non-intrusive performance information while runs proceed. There are only a few outputs and this information does not impact performance. This is especially useful because many runs can go for hours without any information. 
+    </p>
+ 
+    <p id="GUID-FBA31071-74CC-4AE2-BC18-1525E40C55C7"> 
+      <strong id="GUID-FCE731AB-8A8F-4512-8020-2E4EFEF25273">ASYOUGO2:</strong> Provides slightly intrusive additional performance information by intercepting every 
+      <samp class="codeph" id="GUID-6BE45D5C-8F9B-4DBE-9B9C-CF620E4F11A9">DGEMM</samp> call. 
+    </p>
+ 
+    <p id="GUID-B4EC3D0C-FC59-4A8B-8A80-BEF87E969955"> 
+      <strong id="GUID-CBA11FAB-5917-44FA-9796-9694EE11537E">ASYOUGO2_DISPLAY:</strong> Displays the performance of all the significant 
+      <samp class="codeph" id="GUID-66E99532-6DE0-4EE8-A886-3F7340996F47">DGEMMs</samp> inside the run. 
+    </p>
+ 
+    <p id="GUID-08AABF07-408D-442C-9BDD-9AFE46F41159"> 
+      <strong id="GUID-D085E181-37EE-4FB5-96AE-0B4DA7144803">ENDEARLY:</strong> Displays a few performance hints and then terminates the run early. 
+    </p>
+ 
+    <p id="GUID-05964C18-355E-46B5-9CE5-0B6C149D08BD"> 
+      <strong id="GUID-A2D9EF67-E74A-4122-B4A6-BE12F53D01BE">FASTSWAP:</strong> Inserts the LAPACK-optimized 
+      <samp class="codeph" id="GUID-7AC2F543-E217-40C8-9E43-3933744817D3">DLASWP</samp> into HPL's code. 
+       You can experiment with this to determine best results. 
+    </p>
+ 
+    <p id="GUID-B9A88FAE-C83B-44E2-9E18-E1AB1F27C6DF"> 
+      <strong id="GUID-0D3F9F83-0859-4586-861B-3D175EEE8763">HYBRID:</strong> Establishes the Hybrid OpenMP/MPI mode of MP LINPACK, providing the possibility to use threaded Intel MKL and prebuilt MP LINPACK hybrid libraries. 
+    </p>
+ 
+    <div class="Note"><h3 class="NoteTipHead">
+					Caution</h3> 
+      <p>Use this option only with an Intel&reg; compiler and the Intel&reg; MPI library version 3.1 or higher.
+      </p>
+ 
+    </div> 
+    <p id="P_CF_12857569597140"><a name="P_CF_12857569597140"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d31163e111"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d31163e111 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-10DFCB17-3953-47C6-9971-8C455A925BFE.htm">Intel&reg; Optimized MP LINPACK Benchmark for Clusters</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

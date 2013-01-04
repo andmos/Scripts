@@ -1,0 +1,52 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Compiler-dependent Functions and Fortran&nbsp;90 Modules">
+<meta name="DC.subject" content="compiler-dependent function">
+<meta name="keywords" content="compiler-dependent function">
+<meta name="DC.Relation" scheme="URI" content="GUID-16BF9BCD-1661-4CF9-8001-6691C1347599.htm">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-9DE03643-E10C-456B-8709-E912D851DC49">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Compiler-dependent Functions and Fortran&nbsp;90 Modules</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-9DE03643-E10C-456B-8709-E912D851DC49">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Compiler-dependent Functions and Fortran&nbsp;90 Modules</h1>
+ 
+   
+  <div id="GUID-9A6DB858-020E-43A1-8B07-EA39A26473E9"> 
+    <p id="GUID-AB8997A4-76FC-4C9B-B10E-6D9FF8E582D1">Compiler-dependent functions occur whenever the compiler inserts into the object code function calls that are resolved in its run-time library (RTL). Linking of such code without the appropriate RTL will result in undefined symbols. Intel MKL has been designed to minimize RTL dependencies.
+    </p>
+ 
+    <p id="GUID-7C14BE7A-7FF0-4C49-8698-7272A86E7EF7">In cases where RTL dependencies might arise, the functions are delivered as source code and you need to compile the code with whatever compiler you are using for your application.
+    </p>
+ 
+    <p id="GUID-CB0FFF1D-1740-4E93-B21A-36A2C1882AB3">In particular, Fortran&nbsp;90 modules result in the compiler-specific code generation requiring RTL support. Therefore, Intel MKL delivers these modules compiled with the Intel compiler, along with source code, to be used with different compilers.
+    </p>
+ 
+  </div>
+ 
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-16BF9BCD-1661-4CF9-8001-6691C1347599.htm">Using Language-Specific Interfaces with Intel&reg; Math Kernel Library</a></div>
+</div>
+<div></div>
+
+</body>
+</html>

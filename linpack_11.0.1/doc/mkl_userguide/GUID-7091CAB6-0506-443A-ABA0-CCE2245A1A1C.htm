@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Using the Single Dynamic Library">
+<meta name="DC.subject" content="Single Dynamic Library, SDL">
+<meta name="keywords" content="Single Dynamic Library, SDL">
+<meta name="DC.Relation" scheme="URI" content="GUID-899861D3-2186-445B-B5D0-FEFDC39D41AC.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-7091CAB6-0506-443A-ABA0-CCE2245A1A1C">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Using the Single Dynamic Library</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-7091CAB6-0506-443A-ABA0-CCE2245A1A1C">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Using the Single Dynamic Library</h1>
+ 
+   
+  <div id="GUID-000CC2B1-668C-44C1-B429-044746D56401"> 
+    <p id="GUID-92BC21F0-35EC-4E46-A173-9377D992048C"> You can simplify your link line through the use of the Intel MKL Single Dynamic Library (SDL). 
+    </p>
+ 
+    <p id="GUID-DE82E0E0-1EBE-4263-8591-1F2A48E82E6F">To use SDL, place 
+      <span class="filepath" id="GUID-DB4A1EC5-E8AB-42E6-941B-4E351022FC56">libmkl_rt.so</span> on your link line. For example: 
+    </p>
+ 
+    <pre>icс application.c -lmkl_rt
+
+</pre> 
+    <p>SDL enables you to select the interface and threading library for Intel MKL at run time. By default, linking with SDL provides: 
+    </p>
+ 
+    <ul type="disc" id="GUID-B20C20E3-8CC1-40A7-ADCD-10D6A385881D"> 
+      <li> LP64 interface on systems based on the Intel&reg; 64 architecture 
+      </li>
+ 
+      <li>Intel threading 
+      </li>
+ 
+    </ul>
+ 
+    <p> To use other interfaces or change threading preferences, including use of the sequential version of Intel MKL, you need to specify your choices using functions or environment variables as explained in section 
+      <a href="GUID-ACFFDA19-8914-4F20-9815-5C18DC6BE1C2.htm">Dynamically Selecting the Interface and Threading Layer</a>. 
+    </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-899861D3-2186-445B-B5D0-FEFDC39D41AC.htm">Linking Quick Start</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Threading Behavior of Intel MKL on Intel MIC Architecture">
+<meta name="DC.subject" content="number of threads, for Intel&reg; Math Kernel Library on Intel&reg; Xeon Phi&#8482; coprocessors">
+<meta name="keywords" content="number of threads, for Intel&reg; Math Kernel Library on Intel&reg; Xeon Phi&#8482; coprocessors">
+<meta name="DC.Relation" scheme="URI" content="GUID-108D4F3E-D299-4D35-BAED-ECC5B48DA57E.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-0332F698-1696-4E9F-A908-EA4B1484D114.htm#GUID-0332F698-1696-4E9F-A908-EA4B1484D114">
+<meta name="DC.Relation" scheme="URI" content="GUID-3DC4FC7D-A1E4-423D-9C0C-06AB265FFA86.htm#GUID-3DC4FC7D-A1E4-423D-9C0C-06AB265FFA86">
+<meta name="DC.Relation" scheme="URI" content="GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040.htm#GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-87021656-3B3F-4C64-A609-A3AE0BF14BFD">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Threading Behavior of Intel MKL on Intel MIC Architecture</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-87021656-3B3F-4C64-A609-A3AE0BF14BFD">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Threading Behavior of Intel MKL on Intel MIC Architecture</h1>
+ 
+   
+  <div id="GUID-7137A72C-2175-478A-BCAB-F10E110A899E"> 
+	 <p id="GUID-053418A7-04A1-497E-8BFE-2E69A9054F66">To avoid performance drops caused by oversubscribing Intel Xeon Phi coprocessors, Intel MKL limits the number of threads it uses to parallelize computations: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-70FAB33D-2874-4D33-810A-19B0E58CF980"> 
+		<li> For native runs on coprocessors, Intel MKL uses 4*<var>Number-of-Cores</var> threads by default and scales down the number of threads back to this value if you request more threads and 
+		  <span class="keyword">MKL_DYNAMIC</span> is true. 
+		</li>
+ 
+		<li> For runs that offload computations, Intel MKL uses 4*(<var>Number-of-Cores</var>-1) threads by default and scales down the number of threads back to this value if you request more threads and 
+		  <span class="keyword">MKL_DYNAMIC</span> is true. 
+		</li>
+ 
+		<li> If you request fewer threads than the default number, Intel MKL will use the requested number. 
+		</li>
+ 
+	 </ul>
+ 
+	 <p>Here 
+		<var>Number-of-Cores</var> is the number of Intel Xeon Phi coprocessors on the system. 
+	 </p>
+ 
+	 <p> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d35778e78"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d35778e78 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-108D4F3E-D299-4D35-BAED-ECC5B48DA57E.htm">Using Intel&reg; Math Kernel Library on Intel&reg; Xeon Phi&#8482; Coprocessors</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-0332F698-1696-4E9F-A908-EA4B1484D114.htm#GUID-0332F698-1696-4E9F-A908-EA4B1484D114"><span class="keyword">MKL_DYNAMIC</span> 
+		  </a></div>
+<div><a href="GUID-3DC4FC7D-A1E4-423D-9C0C-06AB265FFA86.htm#GUID-3DC4FC7D-A1E4-423D-9C0C-06AB265FFA86">Automatic Offload Controls</a></div>
+<div><a href="GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040.htm#GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040">Techniques to Set the Number of Threads</a></div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

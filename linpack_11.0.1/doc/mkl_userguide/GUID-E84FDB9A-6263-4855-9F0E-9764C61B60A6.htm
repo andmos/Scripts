@@ -1,0 +1,122 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Introducing the Intel&reg; Math Kernel Library">
+<meta name="DC.Relation" scheme="URI" content="GUID-3179B9D1-C3C3-47E5-B8DE-DE97E78E78CA.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-E84FDB9A-6263-4855-9F0E-9764C61B60A6">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Introducing the Intel&reg; Math Kernel Library</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-E84FDB9A-6263-4855-9F0E-9764C61B60A6">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Introducing the Intel&reg; Math Kernel Library</h1>
+ 
+   
+  <div id="GUID-3D15BAA5-4E1E-47EF-8ABB-1D3985741594"> 
+    <div class="section" id="GUID-316F80A0-5B6B-4776-A343-D780A4F97798"> 
+		<p>Intel&reg; Math Kernel Library (Intel&reg; MKL) is a computing math library of highly optimized, extensively threaded routines for applications that require maximum performance. Intel MKL provides comprehensive functionality support in these major areas of computation: 
+		</p>
+ 
+		<a name="d4298e16"><!-- --></a><ul type="disc" id="d4298e16"> 
+		  <li id="d4298e18"><a name="d4298e18"><!-- --></a>BLAS (level 1, 2, and 3) and LAPACK linear algebra routines, offering vector, vector-matrix, and matrix-matrix operations. 
+		  </li>
+ 
+		  <li id="d4298e21"><a name="d4298e21"><!-- --></a>The PARDISO* direct sparse solver, an iterative sparse solver, and supporting sparse BLAS (level 1, 2, and 3) routines for solving sparse systems of equations. 
+		  </li>
+ 
+		  <li id="d4298e24"><a name="d4298e24"><!-- --></a>ScaLAPACK distributed processing linear algebra routines for Linux* and Windows* operating systems, as well as the Basic Linear Algebra Communications Subprograms (BLACS) and the Parallel Basic Linear Algebra Subprograms (PBLAS). 
+		  </li>
+ 
+		  <li id="d4298e27"><a name="d4298e27"><!-- --></a>Fast Fourier transform (FFT) functions in one, two, or three dimensions with support for mixed radices (not limited to sizes that are powers of 2), as well as distributed versions of these functions provided for use on clusters of the Linux* and Windows* operating systems.
+		  </li>
+ 
+		  <li id="d4298e30"><a name="d4298e30"><!-- --></a>Vector Math Library (VML) routines for optimized mathematical operations on vectors. 
+		  </li>
+ 
+		  <li id="d4298e34"><a name="d4298e34"><!-- --></a>Vector Statistical Library (VSL) routines, which offer high-performance vectorized random number generators (RNG) for several probability distributions, convolution and correlation routines, and summary statistics functions. 
+		  </li>
+ 
+		  <li id="d4298e37"><a name="d4298e37"><!-- --></a>Data Fitting Library, which provides capabilities for spline-based approximation of functions, derivatives and integrals of functions, and search. 
+		  </li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+    <p id="GUID-9AE2AC5E-EE1B-4ADA-9686-88AC98114A99">For details see the 
+      <em id="GUID-AF6D3071-D96F-4D5D-9CA7-8976E2B9B7C4">Intel&reg; MKL Reference Manual</em>. 
+    </p>
+ 
+    <p><span>Intel MKL is optimized for the latest Intel processors, including processors with multiple cores (see the 
+		  <em>Intel&reg; MKL Release Notes</em> for the full list of supported processors). Intel MKL also performs well on non-Intel processors.</span> 
+	 </p>
+ 
+    <p>For Linux* systems based on Intel&reg; 64 Architecture, Intel MKL also includes support for the Intel&reg; Many Integrated Core (Intel&reg; MIC) Architecture and provides libraries to help you port your applications to Intel MIC Architecture. 
+	 </p>
+ 
+    <p id="P_CF_12857569597140"><a name="P_CF_12857569597140"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d68298e89"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d68298e89 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-3179B9D1-C3C3-47E5-B8DE-DE97E78E78CA.htm">Intel&reg; Math Kernel Library for Linux* OS User's Guide</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

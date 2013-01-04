@@ -1,0 +1,98 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Setting the Number of Threads">
+<meta name="DC.subject" content="number of threads, setting for cluster">
+<meta name="keywords" content="number of threads, setting for cluster">
+<meta name="DC.Relation" scheme="URI" content="GUID-961566D0-E177-467A-96F6-E0D6541430A0.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040.htm#GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-CC6E9649-B783-41BC-9ECD-83747C4273F4">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Setting/Determining the Number of Threads</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-CC6E9649-B783-41BC-9ECD-83747C4273F4">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1"> 
+    <span id="GUID-4729DBB6-CCA6-4137-A321-53A9DC8CA0B0">Setting</span> the Number of Threads</h1>
+ 
+   
+   
+  <div id="GUID-73B5294C-7CAA-4094-90AF-42AF9652F413"> 
+    <p id="GUID-3CC862C7-C8CC-4EFA-960C-F9F943C6C202"> 
+      <span id="GUID-DB7B9C1D-D2C5-41D4-9E20-F270E0D8F931">The OpenMP* software responds to the environment variable 
+        <samp class="codeph" id="GUID-90BB99C7-ED81-48A1-A77E-203F893385C2">OMP_NUM_THREADS</samp>. Intel MKL also has other mechanisms to set the number of threads, such as the 
+        <samp class="codeph" id="GUID-DBD04EA0-6B40-4D80-B1B0-3BA9B3BE82CD">MKL_NUM_THREADS</samp> or 
+        <samp class="codeph" id="GUID-5136AC11-E716-4397-A946-DC9A39F530B3">MKL_DOMAIN_NUM_THREADS</samp> environment variables (see 
+        <a href="GUID-0073DDBD-3239-44B2-AD92-87A533733E11.htm"><span id="GUID-7C4B0A61-BD2F-458B-97A2-F21414ECC94B">Using Additional Threading Control</span></a>).</span> 
+    </p>
+ 
+    <p id="GUID-44CF545C-5237-4DC6-B9A4-7444774DCC01"> 
+      <span id="GUID-BDACF1DB-00B6-42BE-9C12-D8DE32C53D66">Make sure that the relevant environment variables have the same and correct values on all the nodes. Intel MKL does not set the default number of threads to one, but depends on the OpenMP libraries used with the compiler to set the default number. For the threading layer based on the Intel compiler (</span><span class="filepath" id="GUID-88EEA788-F3A7-42D8-974B-56A3D4BCB607">lib</span><span class="filepath" id="GUID-102E4D60-B46C-4767-8904-C16B1B1F5FC8">mkl_intel_thread.</span><span class="filepath" id="GUID-D859791E-ECDA-4E7D-AFA9-E7E4D8B53EA7">a</span><span id="GUID-B28EFBD3-CAFA-4348-8F58-C8ACAB63C576">), this value is the number of CPUs according to the OS.</span> 
+    </p>
+ 
+    <div class="section" id="GUID-18374E34-471B-45E3-A410-E9DB026B5105"> 
+      <div class="Note"><h3 class="NoteTipHead">
+					Caution</h3> 
+        <p>Avoid over-prescribing the number of threads, which may occur, for instance, when the number of MPI ranks per node and the number of threads per node are both greater than one. The number of MPI ranks per node multiplied by the number of threads per node should not exceed the number of hardware threads per node. 
+        </p>
+ 
+      </div> 
+      <p id="GUID-E49BBEBB-D89D-49BB-B3D7-0A6B2DD5A447"> 
+        </p>
+ 
+      <p id="GUID-C24E3D5E-3B56-432A-BA5F-6FE472F57F47"> 
+        <span id="GUID-4B343BB2-7264-4341-9FE0-04C52670D593">If you are using your login environment to set an environment variable, such as 
+          <samp class="codeph" id="GUID-7F57534E-32A6-4F1A-922C-DE3FE1481D5C">OMP_NUM_THREADS</samp>, remember that changing the value on the head node and then doing your run, as you do on a shared-memory (SMP) system, does not change the variable on all the nodes because 
+          <samp class="codeph" id="GUID-B11EC441-7DC6-40AD-832B-2E2315564035">mpirun</samp> starts a fresh default shell on all the nodes. To change the number of threads on all the nodes, in 
+          <span class="filepath" id="GUID-0D08C840-81DD-45A9-B8A0-F5D4CE88D7D5">.bashrc</span>, add a line at the top, as follows:</span> 
+      </p>
+ 
+      <p id="GUID-57A1FFBC-5F40-4440-9356-FC44D3547B70"> 
+        <span id="GUID-A939C8DF-DF64-4EE1-AB71-FD0A3C8613AC"> 
+          <samp class="codeph" id="GUID-0871C7D2-BB0A-4494-81C6-CED7B4D285BB">OMP_NUM_THREADS=1; export OMP_NUM_THREADS</samp> 
+        </span> 
+      </p>
+ 
+      <p id="GUID-5DB4D106-3AE7-4FCF-8697-78AFB02DAEEB">You can run multiple CPUs per node using MPICH. To do this, build MPICH to enable multiple CPUs per node. Be aware that certain MPICH applications may fail to work perfectly in a threaded environment (see the Known Limitations section in the 
+        <em id="GUID-DC99A1A6-07C0-47B4-9633-945AECFDE091">Release Notes</em>. If you encounter problems with MPICH and setting of the number of threads is greater than one, first try setting the number of threads to one and see whether the problem persists. 
+      </p>
+ 
+      <p id="GUID-B00B140F-8F38-420A-A8EA-236D769879F8"> 
+        </p>
+ 
+    </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-961566D0-E177-467A-96F6-E0D6541430A0.htm">Working with the Intel&reg; Math Kernel Library Cluster Software</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040.htm#GUID-DEEF0363-2B34-4BAB-87FA-A75DBE842040">Techniques to Set the Number of Threads 
+        </a>  
+        </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

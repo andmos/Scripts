@@ -1,0 +1,192 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Calling BLAS Functions that Return the Complex Values in C/C++ Code">
+<meta name="DC.subject" content="calling, complex BLAS Level 1 function from C, complex BLAS Level 1 function from C++, CBLAS interface from C, BLAS functions from C">
+<meta name="keywords" content="calling, complex BLAS Level 1 function from C, complex BLAS Level 1 function from C++, CBLAS interface from C, BLAS functions from C">
+<meta name="DC.Relation" scheme="URI" content="GUID-F089D943-2BDC-47B7-816C-1B15291C61FC.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-A0908E50-19D7-44C1-A068-44036B466BC7">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Calling BLAS Functions that Return the Complex Values in C/C++ Code</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-A0908E50-19D7-44C1-A068-44036B466BC7">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Calling BLAS Functions that Return the Complex Values in C/C++ Code</h1>
+ 
+   
+  <div id="GUID-E8A04EBE-918F-4F43-89DF-35379D4BAAAE"> 
+	 <p id="GUID-1AE6F0AF-4D3A-4ABA-B7F7-FDDD5B698F1C"> Complex values that functions return are handled differently in C and Fortran. Because BLAS is Fortran-style, you need to be careful when handling a call from C to a BLAS function that returns complex values. However, in addition to normal function calls, Fortran enables calling functions as though they were subroutines, which provides a mechanism for returning the complex value correctly when the function is called from a C program. When a Fortran function is called as a subroutine, the return value is the first parameter in the calling sequence. You can use this feature to call a BLAS function from C. 
+	 </p>
+ 
+	 <p id="GUID-01F563AE-C065-4A3A-BBD5-F08ACE2CDE9E">The following example shows how a call to a Fortran function as a subroutine converts to a call from C and the hidden parameter 
+		<span id="GUID-BBCD01C3-830E-4992-8CF4-B347316941A4">result</span> gets exposed: 
+	 </p>
+ 
+	 <p id="GUID-6E9D0D2B-3D3F-4E98-B6B9-973AF027D8F9">Normal Fortran function call:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<samp class="codeph" id="GUID-99CCF65B-BC93-4229-B17C-7A62C2646A46">result = cdotc( n, x, 1, y, 1 )</samp> 
+	 </p>
+ 
+	 <p id="GUID-9EF67459-8A50-4BB6-B3CF-B32DCFBE33E9">A call to the function as a subroutine: 
+		<samp class="codeph" id="GUID-B2C2693B-EBAA-4088-9FD6-E9E52AD4EACA">&nbsp;call cdotc( result, n, x, 1, y, 1)</samp> 
+	 </p>
+ 
+	 <p id="GUID-C3DF5447-AF0E-4BA9-9735-90F16481B2B0">A call to the function from C:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<samp class="codeph" id="GUID-15AC1E58-1395-4830-8054-C7DC6283E4FA">cdotc( &amp;result, &amp;n, x, &amp;one, y, &amp;one )</samp> 
+	 </p>
+ 
+	 <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+		<p>Intel MKL has both upper-case and lower-case entry points in the Fortran-style (case-insensitive) BLAS, with or without the trailing underscore. So, all these names are equivalent and acceptable: 
+		  <samp class="codeph" id="GUID-83B0CA15-F84E-4A79-BAE3-0A1FA362392A">cdotc, CDOTC, cdotc_</samp>, and 
+		  <samp class="codeph" id="GUID-D4D17A08-7717-45F1-B7F5-D75F90C5112A">CDOTC_</samp>. 
+		</p>
+ 
+	 </div> 
+	 <p id="GUID-EFA3B753-073E-45D2-A6A3-C6E5300465AA"> 
+		<span id="GUID-7F3F012D-2D91-435B-9642-73D2A6F11267">The above example shows one of the ways to call several level 1 BLAS functions that return complex values from your C and C++ applications. An easier way is to use the CBLAS interface. For instance, you can call the same function using the CBLAS interface as follows:</span> 
+	 </p>
+ 
+	 <p id="GUID-BB16816B-7102-40EB-889A-F811FFAED0F0"> 
+		<samp class="codeph" id="GUID-39D1A6B6-B213-4FCD-8699-A105412B831F">cblas_cdotu( n, x, 1, y, 1, &amp;result )</samp> 
+	 </p>
+ 
+	 <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+		<p>The complex value comes last on the argument list in this case. 
+		</p>
+ 
+	 </div> 
+	 <p id="GUID-183D20B5-7119-4B72-ADA8-3B5C8CA79CFD">The following examples show use of the Fortran-style BLAS interface from C and C++, as well as the CBLAS (C language) interface: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-DB2E08EB-FFE7-4957-8049-E7339CCF3FE5"> 
+		<li id="GUID-C2ADFBD4-C002-43DD-A49D-F82A571CE926"> 
+		  <a href="GUID-A0908E50-19D7-44C1-A068-44036B466BC7.htm#IX_COMPLEX_BLAS_LEVEL_1">Example "Calling a Complex BLAS Level 1 Function from C"</a> 
+		</li>
+ 
+		<li id="GUID-9A48EFF1-D008-43D4-A128-3F97A363B66F"><a href="GUID-A0908E50-19D7-44C1-A068-44036B466BC7.htm#IX_COMPLEX_BLAS_LEVEL_1_1">Example "Calling a Complex BLAS Level 1 Function from C++"</a> 
+		</li>
+ 
+		<li id="GUID-6C9189ED-2FD0-4390-BA05-3079F6EAC03D"> 
+		  <a href="GUID-A0908E50-19D7-44C1-A068-44036B466BC7.htm#XREF_EXAMPLE_6_3_USING_CBLAS">Example "Using CBLAS Interface Instead of Calling BLAS Directly from C"</a> 
+		</li>
+ 
+	 </ul>
+
+	 <div class="section" id="IX_COMPLEX_BLAS_LEVEL_1"><a name="IX_COMPLEX_BLAS_LEVEL_1"><!-- --></a><h2 class="sectiontitle">Example "Calling a Complex BLAS Level 1 Function from C"</h2> 
+		 
+		<p id="GUID-E461D1E4-45C8-4C61-B8EB-29814C57E996">The example below illustrates a call from a C program to the complex BLAS Level 1 function 
+		  <samp class="codeph" id="GUID-A7E88760-E546-4919-9131-BBF769E9CD0A">zdotc()</samp>. This function computes the dot product of two double-precision complex vectors. 
+		</p>
+ 
+		<p id="GUID-3E0EC0C2-2332-41E2-93EC-E27A4F9ABA63">In this example, the complex dot product is returned in the structure 
+		  <samp class="codeph" id="GUID-426BDA84-3363-433E-AA3B-8AF0F746B61D">c</samp>. 
+		</p>
+ 
+		<pre>
+                         
+#include "mkl.h"
+#define N 5
+int main()
+{
+int n = N, inca = 1, incb = 1, i;
+MKL_Complex16 a[N], b[N], c;
+for( i = 0; i &lt; n; i++ ){
+a[i].real = (double)i; a[i].imag = (double)i * 2.0;
+b[i].real = (double)(n - i); b[i].imag = (double)i * 2.0;
+}
+zdotc( &amp;c, &amp;n, a, &amp;inca, b, &amp;incb );
+printf( "The complex dot product is: ( %6.2f, %6.2f)\n", c.real, c.imag );
+return 0;
+}
+</pre> 
+	 </div>
+ 
+	 <div class="section" id="IX_COMPLEX_BLAS_LEVEL_1_1"><a name="IX_COMPLEX_BLAS_LEVEL_1_1"><!-- --></a><h2 class="sectiontitle">Example "Calling a Complex BLAS Level 1 Function from C++"</h2> 
+		 
+		<p id="GUID-8F2ED98B-D353-4CD6-BC0F-A5F6E67BA35F">Below is the C++ implementation: 
+		</p>
+ 
+		<pre>
+                         
+#include &lt;complex&gt;
+#include &lt;iostream&gt;
+#define MKL_Complex16 std::complex&lt;double&gt;
+#include "mkl.h"
+
+#define N 5
+
+int main()
+{
+	int n, inca = 1, incb = 1, i;
+	std::complex&lt;double&gt; a[N], b[N], c;
+	n = N;
+	
+	for( i = 0; i &lt; n; i++ ){
+		a[i] = std::complex&lt;double&gt;(i,i*2.0);
+		b[i] = std::complex&lt;double&gt;(n-i,i*2.0);
+	}
+	zdotc(&amp;c, &amp;n, a, &amp;inca, b, &amp;incb );
+	std::cout &lt;&lt; "The complex dot product is: " &lt;&lt; c &lt;&lt; std::endl;
+	return 0;
+}
+            </pre> 
+	 </div>
+ 
+	 <div class="section" id="XREF_EXAMPLE_6_3_USING_CBLAS"><a name="XREF_EXAMPLE_6_3_USING_CBLAS"><!-- --></a><h2 class="sectiontitle">Example "Using CBLAS Interface Instead of Calling BLAS Directly from C"</h2> 
+		 
+		<p id="GUID-F0DC961C-8D11-4821-BD49-FA11A9EFB33D">This example uses CBLAS: 
+		</p>
+ 
+		<pre>
+                    
+#include &lt;stdio.h&gt;
+#include "mkl.h"
+typedef struct{ double re; double im; } complex16;
+#define N 5
+int main()
+{
+int n, inca = 1, incb = 1, i;
+complex16 a[N], b[N], c;
+n = N;
+for( i = 0; i &lt; n; i++ ){
+a[i].re = (double)i; a[i].im = (double)i * 2.0;
+b[i].re = (double)(n - i); b[i].im = (double)i * 2.0;
+}
+cblas_zdotc_sub(n, a, inca, b, incb, &amp;c );
+printf( "The complex dot product is: ( %6.2f, %6.2f)\n", c.re, c.im );
+return 0;
+}
+            </pre> 
+	 </div>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-F089D943-2BDC-47B7-816C-1B15291C61FC.htm">Mixed-language Programming with the Intel Math Kernel Library</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

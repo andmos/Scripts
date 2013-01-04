@@ -1,0 +1,177 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Improving Performance on Intel Xeon Phi Coprocessors">
+<meta name="DC.subject" content="Intel&reg; Many Integrated Core Architecture, improving performance on, performance, on Intel&reg; Many Integrated Core Architecture, Intel&reg; Xeon Phi&#8482; coprocessors, performance tips for">
+<meta name="keywords" content="Intel&reg; Many Integrated Core Architecture, improving performance on, performance, on Intel&reg; Many Integrated Core Architecture, Intel&reg; Xeon Phi&#8482; coprocessors, performance tips for">
+<meta name="DC.Relation" scheme="URI" content="GUID-108D4F3E-D299-4D35-BAED-ECC5B48DA57E.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-DCBB0CE7-CEAA-4147-97D8-1BD7975029E3.htm#GUID-DCBB0CE7-CEAA-4147-97D8-1BD7975029E3">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-7F67CA7F-0B2D-4584-AE90-63A64A58F0EC">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Improving Performance on Intel Xeon Phi Coprocessors</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-7F67CA7F-0B2D-4584-AE90-63A64A58F0EC">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Improving Performance on Intel Xeon Phi Coprocessors </h1>
+ 
+   
+  <div> 
+	 <p>To improve performance of Intel MKL on Intel Xeon Phi coprocessors, use the following tips, which are specific to Intel MIC Architecture. You can also use general performance improvement recommendations, in 
+		<a href="GUID-8672C441-6165-4E29-A771-CAB2A0F07652.htm">Coding Techniques</a>.
+	 </p>
+ 
+	 <div class="section" id="GUID-E1A87E40-C86D-48D1-B464-33187B865232"><h2 class="sectiontitle">Memory Allocation</h2> 
+		 
+		<p> Performance of many Intel MKL routines improves when input and output data reside in memory allocated with 2M pages because this enables you to address more memory with less pages and thus reduce the overhead of translating between virtual and physical memory addresses compared to memory allocated with the default page size of 4K. For more information, refer to 
+		  <em>Intel&reg; 64 and IA-32 Architectures Optimization Reference Manual</em> and 
+		  <em>Intel&reg; 64 and IA-32 Architectures Software Developer's Manual</em> (connect to 
+		  <a href="http://www.intel.com/" target="_blank">http://www.intel.com/</a> and enter the name of each document in the 
+		  <b class="uicontrol">Find Content</b> text box). 
+		</p>
+ 
+		<p>To allocate memory with 2M pages, you can use the 
+		  <samp class="codeph">mmap</samp> system call with the 
+		  <span class="keyword">MAP_HUGETLB</span> flag. 
+		</p>
+ 
+		<p> To enable allocation of memory with 2M pages for data of size exceeding 2M and transferred with offload pragmas, set the 
+		  <samp class="codeph">MIC_USE_2MB_BUFFERS</samp> environment variable to 2M. See 
+		  <em>Intel&reg; Compiler User and Reference Guides</em> for more details. 
+		</p>
+ 
+		<p>Specifying the maximum coprocessor memory that can be used for Automatic Offload computations typically enhances the performance because Intel MKL can reserve and keep the memory on the coprocessor during Automatic Offload computations. You can specify the maximum memory by setting the 
+		  <samp class="codeph">MKL_MIC_MAX_MEMORY</samp> environment variable to a value such as 2 GB. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="GUID-3DC9C9EF-BCDB-41FA-869C-F4F36858C2C3"><h2 class="sectiontitle">OpenMP and Threading Settings</h2> 
+		 
+		<p> To improve performance of Intel MKL routines, use the following OpenMP and threading settings: 
+		</p>
+ 
+		<ul type="disc" id="GUID-F1671662-55B6-40E4-AB43-FC9174215998"> 
+		  <li> 
+			 <p> For BLAS, LAPACK, and Sparse BLAS: 
+			 </p>
+ 
+			 <p>Set 
+				<samp class="codeph">KMP_AFFINITY=compact,granularity=fine</samp> 
+			 </p>
+ 
+		  </li>
+ 
+		  <li> 
+			 <p> For FFT: 
+			 </p>
+ 
+			 <p>Set 
+				<samp class="codeph">KMP_AFFINITY=balanced,granularity=fine</samp> and use a number of threads that is a power of two 
+			 </p>
+ 
+		  </li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="GUID-B7D6E7DF-1CC9-4EA0-BDD9-5EE15F5D388B"><h2 class="sectiontitle">Data Alignment and Leading Dimensions</h2> 
+		 
+		<p>To improve performance of Intel MKL FFT functions, follow these recommendations: 
+		</p>
+ 
+		<ul type="disc" id="GUID-8C730D51-EE39-46A6-8E15-4982A8BBA0B5"> 
+		  <li> 
+			 <p>Align the first element of the input data on 64-byte boundaries 
+			 </p>
+ 
+		  </li>
+ 
+		  <li> 
+			 <p> For two- or higher-dimensional single-precision transforms, use leading dimensions (strides) divisible by 8 but not divisible by 16 
+			 </p>
+ 
+		  </li>
+ 
+		  <li> 
+			 <p> For two- or higher-dimensional double-precision transforms, use leading dimensions divisible by 4 but not divisible by 8 
+			 </p>
+ 
+		  </li>
+ 
+		</ul>
+ 
+		<p>For other Intel MKL function domains, use 
+		  <a href="GUID-8672C441-6165-4E29-A771-CAB2A0F07652.htm#GUID-BD3D809E-DF56-473B-862F-317FACEA98B8">general recommendations for data alignment</a>. 
+		</p>
+ 
+	 </div>
+ 
+	 <p> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d34846e175"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d34846e175 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-108D4F3E-D299-4D35-BAED-ECC5B48DA57E.htm">Using Intel&reg; Math Kernel Library on Intel&reg; Xeon Phi&#8482; Coprocessors</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-DCBB0CE7-CEAA-4147-97D8-1BD7975029E3.htm#GUID-DCBB0CE7-CEAA-4147-97D8-1BD7975029E3">Examples of Compiler Assisted Offload</a></div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

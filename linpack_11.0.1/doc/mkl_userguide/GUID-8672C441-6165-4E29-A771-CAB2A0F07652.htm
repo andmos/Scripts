@@ -1,0 +1,121 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Coding Techniques">
+<meta name="DC.subject" content="coding, techniques to improve performance, FFT interface, data alignment, LAPACK, performance of packed routines">
+<meta name="keywords" content="coding, techniques to improve performance, FFT interface, data alignment, LAPACK, performance of packed routines">
+<meta name="DC.Relation" scheme="URI" content="GUID-01C4A8FA-8BEC-4847-B1D5-16E76E6A03F7.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-8672C441-6165-4E29-A771-CAB2A0F07652">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Coding Techniques</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-8672C441-6165-4E29-A771-CAB2A0F07652">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Coding Techniques</h1>
+ 
+   
+  <div id="GUID-65F01C26-B329-47EF-8201-B751B3239385"> 
+    <p id="GUID-BD3D809E-DF56-473B-862F-317FACEA98B8"> To improve performance of your application that calls Intel MKL, align your arrays on 64-byte boundaries and ensure that the leading dimensions of the arrays are divisible by 64. 
+    </p>
+ 
+    <div class="section" id="GUID-6018C424-1F3B-4EEB-9241-08844A34D93C"><h2 class="sectiontitle">LAPACK Packed Routines</h2> 
+       
+      <p id="GUID-C3A6DCCC-8C00-4912-AED9-668E43787A1C">The routines with the names that contain the letters 
+        <samp class="codeph" id="GUID-712D3A1D-7AF3-41F7-8F21-A99F8C19E276">HP, OP, PP, SP, TP, UP</samp> in the matrix type and storage position (the second and third letters respectively) operate on the matrices in the packed format (see LAPACK "Routine Naming Conventions" sections in the Intel MKL Reference Manual). Their functionality is strictly equivalent to the functionality of the unpacked routines with the names containing the letters 
+        <samp class="codeph" id="GUID-13A2612F-BCA9-4719-867E-A69D181CBFB6">HE, OR, PO, SY, TR, UN</samp> in the same positions, but the performance is significantly lower. 
+      </p>
+ 
+      <p id="GUID-6889DCA4-9A8A-411E-B7F4-09B700DA570A">If the memory restriction is not too tight, use an unpacked routine for better performance. In this case, you need to allocate 
+        <var>N</var><sup id="GUID-66811A18-8571-4B39-BC40-3100683CC70F">2</sup>/2 more memory than the memory required by a respective packed routine, where 
+        <var>N</var> is the problem size (the number of equations). 
+      </p>
+ 
+      <p id="GUID-2B1480DD-1DF6-4E72-91F9-4F024C33B987">For example, to speed up solving a symmetric eigenproblem with an expert driver, use the unpacked routine: 
+      </p>
+ 
+      <pre>            
+call dsyevx(jobz, range, uplo, n, a, lda, vl, vu, il, iu, abstol, m, w, z, ldz, work, lwork, iwork, ifail, info)
+            </pre> 
+      <p id="GUID-86AF2458-4320-4714-8FEF-52ABA33C2A22">where 
+        <samp class="codeph" id="GUID-8074C6C6-9F4D-43CB-BA2D-6B335CF66038">a</samp> is the dimension 
+        <samp class="codeph" id="GUID-C32E0F68-A4B7-4117-84CE-A708AD3AB2FF"><var>lda</var>-by-<var>n</var></samp>, which is at least 
+        <var>N</var><sup id="GUID-9C4D7C3B-CEB9-4C67-8D55-04A5A5D1E9AB">2</sup> elements, 
+        <br> instead of the packed routine: 
+      </p>
+ 
+      <pre>
+call dspevx(jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldz, work, iwork, ifail, info)
+            </pre> 
+      <p id="GUID-2C914505-78D3-4777-A865-2C3C4686A2BA">where 
+        <samp class="codeph" id="GUID-4D67FD6D-458C-43D0-9042-C0905060B5E4">ap</samp> is the dimension 
+        <var>N</var>*(<var>N</var>+1)/2. 
+      </p>
+ 
+    </div>
+ 
+    <p> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d35506e131"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d35506e131 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-01C4A8FA-8BEC-4847-B1D5-16E76E6A03F7.htm">Other Tips and Techniques to Improve Performance</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

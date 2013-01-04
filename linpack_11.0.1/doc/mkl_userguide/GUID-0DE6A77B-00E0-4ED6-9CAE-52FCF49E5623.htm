@@ -1,0 +1,99 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Setting the Environment Variables for Threading Control">
+<meta name="DC.Relation" scheme="URI" content="GUID-0073DDBD-3239-44B2-AD92-87A533733E11.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-0DE6A77B-00E0-4ED6-9CAE-52FCF49E5623">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Setting Environment Variables for Threading Control</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-0DE6A77B-00E0-4ED6-9CAE-52FCF49E5623">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Setting the Environment Variables for Threading Control</h1>
+ 
+   
+   
+  <div id="GUID-23875CC9-4FD8-47FB-AE77-CBF43D29D34A"> 
+	 <p id="GUID-08CB9E2A-B508-4275-9F4B-85A8D264AC2E">To set the environment variables used for threading control, in the command shell in which the program is going to run, enter<span id="GUID-6047025D-8E6B-4211-B54B-1A821E7D2AE8"> the 
+		  <samp class="codeph" id="GUID-C607A205-3E5E-442F-9158-599C6E75643F">export</samp> or 
+		  <samp class="codeph" id="GUID-659C525C-94E5-471F-9C8D-C07C0DC23FC2">setenv</samp> commands, depending on the shell you use.</span></p>
+ 
+	 <p><span>For a bash shell, use the 
+		  <samp class="codeph" id="GUID-B37554AE-2BC4-48DE-A006-D53AADB8F3B0">export</samp> commands:</span> 
+	 </p>
+ 
+	 <p id="GUID-4FAE297B-4132-4D30-A7AB-253165834DF7"> 
+		<samp class="codeph" id="GUID-2D460A39-C089-484D-A23E-4B00BB43BD3B">export 
+		  <var>&lt;VARIABLE NAME&gt;</var>=<var>&lt;value&gt;</var></samp> 
+	 </p>
+ 
+	 <p id="GUID-AD803C54-4892-411A-8D9B-BF75CBE50C25">For example: 
+	 </p>
+ 
+	 <p id="GUID-91B1816C-E3C8-45E4-868D-668513931CA5"> 
+		<samp class="codeph" id="GUID-8C0F0294-A335-4158-A3C2-2CCC2CC74B7D">export MKL_NUM_THREADS=4</samp> 
+	 </p>
+ 
+	 <p id="GUID-EE0C5689-DF97-44C2-B6AB-0D57B5576861"> 
+		<samp class="codeph" id="GUID-10C40003-28FB-4F4C-99D5-5B28A8E730AE">export MKL_DOMAIN_NUM_THREADS="MKL_DOMAIN_ALL=1, MKL_DOMAIN_BLAS=4"</samp> 
+	 </p>
+ 
+	 <p id="GUID-FC6DEC9C-E00A-411C-8497-B927F98D670A"> 
+		<samp class="codeph" id="GUID-617D8B06-E13C-451A-99B5-85EB73C4F5C2">export MKL_DYNAMIC=FALSE</samp> 
+	 </p>
+ 
+	 <p id="GUID-5C940D7C-7288-4118-B1B4-4D2B1D1B0522"> For the csh or tcsh shell, use the 
+		<samp class="codeph" id="GUID-A33A38C5-F1E1-4F65-8CD2-61941532CB59">setenv</samp> commands: 
+	 </p>
+ 
+	 <p id="GUID-81C8F5D9-2341-4C56-9FA2-2516E53BA512"> 
+		<samp class="codeph" id="GUID-A5A6D086-E94D-41F7-92E3-D55E11DDCCEC">setenv 
+		  <var>&lt;VARIABLE NAME&gt;</var> 
+		  <var>&lt;value&gt;</var></samp>. 
+	 </p>
+ 
+	 <p id="GUID-990E7B80-9319-4C1D-82E0-72C54D73E973"> For example: 
+	 </p>
+ 
+	 <p id="GUID-74C0F098-DC9C-4E23-B713-DC070B16A549"> 
+		<samp class="codeph" id="GUID-DCB285C9-2907-4697-96EA-44F7D9D24102">setenv MKL_NUM_THREADS 4</samp> 
+	 </p>
+ 
+	 <p id="GUID-E9078160-5AD1-4B9F-BFFB-9928848BFC3E"> 
+		<samp class="codeph" id="GUID-CBF692CF-100B-4955-8EC6-42662A4D4AE4">setenv MKL_DOMAIN_NUM_THREADS "MKL_DOMAIN_ALL=1, MKL_DOMAIN_BLAS=4"</samp> 
+	 </p>
+ 
+	 <p id="GUID-1F499492-1942-4EB2-AE2F-0C9027E802CE"> 
+		<samp class="codeph" id="GUID-1912AC97-291B-4323-B60B-AA90CBAFF5AF">setenv MKL_DYNAMIC FALSE</samp> 
+	 </p>
+ 
+	 </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-0073DDBD-3239-44B2-AD92-87A533733E11.htm">Using Additional Threading Control</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

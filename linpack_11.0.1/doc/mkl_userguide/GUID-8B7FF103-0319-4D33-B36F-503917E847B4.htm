@@ -1,0 +1,223 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Linking on Intel Xeon Phi Coprocessors">
+<meta name="DC.subject" content="linking, on Intel&reg; Xeon Phi&#8482; coprocessors, examples, linking, Intel&reg; Many Integrated Core Architecture, examples of linking on coprocessors, for Compiler-Assisted Offload, Intel&reg; Xeon Phi&#8482; coprocessors, linking on">
+<meta name="keywords" content="linking, on Intel&reg; Xeon Phi&#8482; coprocessors, examples, linking, Intel&reg; Many Integrated Core Architecture, examples of linking on coprocessors, for Compiler-Assisted Offload, Intel&reg; Xeon Phi&#8482; coprocessors, linking on">
+<meta name="DC.Relation" scheme="URI" content="GUID-7B8024BF-49A9-4912-99DB-D8D1ABACA575.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-DF5E72C6-E420-4B31-B6B1-3D4901E62F9C.htm#GUID-DF5E72C6-E420-4B31-B6B1-3D4901E62F9C">
+<meta name="DC.Relation" scheme="URI" content="GUID-549011AB-1324-4694-B8DD-AFBE81397B8C.htm#GUID-549011AB-1324-4694-B8DD-AFBE81397B8C">
+<meta name="DC.Relation" scheme="URI" content="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-8B7FF103-0319-4D33-B36F-503917E847B4">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Linking on Intel Xeon Phi Coprocessors</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-8B7FF103-0319-4D33-B36F-503917E847B4">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Linking on Intel Xeon Phi Coprocessors</h1>
+ 
+   
+  <div id="GUID-2DFC7828-7997-44BB-8C61-9C2F786BEAB1"> 
+	 <p>Intel MKL provides both static and dynamic libraries for coprocessors based on Intel MIC Architecture, but the Single Dynamic Library is unavailable for the coprocessors. 
+	 </p>
+ 
+	 <p>See 
+		<a href="GUID-5FE64872-8340-46CB-A763-BFF2CD227CB5.htm">Selecting Libraries to Link with</a> for libraries to list on your link line in the simplest case. 
+	 </p>
+ 
+	 
+	 <p>See 
+		<a href="GUID-9B5D271C-F370-437D-A409-0D8491CE6733.htm">Detailed Directory Structure of the lib/mic Directory</a> for a full list of libraries provided in the 
+		<span class="filepath"><var>&lt;mkl&nbsp;directory&gt;</var>/lib/mic</span> directory. 
+	 </p>
+ 
+	 <p>You can link either static or dynamic host libraries and either static or dynamic coprocessor-side libraries independently. 
+	 </p>
+ 
+	 <p>To run applications linked dynamically with the host-computer and coprocessor-side libraries, perform the 
+		<a href="GUID-390867EA-9DD8-4CBE-93B6-CE11251C050D.htm">Setting Environment Variables</a> step of the Getting Started process, which sets: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-E905C898-FCCF-4AC0-A690-84E28052DB34"> 
+		<li> 
+		  <p><span class="keyword">LD_LIBRARY_PATH</span> to contain 
+			 <span class="filepath"><var>&lt;mkl&nbsp;directory&gt;</var>/lib/intel64</span> 
+		  </p>
+ 
+		</li>
+ 
+		<li><span class="keyword">MIC_LD_LIBRARY_PATH</span> to contain 
+		  <span class="filepath"><var>&lt;mkl&nbsp;directory&gt;</var>/lib/mic</span> 
+		</li>
+ 
+	 </ul>
+ 
+	 <p>To make Intel MKL functions available on the coprocessor side, provide the 
+		<span class="keyword">-offload-attribute-target=mic</span> option on your link line. 
+	 </p>
+ 
+	 <div class="Note"><h3 class="NoteTipHead">
+					Important</h3> 
+		<p>Because Intel MKL provides both LP64 and ILP64 interfaces, ensure that the host and coprocessor-side executables use the same interface or cast all 64-bit integers to 32-bit integers (or vice-versa) before calling coprocessor-side functions in your application. 
+		</p>
+ 
+	 </div> 
+	 <p>The following examples illustrate linking with Intel compilers on Intel Xeon Phi coprocessors. 
+	 </p>
+ 
+	 <p id="GUID-B2BB89CA-A18C-4DCB-AD27-C932753E4448">The examples use a 
+		<span class="filepath" id="GUID-3ADBDFDD-5C14-4BB3-B368-E1FA5B42B5EC">.f</span> (Fortran) source file and Intel&reg; Fortran Compiler. C/C++ users should instead specify a 
+		<span class="filepath" id="GUID-837A8208-ED63-4097-8D8A-C5E447F9E5A4">.cpp</span> (C++) or 
+		<span class="filepath" id="GUID-D926EA76-08F1-4353-BC22-BEF3609F4284">.c</span> (C) file and replace 
+		<samp class="codeph" id="GUID-BC6E9666-D2E2-4090-AF57-8C6566E6BFEF">ifort</samp> with 
+		<samp class="codeph" id="GUID-26AB4363-0CAE-4363-9F83-40364E62E574">icc</samp>. 
+	 </p>
+ 
+	 <p id="GUID-1EEF62C8-12B2-4A16-BB0E-B01932A06B7D"> In these examples, 
+		<samp class="codeph" id="GUID-467EB8BA-F1C3-4569-A4C9-177E2B84DC69">MKLINCLUDE</samp> is defined as 
+		<samp class="codeph">$MKLROOT/include</samp> 
+		<br>(if you successfully completed the 
+		<a href="GUID-390867EA-9DD8-4CBE-93B6-CE11251C050D.htm">Setting Environment Variables</a> step of the Getting Started process, you can omit the 
+		<samp class="codeph" id="GUID-941C9C43-38AC-47E8-A051-E353516C5C20">-I$MKLINCLUDE</samp> parameter): 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-0C712BD4-07FD-4966-9445-55741AA15443"> 
+		<li id="GUID-766C04C9-56BD-49F4-BC5F-CA0516E991A1"> 
+		  <p id="GUID-33422B5D-5008-4A2C-86C1-8FBC6C601BE2">Static linking of 
+			 <span class="filepath" id="GUID-BB4CD22E-77F8-4194-83B9-B79276A5C289">myprog.f</span>, host-computer and coprocessor-side libraries for parallel Intel MKL using LP64 interface: 
+		  </p>
+ 
+		  <p id="GUID-B0096CA1-BA5A-4770-A2D1-ECCCFFEB0DEE"> 
+			 <samp class="codeph" id="GUID-E40B70A5-5C12-4E72-A3AC-16595155D4BF">ifort myprog.f -I$MKLINCLUDE -offload-attribute-target=mic 
+				<br>-Wl,--start-group $MKLROOT/lib/intel64/libmkl_intel_lp64.a 
+				<br>$MKLROOT/lib/intel64/libmkl_intel_thread.a 
+				<br>$MKLROOT/lib/intel64/libmkl_core.a -Wl,--end-group 
+				<br>-openmp -lpthread -lm 
+				<br>-offload-option,mic,compiler,"-Wl,--start-group $MKLROOT/lib/mic/libmkl_intel_lp64.a 
+				$MKLROOT/lib/mic/libmkl_intel_thread.a $MKLROOT/lib/mic/libmkl_core.a 
+				-Wl,--end-group"</samp> 
+		  </p>
+ 
+		</li>
+ 
+		<li id="GUID-330B473D-3E94-48F1-866F-FFD93C97FD6C"> 
+		  <p id="GUID-CFDE6D6C-CF24-4FBC-A812-D5881511C055">Dynamic linking of 
+			 <span class="filepath" id="GUID-FC8CFE9C-6B82-47D8-A032-E75824F34D48">myprog.f</span>, host-computer and coprocessor-side libraries for parallel Intel MKL using LP64 interface: 
+		  </p>
+ 
+		  <p id="GUID-C30A614C-66FC-415F-9747-4952FA1E53B5"> 
+			 <samp class="codeph" id="GUID-E3526D4F-B2FB-434D-823B-B7CCB505CC52">ifort myprog.f -I$MKLROOT/include -offload-attribute-target=mic 
+				<br>-L$MKLROOT/lib/intel64 
+				<br>-lmkl_intel_lp64 -lmkl_intel_thread 
+				<br>-lmkl_core -openmp -lpthread -lm 
+				<br>-offload-option,mic,compiler,"-L$MKLROOT/lib/mic -lmkl_intel_lp64 -lmkl_intel_thread 
+				-lmkl_core"</samp> 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p>Static linking of 
+			 <span class="filepath">myprog.f</span>, host-computer and coprocessor-side libraries for parallel Intel MKL using ILP64 interface: 
+		  </p>
+ 
+		  <p> 
+			 <samp class="codeph">ifort myprog.f -I$MKLINCLUDE -offload-attribute-target=mic 
+				<br>-Wl,--start-group $MKLROOT/lib/intel64/libmkl_intel_ilp64.a 
+				<br>$MKLROOT/lib/intel64/libmkl_intel_thread.a 
+				<br>$MKLROOT/lib/intel64/libmkl_core.a -Wl,--end-group 
+				<br>-openmp -lpthread -lm 
+				<br>-offload-option,mic,compiler,"-Wl,--start-group 
+				$MKLROOT/lib/mic/libmkl_intel_ilp64.a $MKLROOT/lib/mic/libmkl_intel_thread.a 
+				$MKLROOT/lib/mic/libmkl_core.a -Wl,--end-group"</samp> 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p>Dynamic linking of 
+			 <span class="filepath">myprog.f</span>, host-computer and coprocessor-side libraries for parallel Intel MKL using ILP64 interface: 
+		  </p>
+ 
+		  <p> 
+			 <samp class="codeph">ifort myprog.f -I$MKLROOT/include -offload-attribute-target=mic 
+				<br>-L$MKLROOT/lib/intel64 
+				<br>-lmkl_intel_ilp64 -lmkl_intel_thread 
+				<br>-lmkl_core -openmp -lpthread -lm 
+				<br>-offload-option,mic,compiler,"-L$MKLROOT/lib/mic -lmkl_intel_ilp64 
+				-lmkl_intel_thread -lmkl_core"</samp> 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p>Static linking of 
+			 <span class="filepath">myprog.f</span>, host-computer and coprocessor-side libraries for sequential version of Intel MKL using LP64 interface: 
+		  </p>
+ 
+		  <p> 
+			 <samp class="codeph">ifort myprog.f -I$MKLINCLUDE -offload-attribute-target=mic 
+				<br>-Wl,--start-group $MKLROOT/lib/intel64/libmkl_intel_lp64.a 
+				<br>$MKLROOT/lib/intel64/libmkl_sequential.a 
+				<br>$MKLROOT/lib/intel64/libmkl_core.a -Wl,--end-group -lm 
+				<br>-offload-option,mic,compiler,"-Wl,--start-group $MKLROOT/lib/mic/libmkl_intel_lp64.a 
+				$MKLROOT/lib/mic/libmkl_sequential.a $MKLROOT/lib/mic/libmkl_core.a -Wl,--end-group"</samp> 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p>Dynamic linking of 
+			 <span class="filepath">myprog.f</span>, host-computer and coprocessor-side libraries for sequential version of Intel MKL using LP64 interface: 
+		  </p>
+ 
+		  <p> 
+			 <samp class="codeph">ifort myprog.f -I$MKLROOT/include -offload-attribute-target=mic 
+				<br>-L$MKLROOT/lib/intel64 
+				<br>-lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lm 
+				<br>-offload-option,mic,compiler,"-L$MKLROOT/lib/mic -lmkl_intel_lp64 -lmkl_sequential 
+				-lmkl_core"</samp> 
+		  </p>
+ 
+		</li>
+ 
+	 </ul>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-7B8024BF-49A9-4912-99DB-D8D1ABACA575.htm">Compiler Assisted Offload</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-DF5E72C6-E420-4B31-B6B1-3D4901E62F9C.htm#GUID-DF5E72C6-E420-4B31-B6B1-3D4901E62F9C">Linking Your Application with the Intel&reg; Math Kernel Library 
+		  </a></div>
+<div><a href="GUID-549011AB-1324-4694-B8DD-AFBE81397B8C.htm#GUID-549011AB-1324-4694-B8DD-AFBE81397B8C">Linking with System Libraries 
+		  </a></div>
+<div><a href="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm">Using the Link-line Advisor 
+		  </a>  
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

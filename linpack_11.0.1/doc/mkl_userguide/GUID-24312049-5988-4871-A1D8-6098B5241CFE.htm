@@ -1,0 +1,191 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Support for Boost uBLAS Matrix-matrix Multiplication">
+<meta name="DC.subject" content="uBLAS, matrix-matrix multiplication, substitution with Intel MKL functions">
+<meta name="keywords" content="uBLAS, matrix-matrix multiplication, substitution with Intel MKL functions">
+<meta name="DC.Relation" scheme="URI" content="GUID-F089D943-2BDC-47B7-816C-1B15291C61FC.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-DBA5FB29-E0D1-456B-8E32-E30ED322BD91.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-24312049-5988-4871-A1D8-6098B5241CFE">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Support for Boost uBLAS Matrix-matrix Multiplication</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-24312049-5988-4871-A1D8-6098B5241CFE">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Support for Boost uBLAS Matrix-matrix Multiplication</h1>
+ 
+   
+  <div id="GUID-9A1B6245-2C9C-4CB0-A9DF-422267B2F235"> 
+	 <p id="GUID-091EAAB4-B7D1-4AB6-B397-A6CBBB0CA6BD">If you are used to uBLAS, you can perform BLAS matrix-matrix multiplication in C++ using Intel MKL substitution of Boost uBLAS functions. uBLAS is the Boost C++ open-source library that provides BLAS functionality for dense, packed, and sparse matrices. The library uses an expression template technique for passing expressions as function arguments, which enables evaluating vector and matrix expressions in one pass without temporary matrices. uBLAS provides two modes: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-A77D8519-2242-4DE1-960B-C459CD0AFC16"> 
+		<li> 
+		  <p id="GUID-329E0BE8-D507-4A7C-A24A-9AB5529B63D4">Debug (safe) mode, default. 
+			 <br> Checks types and conformance. 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-79D46E06-F9E5-454C-BEF1-7ABB4E7D4B4F">Release (fast) mode. 
+			 <br> Does not check types and conformance. To enable this mode, use the 
+			 <samp class="codeph" id="GUID-8F597E9C-BCDB-443D-B33B-12CF67CA1809">NDEBUG</samp> preprocessor symbol. 
+		  </p>
+ 
+		</li>
+ 
+	 </ul>
+ 
+	 <p id="GUID-334317D1-0550-4520-866D-E3CBFB93657C">The documentation for the Boost uBLAS is available at www.boost.org. 
+	 </p>
+ 
+	 <p id="GUID-46B287C9-6D77-4862-94DB-55E643E1C20E">Intel MKL provides overloaded 
+		<samp class="codeph" id="GUID-DBD5408E-19FA-49DB-BF56-72F8526AF047">prod()</samp> functions for substituting uBLAS dense matrix-matrix multiplication with the Intel MKL 
+		<samp class="codeph" id="GUID-B04A8747-83E9-4BA8-B5BB-9A11E65B8CB8">gemm</samp> calls. Though these functions break uBLAS expression templates and introduce temporary matrices, the performance advantage can be considerable for matrix sizes that are not too small (roughly, over 50). 
+	 </p>
+ 
+	 <p id="GUID-7F7D1DAA-2445-4DAF-A6DE-F2C6F96084E8">You do not need to change your source code to use the functions. To call them: 
+	 </p>
+ 
+	 <ul type="disc" id="GUID-C7235BE7-C872-4EA9-84C7-7AD22E853E71"> 
+		<li> 
+		  <p id="GUID-3F8F3DB4-179C-4126-8998-5991AAB71BF6">Include the header file 
+			 <span class="filepath" id="GUID-BD334ACA-6229-4F3A-A18E-6315FCDF79FC">mkl_boost_ublas_matrix_prod.hpp</span> in your code (from the Intel MKL include directory) 
+		  </p>
+ 
+		</li>
+ 
+		<li> 
+		  <p id="GUID-470E7E72-94BA-4263-932B-A1E33B5A2F42">Add appropriate Intel MKL libraries to the link line. 
+		  </p>
+ 
+		</li>
+ 
+	 </ul>
+ 
+	 <p id="GUID-B8E21A31-5E8B-419F-98A3-C018156AEF24">The list of expressions that are substituted follows: 
+	 </p>
+ 
+	 <p id="GUID-342C2B4C-A972-4C00-A087-F589BF55D08C"> 
+		<samp class="codeph" id="GUID-F521E39A-3339-4057-9108-60DD5DF96F65">prod( m1, m2 )</samp> 
+	 </p>
+ 
+	 <p id="GUID-7E53912F-F184-47F7-99E8-D4EA6473F1D9"> 
+		<samp class="codeph" id="GUID-8EF5FB7B-C8D4-444C-A62A-8AF0FEFD4162">prod( trans(m1), m2 )</samp> 
+	 </p>
+ 
+	 <p id="GUID-A5813C96-E84E-4058-AB11-594BCB8E780E"> 
+		<samp class="codeph" id="GUID-E85F76DA-C494-48F2-9F01-BEE6E042AD4A">prod( trans(conj(m1)), m2 )</samp> 
+	 </p>
+ 
+	 <p id="GUID-2D77C014-F9E9-497B-B7A9-B45D6D61022F"> 
+		<samp class="codeph" id="GUID-7E8F8CD2-2454-4009-8F91-8F35246461DD">prod( conj(trans(m1)), m2 )</samp> 
+	 </p>
+ 
+	 <p id="GUID-5C0D9D4E-F355-488D-86E4-F4D51D8351EC"> 
+		<samp class="codeph" id="GUID-ACE2F027-EE11-471C-B2E9-0380B5034EE8">prod( m1, trans(m2) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-0143071D-F838-4BB7-A408-D4318F1779E1"> 
+		<samp class="codeph" id="GUID-8CE3DE78-7A1B-4028-8DC0-CA3117233D3D">prod( trans(m1), trans(m2) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-B30411AE-E740-43ED-9433-6BA1C7720CF1"> 
+		<samp class="codeph" id="GUID-D868DCEE-E413-415D-B411-F31291C359DA">prod( trans(conj(m1)), trans(m2) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-BCC3A6DE-2548-4908-9A9B-99AE4D110125"> 
+		<samp class="codeph" id="GUID-12064494-D8D6-4D00-88CB-6288407C4B72">prod( conj(trans(m1)), trans(m2) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-96ACF680-96F9-43A5-9C6E-478E094378DD"> 
+		<samp class="codeph" id="GUID-B8AE433F-ABB8-4F5C-B9BE-0E463FA19A17">prod( m1, trans(conj(m2)) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-F843C113-71C8-44DF-A8F7-C9822E5F4333"> 
+		<samp class="codeph" id="GUID-E132EA47-3CD6-45AF-95F6-6EBB2F0D59E4">prod( trans(m1), trans(conj(m2)) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-82C4416D-3BD5-4FAE-A9D8-27630A4E4DED"> 
+		<samp class="codeph" id="GUID-309D557F-E04E-4E38-ADFF-1911F71D9932">prod( trans(conj(m1)), trans(conj(m2)) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-55185F1F-52B8-418A-A6F8-5704ED6BB2C2"> 
+		<samp class="codeph" id="GUID-3A209A58-FE42-44FA-AB12-40EF9F8BD5DB">prod( conj(trans(m1)), trans(conj(m2)) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-DA098BDE-FD8E-4A8E-AB51-863D1F572E52"> 
+		<samp class="codeph" id="GUID-696501C9-CB88-402D-A9AA-D2915CC13545">prod( m1, conj(trans(m2)) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-26DD1BBD-9AB4-49E6-B32F-958ED9348A99"> 
+		<samp class="codeph" id="GUID-B3342620-C13A-4138-A553-BDE795D2AE1C">prod( trans(m1), conj(trans(m2)) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-F0DD8340-AB04-4248-88F6-A47A81A44551"> 
+		<samp class="codeph" id="GUID-F1BC49B3-4DE3-435D-8A40-2F9966705320">prod( trans(conj(m1)), conj(trans(m2)) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-5D8BC542-D681-4B8A-A793-64D59B241F8F"> 
+		<samp class="codeph" id="GUID-8C96B6D8-8A63-42EB-AF26-B57849CF3848">prod( conj(trans(m1)), conj(trans(m2)) )</samp> 
+	 </p>
+ 
+	 <p id="GUID-71215630-038F-48CF-B6AB-0843D1DA0B00">These expressions are substituted in the 
+		<em id="GUID-614EF9EE-4A96-4A9B-9603-5EC0D8BB4069">release</em> mode only (with 
+		<samp class="codeph" id="GUID-3EF2B846-B54A-44E0-B69D-840069114140">NDEBUG</samp> preprocessor symbol defined). Supported uBLAS versions are Boost 1.34.1 and higher. To get them, visit www.boost.org. 
+	 </p>
+ 
+	 <p id="GUID-A987B1D2-CAC6-4E18-96E6-1E22416362D8">A code example provided in the 
+		<span class="filepath" id="GUID-115282A9-7BBB-46E1-A5A7-6F5E0C52908F"><var>&lt;mkl directory&gt;</var></span><span class="filepath" id="GUID-A7AA1A24-DC6F-4440-92D6-98A9D21E44E5">/</span><span class="filepath" id="GUID-717FFE20-2556-42AA-B38C-18FCEC3FF74E">examples</span><span class="filepath" id="GUID-16F2EA14-2ED3-4C1F-AB98-E1AAF453A108">/</span><span class="filepath" id="GUID-763FD6C9-0A46-44B7-8085-45692D8DED69">ublas</span><span class="filepath" id="GUID-71DA4F3A-DFB7-493F-B783-25D0EB1DFB2B">/</span><span class="filepath" id="GUID-3E6BF335-F6D0-4300-9666-61FC24313F66">source</span><span class="filepath" id="GUID-EBB8519C-83B0-4C21-9874-1BA6DD8005FA">/</span><span class="filepath" id="GUID-825C1D66-1928-429A-A19F-71AD831ED0B1">sylvester.cpp</span> file illustrates usage of the Intel MKL uBLAS header file for solving a special case of the Sylvester equation. 
+	 </p>
+ 
+	 <p id="GUID-0BE818A8-0ADD-4BF9-840E-48E9C8C75263">To run the Intel MKL ublas examples, specify the 
+		<samp class="codeph" id="GUID-333FBA83-26FD-40EE-B98E-1154572457E7"><span id="GUID-5AE9A8E9-43C0-4D95-8311-1F3CAE81D26C">BOOST_ROOT</span></samp> parameter in the 
+		<samp class="codeph" id="GUID-DBF9180D-9718-4750-9D36-4198097FC427"> make</samp> command, for instance, when using Boost version 1.37.0: 
+	 </p>
+ 
+	 <p id="GUID-CB168EFE-7836-45AC-A646-78797EEE928A"> 
+		<samp class="codeph" id="GUID-1600BDAA-9CF8-419C-8448-E8C42A689157"> 
+		  make libia32 
+		  <span id="GUID-525BC65C-29EC-4870-8EEB-7CB7C9A3C826">BOOST_ROOT</span> = 
+		  <span class="filepath" id="GUID-C9655361-ECD7-467A-8ED5-A1EC7C48531E"><var>&lt;your_path&gt;</var></span><span class="filepath" id="GUID-4D29E847-8073-4D04-AE0E-E8F51A34C211">/</span><span class="filepath" id="GUID-04AFF809-33BB-4546-9A01-E32AE758ED80">boost_1_37_0</span></samp> 
+	 </p>
+ 
+	 <p id="GUID-C518144F-9DCD-46F8-98E4-FB61E2F5AE95"> 
+		</p>
+ 
+	 </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-F089D943-2BDC-47B7-816C-1B15291C61FC.htm">Mixed-language Programming with the Intel Math Kernel Library</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-DBA5FB29-E0D1-456B-8E32-E30ED322BD91.htm">Using Code Examples 
+		  </a>  
+		  </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

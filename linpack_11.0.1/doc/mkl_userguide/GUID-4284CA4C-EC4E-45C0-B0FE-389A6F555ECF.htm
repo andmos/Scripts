@@ -1,0 +1,108 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Examples for Linking a C Application">
+<meta name="DC.Relation" scheme="URI" content="GUID-96D2696A-BBFD-4869-B51B-926E31EA9300.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-75CABA2D-272A-4E55-BE10-30D8EF592752.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm#GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-4284CA4C-EC4E-45C0-B0FE-389A6F555ECF">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Examples for Linking a C Application</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-4284CA4C-EC4E-45C0-B0FE-389A6F555ECF">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Examples for Linking a C Application</h1>
+ 
+   
+  <div id="GUID-295CB76A-EC18-41A3-B3F7-18DD5C12A4E5"> 
+    <p id="GUID-1F0A9919-A7F3-4BA2-8EC9-6C6A63F56731"> 
+      <span id="GUID-68072884-9C0D-4A8D-98C6-57A48A88F62B">These examples illustrate linking of an application under the following conditions:</span> 
+    </p>
+ 
+    <div class="section" id="GUID-2379FDF8-532B-4F15-8F4C-C5C830FEEE6C"> 
+      <ul type="disc" id="GUID-80B122F9-B1AD-4E37-9C6F-6A43898D4FD5"> 
+        <li id="GUID-8D529D65-46E6-4029-B7CF-B818D635AA67">Main module is in C. 
+        </li>
+ 
+        <li id="GUID-31505E7A-2412-4A35-8677-470E872F1664"> You are using the Intel&reg; C++ Compiler. 
+        </li>
+ 
+        <li> You are using MPICH2. 
+        </li>
+ 
+        <li> The 
+          <span class="keyword">PATH</span> environment variable contains a directory with the MPI linker scripts. 
+        </li>
+ 
+        <li id="GUID-7E101806-C0DD-4162-BAAE-3631A78BA99F"> 
+          <samp class="codeph" id="GUID-A1B2FE4B-2655-4793-B99D-F5F6EBDDCC4A">$MKLPATH</samp> is a user-defined variable containing 
+          <span class="filepath" id="GUID-B3C607BA-AA78-4400-BE52-8DA63A4E00E2"><var>&lt;mkl_directory&gt;</var>/lib/ia32</span>. 
+        </li>
+ 
+      </ul>
+ 
+      <p id="GUID-25145A65-CB24-48C0-B51C-7F114E2D47E3"> To link with ScaLAPACK for a cluster of systems based on the IA-32 architecture, use the following link line: 
+      </p>
+ 
+      <p id="GUID-557B717B-EFFD-44A5-80B3-FAF0DFB47343"> 
+        <samp class="codeph" id="GUID-2F36C5BD-23E5-40FE-AEFA-4B755C5DFF8D">mpicc 
+          <var> &lt;user files to link&gt;</var>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br> &nbsp;&nbsp;&nbsp;-L$MKLPATH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;-lmkl_scalapack_core&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;-lmkl_blacs_intelmpi&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;-lmkl_intel -lmkl_intel_thread -lmkl_core &nbsp; &nbsp;&nbsp;\ 
+          <br> &nbsp;&nbsp;&nbsp;-liomp5 -lpthread</samp> 
+      </p>
+ 
+      <p id="GUID-517D2CC3-290D-4EB5-AA3C-E74DBFCAFF59"> To link with Cluster FFT for a cluster of systems based on the IA-32 architecture, use the following link line: 
+      </p>
+ 
+      <p id="GUID-A6862C19-682C-4D6E-B29B-78529F70DAFB"> 
+        <samp class="codeph" id="GUID-C8DFC0BE-3E12-43CC-9512-9422E2169CE0">mpicc 
+          <var> &lt;user files to link&gt;</var>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ 
+          <br> &nbsp;&nbsp;&nbsp;-Wl,--start-group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;$MKLPATH/libmkl_cdft_core.a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;$MKLPATH/libmkl_blacs_intelmpi.a&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;$MKLPATH/libmkl_intel.a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;$MKLPATH/libmkl_intel_thread.a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;$MKLPATH/libmkl_core.a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;-Wl,--end-group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+          <br> &nbsp;&nbsp;&nbsp;-liomp5 -lpthread</samp> 
+      </p>
+ 
+    </div>
+ 
+    </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-96D2696A-BBFD-4869-B51B-926E31EA9300.htm">Examples for Linking with ScaLAPACK and Cluster FFT</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-75CABA2D-272A-4E55-BE10-30D8EF592752.htm">Linking with ScaLAPACK and Cluster FFTs 
+        </a>  
+        </div>
+<div><a href="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm#GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93">Using the Link-line Advisor</a></div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

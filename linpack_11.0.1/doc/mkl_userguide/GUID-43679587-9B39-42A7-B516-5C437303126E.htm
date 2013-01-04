@@ -1,0 +1,344 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="What You Need to Know Before You Begin Using the Intel&reg; Math Kernel Library">
+<meta name="DC.Relation" scheme="URI" content="GUID-31E14B5F-63AF-4EF8-BCF4-8B2226E64A39.htm">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-43679587-9B39-42A7-B516-5C437303126E">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Before You Begin Using Intel MKL</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-43679587-9B39-42A7-B516-5C437303126E">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">What You Need to Know Before You Begin Using the Intel&reg; Math Kernel Library</h1>
+ 
+   
+   
+  <div id="GUID-B466C77B-00DE-47F0-9897-E78AFB9C148A"> 
+    
+<div class="tablenoborder"><table cellpadding="4" summary="" id="GUID-CDE87157-E9A3-4312-81DD-730A7B0CEECC" width="100%" frame="hsides" border="1" rules="all"> 
+         
+         
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="20%"> 
+              <p id="GUID-A764E0B2-6BCC-48BA-8BA4-C15FB0AE6582">Target platform 
+              </p>
+ 
+            </td>
+ 
+            <td class="row-nocellborder" valign="top" width="80%"> 
+              <p id="GUID-05FE3987-2F21-4323-A6A4-02D9FCAF0D9A">Identify the architecture of your target machine: 
+              </p>
+ 
+              <ul type="disc" id="GUID-5AACEA2E-A8A9-4B76-A932-1BC32402D1AA"> 
+                <li id="GUID-963959CE-9BC7-478A-8189-720E75F382F5">IA-32 or compatible 
+                </li>
+ 
+                <li id="GUID-D063011E-85CB-4AF5-A7A0-34EAB5A6EA8A">Intel&reg; 64 or compatible 
+                </li>
+ 
+                </ul>
+ 
+              <p id="GUID-C28B4653-1A28-4FD1-A888-CE304469FE60"> 
+                <strong id="GUID-5E4FB38D-6726-4FFF-A972-BD17BF47254D">Reason:</strong> 
+                <span id="GUID-1A0B0B19-4576-46A8-9E86-7564A5B4766E">Because Intel MKL libraries are located in directories corresponding to your particular architecture (see</span> 
+                <a href="GUID-3FF62F6F-66B4-4C8E-90A6-1A75CF9394C8.htm">Architecture Support</a><span id="GUID-1F975298-C243-4AE6-ABF7-0EDDFD00AA88">), you should provide proper paths on your link lines (see</span> Linking Examples<span id="GUID-F16B7066-CEE1-49DA-90C9-CCC3FB455A52">).</span> To configure your development environment for the use with Intel MKL, set your environment variables using the script corresponding to your architecture (see 
+                <a href="GUID-390867EA-9DD8-4CBE-93B6-CE11251C050D.htm">Setting Environment Variables</a> for details). 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="20%"> 
+              <p id="GUID-93C305FD-B9A6-4971-B150-B30E40E36C6C">Mathematical problem 
+              </p>
+ 
+            </td>
+ 
+            <td class="row-nocellborder" valign="top" width="80%"> 
+              <p id="GUID-9C688E7C-BD4D-46DB-9ACA-178C8991ECEA">Identify all Intel MKL function domains that you require: 
+              </p>
+ 
+              <ul type="disc" id="GUID-7121165E-460B-4C60-AEBA-DBDA14D5E7E7"> 
+                <li id="LI_38A81DC01993453F9D943EBFC793CFE5"><a name="LI_38A81DC01993453F9D943EBFC793CFE5"><!-- --></a>BLAS 
+                </li>
+ 
+                <li id="LI_B9D4F55BE0F74D988F890E577C5E3059"><a name="LI_B9D4F55BE0F74D988F890E577C5E3059"><!-- --></a>Sparse BLAS 
+                </li>
+ 
+                <li id="LI_A68757CF105343529CA8AEC9A756328F"><a name="LI_A68757CF105343529CA8AEC9A756328F"><!-- --></a>LAPACK 
+                </li>
+ 
+                <li id="LI_3A921ED996454486B3DCEDA0B27A32CA"><a name="LI_3A921ED996454486B3DCEDA0B27A32CA"><!-- --></a> 
+                  <span id="GUID-9AE6A4C0-DEE0-41FB-8D1F-F6BC08FF4B8A">PBLAS</span> 
+                </li>
+ 
+                <li id="LI_2F8763AC004B477394097EDCD99899A1"><a name="LI_2F8763AC004B477394097EDCD99899A1"><!-- --></a> 
+                  <span id="GUID-A6F9C9A1-0DEA-4074-9284-22E847C573F3">ScaLAPACK</span> 
+                </li>
+ 
+                <li id="LI_7072AA1103344FBFAA7195F2F3A15290"><a name="LI_7072AA1103344FBFAA7195F2F3A15290"><!-- --></a>Sparse Solver routines 
+                </li>
+ 
+                <li id="LI_2BBF30BDBB414BD0AAA3001EDE7456C1"><a name="LI_2BBF30BDBB414BD0AAA3001EDE7456C1"><!-- --></a>Vector Mathematical Library functions (VML) 
+                </li>
+ 
+                <li id="LI_E92B72BED16341538A9EF8A0AA053D74"><a name="LI_E92B72BED16341538A9EF8A0AA053D74"><!-- --></a>Vector Statistical Library functions 
+                </li>
+ 
+                <li id="LI_B495439B257C414B951D30B86176B154"><a name="LI_B495439B257C414B951D30B86176B154"><!-- --></a>Fourier Transform functions (FFT) 
+                </li>
+ 
+                <li id="LI_CD8D097E97FF4F37AEDA69EC8EF8C4AA"><a name="LI_CD8D097E97FF4F37AEDA69EC8EF8C4AA"><!-- --></a> 
+                  <span id="GUID-2F6C1E99-34FE-41B8-B5A4-F6EBFFE9A880">Cluster FFT</span> 
+                </li>
+ 
+                <li id="LI_D2981E9EC7354929A5DB578D88DAEAD5"><a name="LI_D2981E9EC7354929A5DB578D88DAEAD5"><!-- --></a>Trigonometric Transform routines 
+                </li>
+ 
+                <li id="LI_32EAAA2FB327402397479EC6E498CFAA"><a name="LI_32EAAA2FB327402397479EC6E498CFAA"><!-- --></a>Poisson, Laplace, and Helmholtz Solver routines 
+                </li>
+ 
+                <li id="LI_6ABB1B2AD7924FFE9F693AFB73F4E502"><a name="LI_6ABB1B2AD7924FFE9F693AFB73F4E502"><!-- --></a>Optimization (Trust-Region) Solver routines 
+                </li>
+ 
+                <li id="LI_A2A5E9D024DA43E0B45FABBA50D7CFB0"><a name="LI_A2A5E9D024DA43E0B45FABBA50D7CFB0"><!-- --></a>Data Fitting Functions 
+                </li>
+ 
+                </ul>
+ 
+              <p id="GUID-97F891DC-3477-40AB-9B8E-3457FDBBDC3A"> 
+                <strong id="GUID-EB10BB40-C256-44FE-8A27-4524F6FF9ADB">Reason:</strong> The function domain you intend to use narrows the search in the 
+                <em id="GUID-3D15781D-61CA-4E19-9C0E-0FFBADCA542D">Reference Manual</em> for specific routines you need. 
+                <span id="GUID-34EAAE3A-543C-4A05-962C-D940A9A9465C">Additionally, if you are using the Intel MKL cluster software, your link line is function-domain specific (see 
+                  <a href="GUID-961566D0-E177-467A-96F6-E0D6541430A0.htm">Working with the Cluster Software</a>).</span> Coding tips may also depend on the function domain (see 
+                <a href="GUID-01C4A8FA-8BEC-4847-B1D5-16E76E6A03F7.htm">Other Tips and Techniques to Improve Performance</a>). 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="20%"> 
+              <p id="GUID-6A3DF586-2494-4D97-B9A5-94B45DF2C20A">Programming language 
+              </p>
+ 
+            </td>
+ 
+            <td class="row-nocellborder" valign="top" width="80%"> 
+              <p id="GUID-62C07B45-B0D7-4226-AD13-AFCC8188A70F">Intel MKL provides support for both Fortran and C/C++ programming. Identify the language interfaces that your function domains support (see 
+                <a href="GUID-584F857E-5EDC-47F7-AE9E-A02A1E42B316.htm">Intel&reg; Math Kernel Library Language Interfaces Support</a>). 
+              </p>
+ 
+              <p id="GUID-04853D7B-9BA8-4B30-AD5B-1F1E5686AAFE"> 
+                <strong id="GUID-B86BC8D6-559C-479F-A46E-092453A3DAA6">Reason:</strong> Intel MKL provides language-specific include files for each function domain to simplify program development (see 
+                <a href="GUID-897A325C-9601-46F8-B567-5668F0EBAB1A.htm">Language Interfaces Support, by Function Domain</a>). 
+              </p>
+ 
+              <p id="GUID-78B91F2A-0472-4B7E-9802-98D02671FB24">For a list of language-specific interface libraries and modules and an example how to generate them, see also 
+                <a href="GUID-16BF9BCD-1661-4CF9-8001-6691C1347599.htm">Using Language-Specific Interfaces with Intel&reg; Math Kernel Library</a>. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="20%"> 
+              <p id="GUID-7E114253-154D-4464-A15F-DAEB053B9269">Range of integer data 
+              </p>
+ 
+            </td>
+ 
+            <td class="row-nocellborder" valign="top" width="80%"> 
+              <p id="GUID-715893BE-8C12-4082-B9DB-186499DFD003"> 
+                <span id="GUID-5ED4D9B2-6B93-4D13-BDFC-D7A5AD91006E">If your system is based on the Intel 64 
+                   architecture, identify</span> whether your application performs calculations with large data arrays (of more than 2<sup id="GUID-4E984F63-5916-4273-A219-1E2392CA8B63">31</sup>-1 elements). 
+              </p>
+ 
+              <p id="GUID-73D24CC3-5BD6-4A81-8E5D-6159513ACCF2"> 
+                <strong id="GUID-5A099D40-7FC9-4CC7-B78B-FE66B749A0FB">Reason:</strong> To operate on large data arrays, you need to select the ILP64 interface, where integers are 64-bit; otherwise, use the default, LP64, interface, where integers are 32-bit (see 
+                <a href="GUID-87821148-338B-4022-8C90-F24C866F2878.htm">Using the ILP64 Interface vs. LP64 Interface</a>). 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="20%"> 
+              <p id="GUID-B8A33379-B8BE-4BA0-9FE9-37C83E8A5B54">Threading model 
+              </p>
+ 
+            </td>
+ 
+            <td class="row-nocellborder" valign="top" width="80%"> 
+              <p id="GUID-7EBF8293-FBE2-4A47-AE6F-51281C6F1B70">Identify whether and how your application is threaded: 
+              </p>
+ 
+              <ul type="disc" id="GUID-4D1E01D4-57B2-4225-BE3C-C6EECA24035E"> 
+                <li id="GUID-AD1C3D3F-4E9F-4318-8D4D-757E57B10DD2">Threaded with the Intel compiler 
+                </li>
+ 
+                <li id="GUID-8A1761CC-4C19-4600-95DD-3EB50271071E">Threaded with a third-party compiler 
+                </li>
+ 
+                <li id="GUID-1A426523-3D32-42F2-A087-02E64044B468">Not threaded 
+                </li>
+ 
+              </ul>
+ 
+              <p id="GUID-1386B7A1-B52E-405A-B93E-479739D298E1"> 
+                <strong id="GUID-90C293CF-2E22-4C02-B650-94A90CE82D4A">Reason:</strong> The compiler you use to thread your application determines which threading library you should link with your application. For applications threaded with a third-party compiler you may need to use Intel MKL in the sequential mode (for more information, see 
+                <a href="GUID-A9E08D9B-DF4A-478D-BC5F-68FDCBB63FEC.htm">Sequential Mode of the Library</a> and 
+                <a href="GUID-C0722BEE-12B8-4034-8152-35FEE9DB150D.htm">Linking with Threading Libraries</a>). 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="20%"> 
+              <p id="GUID-4BE19533-668C-4961-8511-EE28FD711541">Number of threads 
+              </p>
+ 
+            </td>
+ 
+            <td class="row-nocellborder" valign="top" width="80%"> 
+              <p id="GUID-169FBF64-D458-4D9E-9698-6A7A4CD490F2">Determine the number of threads you want Intel MKL to use. 
+              </p>
+ 
+              <p id="GUID-6B621AAE-CF26-4E2A-B33A-CC23B5D57401"> 
+                <strong id="GUID-2AD9578D-9ACE-4372-A87D-21DEEF069DA8">Reason:</strong> Intel MKL is based on the OpenMP* threading. By default, the OpenMP* software sets the number of threads that Intel MKL uses. If you need a different number, you have to set it yourself using one of the available mechanisms. For more information, see 
+                <a href="GUID-A09C5398-D263-42F8-95E2-772C3C1FE79C.htm">Improving Performance with Threading</a>. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="20%"> 
+              <p id="GUID-9F6D6E4B-DB77-460C-BA2B-724C5F263D59">Linking model 
+              </p>
+ 
+            </td>
+ 
+            <td class="row-nocellborder" valign="top" width="80%"> 
+              <p id="GUID-A5A3E85B-1723-4A46-980F-F88392D49C72">Decide which linking model is appropriate for linking your application with Intel MKL libraries: 
+              </p>
+ 
+              <ul type="disc" id="GUID-4CBD857B-6884-444C-895A-980B583017A6"> 
+                <li id="GUID-E390C9C0-CDE3-430A-BCDD-3D052BD0340A">Static 
+                </li>
+ 
+                <li id="GUID-1362B9F1-1B6F-43D2-BAEA-C0369E3D5E4A">Dynamic 
+                </li>
+ 
+              </ul>
+ 
+              <p id="GUID-5A1E62BF-D0C3-40A7-9EF7-A7B0AB343DDC"> 
+                <strong id="GUID-1346A2DC-B44F-4744-8041-1AAA4AAB08CA">Reason:</strong> The link 
+                <span id="GUID-C06A2F7D-FAE4-473E-994D-4D7D6812EB4F">line syntax and</span> libraries for static and dynamic linking are different. For the list of link libraries for static and dynamic models, linking examples, and other relevant topics, like how to save disk space by creating a custom dynamic library, see 
+                <a href="GUID-DF5E72C6-E420-4B31-B6B1-3D4901E62F9C.htm">Linking Your Application with the Intel&reg; Math Kernel Library</a>. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="20%"> 
+              <p id="GUID-FF033C00-FF02-4B12-A93D-B73070ED53DC">MPI used 
+              </p>
+ 
+            </td>
+ 
+            <td class="row-nocellborder" valign="top" width="80%"> 
+              <p id="GUID-4C009493-C4FF-4EBE-8117-6A36BAEE9BE5">Decide what MPI you will use with the Intel MKL cluster software. You are strongly encouraged to use the latest available version of Intel&reg; MPI. 
+              </p>
+ 
+              <p id="GUID-6C5921D1-99A6-4993-9509-20759DE9930C"> 
+                <strong id="GUID-637AF581-FC84-4229-98AD-AB1E7D6DD214">Reason:</strong> To link your application with ScaLAPACK and/or Cluster FFT, the libraries corresponding to your particular MPI should be listed on the link line (see 
+                <a href="GUID-961566D0-E177-467A-96F6-E0D6541430A0.htm">Working with the Cluster Software</a>). 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+    <p id="P_CF_12857569597140"><a name="P_CF_12857569597140"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d16621e393"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d16621e393 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-31E14B5F-63AF-4EF8-BCF4-8B2226E64A39.htm">Getting Started</a></div>
+</div>
+<div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

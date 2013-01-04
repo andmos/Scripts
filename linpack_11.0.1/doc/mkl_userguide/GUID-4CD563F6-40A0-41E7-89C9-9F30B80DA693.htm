@@ -1,0 +1,122 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Using the -mkl Compiler Option">
+<meta name="DC.subject" content="Enter index keyword">
+<meta name="keywords" content="Enter index keyword">
+<meta name="DC.Relation" scheme="URI" content="GUID-899861D3-2186-445B-B5D0-FEFDC39D41AC.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-F6E3AD73-ED3F-499E-A125-9570533F7B53.htm#GUID-F6E3AD73-ED3F-499E-A125-9570533F7B53">
+<meta name="DC.Relation" scheme="URI" content="GUID-87821148-338B-4022-8C90-F24C866F2878.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm">
+<meta name="DC.Relation" scheme="URI" content="http://software.intel.com/en-us/articles/intel-software-technical-documentation/">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-4CD563F6-40A0-41E7-89C9-9F30B80DA693">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Using the -mkl Compiler Option</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-4CD563F6-40A0-41E7-89C9-9F30B80DA693">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1"> Using the 
+    <span id="GUID-63148B14-A241-4901-B580-557223AF6813">-</span>mkl Compiler Option</h1>
+ 
+   
+  <div id="GUID-0CABA2F7-0FBE-4C3C-BEB4-6B0D704D09CF"> 
+    <p id="GUID-1261E742-1C48-4171-A2C4-22E7A9800DA2"> The Intel&reg; Composer XE compiler supports the following variants of the 
+      <samp class="codeph" id="GUID-23FC2E8A-5A55-43AD-BAE8-3051DC43033D"><span id="GUID-E49ADF7E-4389-4628-BEAF-167052BCE295">-</span>mkl</samp> compiler option: 
+    </p>
+ 
+    <table cellspacing="0" cellpadding="4" border="0" width="90%" style="border-spacing:0; border-collapse:collapse"> 
+      <tr> 
+        <td valign="top" class="noborder" width=" &#xA;       &#xA;        -mkl or &#xA;           &#xA;          -mkl=parallel &#xA;         &#xA;         &#xA;           to link with standard threaded Intel MKL. &#xA;           &#xA;         &#xA;       &#xA;       &#xA;         &#xA;          -mkl=sequential &#xA;         &#xA;         &#xA;           to link with sequential version of Intel MKL. &#xA;           &#xA;         &#xA;       &#xA;       &#xA;         &#xA;          -mkl=cluster &#xA;         &#xA;         &#xA;           to link with Intel MKL cluster components (sequential) that use Intel MPI. &#xA;           &#xA;         &#xA;       &#xA;    "><p><samp class="codeph" id="GUID-CB62BCA9-F41F-4B39-A68A-4EA2E4293717"><span id="GUID-E6C629F6-2103-466B-B2B3-73D30913EE10">-</span>mkl</samp> or 
+          <br> 
+          <samp class="codeph" id="GUID-107C1A85-DBF0-4552-95BA-3074C571E792"><span id="GUID-84A2DAB9-4128-466C-A7DB-0387D75B022B">-mkl=parallel</span></samp> 
+        </p></td>
+ 
+        <td valign="top" class="noborder"> 
+          <p id="GUID-71A58304-3AA2-4580-A508-F8E7C028E3E2"> to link with standard threaded Intel MKL. 
+          </p>
+ 
+        </td>
+ 
+      </tr> 
+      <tr> 
+        <td valign="top" class="noborder" width=" &#xA;       &#xA;        -mkl or &#xA;           &#xA;          -mkl=parallel &#xA;         &#xA;         &#xA;           to link with standard threaded Intel MKL. &#xA;           &#xA;         &#xA;       &#xA;       &#xA;         &#xA;          -mkl=sequential &#xA;         &#xA;         &#xA;           to link with sequential version of Intel MKL. &#xA;           &#xA;         &#xA;       &#xA;       &#xA;         &#xA;          -mkl=cluster &#xA;         &#xA;         &#xA;           to link with Intel MKL cluster components (sequential) that use Intel MPI. &#xA;           &#xA;         &#xA;       &#xA;    "><p> 
+          <samp class="codeph" id="GUID-89100294-7033-4974-BE76-6E276F814C5C"><span id="GUID-907CBB40-9288-4F63-90B2-941E1AA255A1">-mkl=sequential</span></samp> 
+        </p></td>
+ 
+        <td valign="top" class="noborder"> 
+          <p id="GUID-BEB49195-EBC4-4D45-8AD9-82511A84E2D5"> to link with sequential version of Intel MKL. 
+          </p>
+ 
+        </td>
+ 
+      </tr> 
+      <tr> 
+        <td valign="top" class="noborder" width=" &#xA;       &#xA;        -mkl or &#xA;           &#xA;          -mkl=parallel &#xA;         &#xA;         &#xA;           to link with standard threaded Intel MKL. &#xA;           &#xA;         &#xA;       &#xA;       &#xA;         &#xA;          -mkl=sequential &#xA;         &#xA;         &#xA;           to link with sequential version of Intel MKL. &#xA;           &#xA;         &#xA;       &#xA;       &#xA;         &#xA;          -mkl=cluster &#xA;         &#xA;         &#xA;           to link with Intel MKL cluster components (sequential) that use Intel MPI. &#xA;           &#xA;         &#xA;       &#xA;    "><p> 
+          <samp class="codeph" id="GUID-C6E5F45F-E453-4C01-A300-8BA2A3EA4936"><span id="GUID-1C86C50F-9C3C-408F-B7FB-74C16ED16D97">-mkl=cluster</span></samp> 
+        </p></td>
+ 
+        <td valign="top" class="noborder"> 
+          <p id="GUID-FC4E4E19-4E12-441A-8DE9-E69EE2767E62"> to link with Intel MKL cluster components (sequential) that use Intel MPI. 
+          </p>
+ 
+        </td>
+ 
+      </tr> 
+    </table>
+ 
+    <p id="GUID-84A40A2F-F80B-4FC6-98C7-BB22BCF9C7B2">For more information on the 
+      <samp class="codeph" id="GUID-4620449E-8B01-403D-82CF-C768C7BB0221"><span id="GUID-98560F70-A683-49D7-BED7-1FC468FA42A8">-</span>mkl</samp> compiler option, see the Intel Compiler User and Reference Guides. 
+    </p>
+ 
+    <p id="GUID-7A3430BC-A110-443D-B4DD-D181B91621E9">On Intel&reg; 64 architecture systems, for each variant of the 
+      <samp class="codeph" id="GUID-6702307A-5B18-4742-A6F0-57A7B617AFEF">-mkl</samp> option, the compiler links your application using the LP64 interface. 
+    </p>
+ 
+    <p>If you specify any variant of the 
+      <samp class="codeph"><span>-</span>mkl</samp> compiler option, the compiler automatically includes the Intel MKL libraries. In cases not covered by the option, use the Link-line Advisor or see 
+      <a href="GUID-A5E2525D-9FE2-4BDB-ACF8-56F81E5918AA.htm">Linking in Detail</a>. 
+    </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-899861D3-2186-445B-B5D0-FEFDC39D41AC.htm">Linking Quick Start</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-F6E3AD73-ED3F-499E-A125-9570533F7B53.htm#GUID-F6E3AD73-ED3F-499E-A125-9570533F7B53">Listing Libraries on a Link Line 
+        </a>  
+        </div>
+<div><a href="GUID-87821148-338B-4022-8C90-F24C866F2878.htm">Using the ILP64 Interface vs. LP64 Interface 
+        </a>  
+        </div>
+<div><a href="GUID-E31BB31D-8F02-4B79-A8D2-0ED5D5C8DE93.htm">Using the Link-line Advisor 
+        </a>  
+        </div>
+<div><a href="http://software.intel.com/en-us/articles/intel-software-technical-documentation/" target="_blank">Intel&reg; Software Documentation Library 
+        </a> for Intel&reg; Composer XE documentation 
+        </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

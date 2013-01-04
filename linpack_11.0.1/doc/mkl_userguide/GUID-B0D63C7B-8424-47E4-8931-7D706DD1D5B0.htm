@@ -1,0 +1,117 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Checking Your Installation">
+<meta name="DC.subject" content="installation, checking">
+<meta name="keywords" content="installation, checking">
+<meta name="DC.Relation" scheme="URI" content="GUID-31E14B5F-63AF-4EF8-BCF4-8B2226E64A39.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-9870FD98-79EE-4006-8129-C5A0C5285B31.htm#GUID-9870FD98-79EE-4006-8129-C5A0C5285B31">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-B0D63C7B-8424-47E4-8931-7D706DD1D5B0">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Checking Your Installation</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-B0D63C7B-8424-47E4-8931-7D706DD1D5B0">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Checking Your Installation</h1>
+ 
+   
+  <div id="GUID-B0A27F34-7977-442F-8AFC-231D0A69F585"> 
+    <p id="GUID-654049D1-481E-48B4-863D-1C827B662D71">After installing the Intel&reg; Math Kernel Library (Intel&reg; MKL), verify that the library is properly installed and configured: 
+    </p>
+ 
+    <ol id="GUID-C3C9DCDF-C723-4E06-A26F-C92FDA8C4D1B"> 
+      <li> 
+        <p id="GUID-F4067272-E555-403D-858C-1C3CA9122487">Intel MKL installs in the 
+          <span class="filepath" id="GUID-B3EC9B3A-29EA-4C65-8AE1-FB0174404D01"><var>&lt;parent product directory&gt;</var></span> directory. 
+        </p>
+ 
+        <p id="GUID-73E2C3BB-70AC-44C9-B0F1-7646E3A0AA9A">Check that the subdirectory of 
+          <span class="filepath" id="GUID-59D11CB9-ACE4-4BBB-9811-7D1D1A338A4B"><var>&lt;parent product directory&gt;</var></span> referred to as 
+          <span class="filepath" id="GUID-D3AFAB66-735A-4667-A55A-3BDB927196B5"><var>&lt;mkl directory&gt;</var></span> was created. 
+        </p>
+ 
+        </li>
+ 
+      <li> 
+        <span id="GUID-C2383C5E-7971-4343-B13D-BBB940DC57CE">If you want to keep multiple versions of Intel MKL installed on your system, update your build scripts to point to the correct Intel MKL version.</span> 
+      </li>
+ 
+      <li> 
+        <p id="GUID-B1A20FBC-32A9-412F-A5DE-3A66BBFA1677">Check that the following files appear in the 
+          <span class="filepath" id="GUID-7FF14DF0-07EA-4079-8A96-356A6362A41A"><var>&lt;mkl directory&gt;</var></span><span class="filepath" id="GUID-007FC974-7C86-407D-8AEC-246027636E4B">/</span><span class="filepath" id="GUID-82402929-DC30-4BD4-98F6-097A70147AC7">bin</span> directory and its subdirectories: 
+        </p>
+ 
+        <p id="GUID-C919B00B-BFF9-410E-B752-0E9DABFFB49E"> 
+          <span class="filepath" id="GUID-12F47ED9-AED5-499B-BD43-3A4EB0654834">mklvars.</span><span class="filepath" id="GUID-AF52D95A-A9B7-4E5D-B4B0-A1F93D792C21">sh</span></p>
+ 
+        <p id="GUID-688FAEBF-0D82-4FB8-A367-559AC1A68DC0"> 
+          <span class="filepath" id="GUID-32DC5A47-35E7-4864-B8C0-829A6A810295">mklvars.csh</span> 
+        </p>
+ 
+        <p id="GUID-CFF425A4-684C-4AA1-B4C8-A158AD5C7D88"> 
+          <span class="filepath" id="GUID-28ABF5F9-860D-43BD-8E40-A5D4F1853E10">ia32</span><span class="filepath" id="GUID-35060ACE-CBDE-40D4-BA89-F76CFECF696E">/</span><span class="filepath" id="GUID-32ECB7BB-569D-449C-8434-498C9E10F5D4">mklvars_ia32.</span><span class="filepath" id="GUID-3C2E906C-4E95-4B58-890B-B983162F7923">sh</span></p>
+ 
+        <p id="GUID-B6CDFC15-141C-4316-B778-D11CC5536A80"><span class="filepath" id="GUID-23DFC030-A556-4A9D-89D3-54FE488074CE">ia32/mklvars_ia32.csh</span> 
+        </p>
+ 
+        <p id="GUID-9FF44C80-5253-48E2-B6C5-1CAA928DAEDB"> 
+          <span class="filepath" id="GUID-7C4845AB-C79E-4F6B-9084-C4ABE17B2C69">intel64</span><span class="filepath" id="GUID-A2CE82AA-B15B-44B4-82A2-ECF2B39FC1CF">/</span><span class="filepath" id="GUID-80C6A438-0BEC-4171-81C8-2CD71D214FCB">mklvars_intel64.</span><span class="filepath" id="GUID-B801685A-FC1F-4E45-84AB-1E12456E5582">sh</span></p>
+ 
+        <p id="GUID-D3E069A7-197A-4AC8-B377-E969AF468EA7"><span class="filepath" id="GUID-6C9B2741-A753-46BA-8E16-C40F3417C5C9">intel64/mklvars_intel64.csh</span> 
+        </p>
+ 
+        <p id="GUID-E447179D-C0BA-435E-918E-752FB6ABF1AD">Use these files to assign Intel MKL-specific values to several environment variables, as explained in 
+          <a href="GUID-606E75D0-884E-427B-8F3D-6D1C233E0235.htm">Setting Environment Variables</a></p>
+ 
+      </li>
+ 
+      <li> 
+        <p id="GUID-B8B525E2-B61E-4A3F-BB50-7963D4765387">To understand how the Intel MKL directories are structured, see 
+          <span id="GUID-C513FA78-90BF-4140-AEEA-19F61715DB7D"><a href="GUID-EC550C53-3AB2-4B14-A030-2EE9A4AED885.htm">Intel&reg; Math Kernel Library Structure</a></span>. 
+        </p>
+ 
+      </li>
+ 
+      <li> 
+        <p id="GUID-46915BDC-F695-451E-B1EE-04A90565DCA4">To make sure that Intel MKL runs on your system, launch an Intel MKL example, as explained in 
+          <a href="GUID-DBA5FB29-E0D1-456B-8E32-E30ED322BD91.htm">Using Code Examples</a>. 
+        </p>
+ 
+        </li>
+ 
+    </ol>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-31E14B5F-63AF-4EF8-BCF4-8B2226E64A39.htm">Getting Started</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-9870FD98-79EE-4006-8129-C5A0C5285B31.htm#GUID-9870FD98-79EE-4006-8129-C5A0C5285B31">Notational Conventions 
+        </a>  
+        </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

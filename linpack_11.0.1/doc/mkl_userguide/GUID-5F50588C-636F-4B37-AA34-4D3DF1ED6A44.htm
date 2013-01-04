@@ -1,0 +1,86 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Composing a List of Functions">
+<meta name="DC.subject" content="custom shared object, composing list of functions">
+<meta name="keywords" content="custom shared object, composing list of functions">
+<meta name="DC.Relation" scheme="URI" content="GUID-48717119-DEB8-4010-B3CC-EC5A0CD48269.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-96F254E0-1BCE-4329-94FA-1DC36F929B9C.htm#GUID-96F254E0-1BCE-4329-94FA-1DC36F929B9C">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-5F50588C-636F-4B37-AA34-4D3DF1ED6A44">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Composing a List of Functions</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+</xml>
+</head>
+<body id="GUID-5F50588C-636F-4B37-AA34-4D3DF1ED6A44">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Composing a List of Functions </h1>
+ 
+   
+  <div> 
+    <p>To compose a list of functions for a minimal custom 
+      <span>shared object</span> needed for your application, you can use the following procedure: 
+    </p>
+ 
+    <ol id="GUID-D1266602-DA21-4938-81D4-318F52C51FC8"> 
+      <li> 
+        <p>Link your application with installed Intel MKL libraries to make sure the application builds. 
+        </p>
+ 
+      </li>
+ 
+      <li> 
+        <p>Remove all Intel MKL libraries from the link line and start linking. 
+        </p>
+ 
+        <p>Unresolved symbols indicate Intel MKL functions that your application uses. 
+        </p>
+ 
+      </li>
+ 
+      <li> 
+        <p>Include these functions in the list. 
+        </p>
+ 
+      </li>
+ 
+    </ol>
+ 
+    <div class="Note"><h3 class="NoteTipHead">
+					Important</h3> 
+      <p>Each time your application starts using more Intel MKL functions, update the list to include the new functions. 
+      </p>
+ 
+    </div> 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-48717119-DEB8-4010-B3CC-EC5A0CD48269.htm">Building Custom Shared Objects</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-96F254E0-1BCE-4329-94FA-1DC36F929B9C.htm#GUID-96F254E0-1BCE-4329-94FA-1DC36F929B9C">Specifying Function Names 
+        </a>  
+        </div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>

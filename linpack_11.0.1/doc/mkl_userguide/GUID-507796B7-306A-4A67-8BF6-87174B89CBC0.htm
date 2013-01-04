@@ -1,0 +1,348 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns:MSHelp="http://www.microsoft.com/MSHelp/" lang="en-us" xml:lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="DC.Type" content="topic">
+<meta name="DC.Title" content="Getting Started with Conditional Numerical Reproducibility">
+<meta name="DC.Relation" scheme="URI" content="GUID-497CAEBE-9D78-4C3E-90FE-78437D73C038.htm">
+<meta name="DC.Relation" scheme="URI" content="GUID-4AA9082D-F781-4145-950F-091994B2A3A7.htm#GUID-4AA9082D-F781-4145-950F-091994B2A3A7">
+<meta name="DC.Relation" scheme="URI" content="http://www.intel.com/software/products/softwaredocs_feedback">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="GUID-507796B7-306A-4A67-8BF6-87174B89CBC0">
+<meta name="DC.Language" content="en-US">
+<link rel="stylesheet" type="text/css" href="intel_css_styles.css">
+<title>Getting Started with Conditional Numerical Reproducibility</title>
+<xml>
+<MSHelp:Attr Name="DocSet" Value="Intel"></MSHelp:Attr>
+<MSHelp:Attr Name="Locale" Value="kbEnglish"></MSHelp:Attr>
+<MSHelp:Attr Name="TopicType" Value="kbReference"></MSHelp:Attr>
+<MSHelp:Keyword Index="F" Term="mkl_cbwr_set"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.for.mkl_cbwr_set"></MSHelp:Keyword>
+<MSHelp:Keyword Index="F" Term="intel.cpp.mkl_cbwr_set"></MSHelp:Keyword>
+</xml>
+</head>
+<body id="GUID-507796B7-306A-4A67-8BF6-87174B89CBC0">
+ <!-- ==============(Start:NavScript)================= -->
+ <script src="NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+ <script language="JavaScript1.2" type="text/javascript">WriteNavLink(0);</script>
+ <!-- ==============(End:NavScript)================= -->
+
+
+ 
+  <h1 class="topictitle1">Getting Started with Conditional Numerical Reproducibility </h1>
+ 
+   
+  <div> 
+    <p> Intel MKL offers functions and environment variables to increase your chances of getting reproducible results. You can configure Intel MKL using functions or environment variables, but the functions provide more flexibility. 
+    </p>
+ 
+    <p>The following specific examples introduce you to the conditional numerical reproducibility. 
+    </p>
+ 
+    <div class="section" id="GUID-686BE65E-5C75-4BF5-BC85-1C30036F77D8"><h2 class="sectiontitle">Intel CPUs supporting Intel AVX</h2> 
+       
+      <p>To ensure Intel MKL calls return the same results on every Intel CPU supporting Intel AVX instructions: 
+      </p>
+ 
+      <ol id="GUID-81D8C3C4-80E6-4D0F-8CF2-8EAF3911986F"> 
+        <li> 
+          <p>Make sure that: 
+          </p>
+ 
+          <ul type="disc" id="GUID-3412B8EE-7BF9-453A-A6C8-6EC336D1D735"> 
+            <li> 
+              <p>Your application uses a fixed number of threads 
+              </p>
+ 
+            </li>
+ 
+            <li> 
+              <p>Input and output arrays in Intel MKL function calls are aligned properly 
+              </p>
+ 
+            </li>
+ 
+          </ul>
+ 
+        </li>
+ 
+        <li> 
+          <p>Do either of the following: 
+          </p>
+ 
+          <ul type="disc" id="GUID-7717A1D0-E317-4BC5-93B1-D195AC26030C"> 
+            <li> 
+              <p>Call 
+              </p>
+ 
+              <p> 
+                <samp class="codeph">mkl_cbwr_set(MKL_CBWR_AVX)</samp> 
+              </p>
+ 
+            </li>
+ 
+            <li> 
+              <p>Set the environment variable 
+              </p>
+ 
+              <p><samp class="codeph"> MKL_CBWR_BRANCH = AVX</samp> 
+              </p>
+ 
+            </li>
+ 
+          </ul>
+ 
+        </li>
+ 
+      </ol>
+ 
+		
+      <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+        <p>On non-Intel CPUs and on Intel CPUs that do not support Intel AVX, this environment setting may cause results to differ because the 
+          <span class="keyword">AUTO</span> branch is used instead, while the above function call returns an error and does not enable the CNR mode. 
+        </p>
+ 
+      </div> 
+    </div>
+ 
+    <div class="section" id="GUID-23B91FF1-4306-48CA-8D66-1713E536DC69"><h2 class="sectiontitle">Intel CPUs supporting Intel SSE2</h2> 
+       
+      <p>To ensure Intel MKL calls return the same results on every Intel CPU supporting Intel SSE2 instructions: 
+      </p>
+ 
+      <ol id="GUID-8B6D51CD-F6CA-4E4D-B319-126375D985B1"> 
+        <li> 
+          <p>Make sure that: 
+          </p>
+ 
+          <ul type="disc" id="GUID-94F10C08-465E-4693-B706-45B32BCCAA19"> 
+            <li> 
+              <p>Your application uses a fixed number of threads 
+              </p>
+ 
+            </li>
+ 
+            <li> 
+              <p>Input and output arrays in Intel MKL function calls are aligned properly 
+              </p>
+ 
+            </li>
+ 
+          </ul>
+ 
+        </li>
+ 
+        <li> 
+          <p>Do either of the following: 
+          </p>
+ 
+          <ul type="disc" id="GUID-A25EC8A6-95A1-4011-B0A8-703A7B2EF474"> 
+            <li> 
+              <p>Call 
+              </p>
+ 
+              <p> 
+                <samp class="codeph">mkl_cbwr_set(MKL_CBWR_SSE2)</samp> 
+              </p>
+ 
+            </li>
+ 
+            <li> 
+              <p>Set the environment variable 
+              </p>
+ 
+              <p><samp class="codeph"> MKL_CBWR_BRANCH = SSE2</samp> 
+              </p>
+ 
+            </li>
+ 
+          </ul>
+ 
+        </li>
+ 
+      </ol>
+ 
+		
+      <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+        <p>On non-Intel CPUs and on Intel CPUs that do not support Intel SSE2, this environment setting may cause results to differ because the 
+          <span class="keyword">AUTO</span> branch is used instead, while the above function call returns an error and does not enable the CNR mode. 
+        </p>
+ 
+      </div> 
+    </div>
+ 
+    <div class="section" id="GUID-1C83CAB4-06F0-446F-9189-52A19906ACC9"><h2 class="sectiontitle">Intel or Intel compatible CPUs supporting Intel SSE2</h2> 
+       
+      <p>On non-Intel CPUs, only the 
+        <span class="keyword">MKL_CBWR_AUTO</span> and 
+        <span class="keyword">MKL_CBWR_COMPATIBLE</span> options are supported for function calls and only 
+        <span class="keyword">AUTO</span> and 
+        <span class="keyword">COMPATIBLE</span> options for environment settings. 
+      </p>
+ 
+      <p>To ensure Intel MKL calls return the same results on all Intel or Intel compatible CPUs supporting Intel SSE2 instructions: 
+      </p>
+ 
+      <ol id="GUID-55E78510-1E4E-45A1-93B3-85BB4AE5149F"> 
+        <li> 
+          <p>Make sure that: 
+          </p>
+ 
+          <ul type="disc" id="GUID-53DA0654-EE29-4DD2-A851-F06FFFB10D5A"> 
+            <li> 
+              <p>Your application uses a fixed number of threads 
+              </p>
+ 
+            </li>
+ 
+            <li> 
+              <p>Input and output arrays in Intel MKL function calls are aligned properly 
+              </p>
+ 
+            </li>
+ 
+          </ul>
+ 
+        </li>
+ 
+        <li> 
+          <p>Do either of the following: 
+          </p>
+ 
+          <ul type="disc" id="GUID-80484EAE-4FE4-4AA7-A55A-C1BC26DC55E6"> 
+            <li> 
+              <p>Call 
+              </p>
+ 
+              <p> 
+                <samp class="codeph">mkl_cbwr_set(MKL_CBWR_COMPATIBLE)</samp> 
+              </p>
+ 
+            </li>
+ 
+            <li> 
+              <p>Set the environment variable 
+              </p>
+ 
+              <p><samp class="codeph"> MKL_CBWR_BRANCH = COMPATIBLE</samp> 
+              </p>
+ 
+            </li>
+ 
+          </ul>
+ 
+        </li>
+ 
+      </ol>
+ 
+      <div class="Note"><h3 class="NoteTipHead">
+					Note</h3> 
+        <p> The special 
+          <span class="keyword">MKL_CBWR_COMPATIBLE/COMPATIBLE</span> option is provided because Intel and Intel compatible CPUs have two approximation instructions(rcpps/rsqrtps) that may return different results. This option ensures that Intel MKL does not use these instructions and forces a single Intel SSE2 only code path to be executed. 
+        </p>
+ 
+      </div> 
+    </div>
+ 
+    <div class="section" id="GUID-A4D84CED-6E1E-45C6-BA05-FC2163B9AEF3"><h2 class="sectiontitle">Next steps</h2> 
+       
+      <table cellspacing="0" cellpadding="4" border="0" width="90%" style="border-spacing:0; border-collapse:collapse"> 
+        <tr> 
+          <td valign="top" class="noborder" width=" &#xA;         &#xA;          See &#xA;            Specifying the Code Branches &#xA;           &#xA;           &#xA;            for details of specifying the branch using environment variables. &#xA;             &#xA;           &#xA;         &#xA;      "><p>See 
+            <a href="GUID-DCB010F6-DDBF-4A00-8BB3-049BEFDC2ED2.htm">Specifying the Code Branches</a> 
+          </p></td>
+ 
+          <td valign="top" class="noborder"> 
+            <p>for details of specifying the branch using environment variables. 
+            </p>
+ 
+          </td>
+ 
+        </tr> 
+      </table>
+ 
+      <p>See the following sections in the 
+        <em>Intel MKL Reference Manual</em>: 
+      </p>
+ 
+      <table cellspacing="0" cellpadding="4" border="0" width="90%" style="border-spacing:0; border-collapse:collapse"> 
+        <tr> 
+          <td valign="top" class="noborder" width=" &#xA;         &#xA;          Support Functions for Conditional Numerical Reproducibility &#xA;           &#xA;           &#xA;            for how to configure the CNR mode of Intel MKL using functions. &#xA;             &#xA;           &#xA;         &#xA;         &#xA;          PARDISO* - Parallel Direct Sparse Solver Interface &#xA;           &#xA;           &#xA;            for how to configure the CNR mode for PARDISO. &#xA;             &#xA;           &#xA;         &#xA;      "><p>Support Functions for Conditional Numerical Reproducibility 
+          </p></td>
+ 
+          <td valign="top" class="noborder"> 
+            <p>for how to configure the CNR mode of Intel MKL using functions. 
+            </p>
+ 
+          </td>
+ 
+        </tr> 
+        <tr> 
+          <td valign="top" class="noborder" width=" &#xA;         &#xA;          Support Functions for Conditional Numerical Reproducibility &#xA;           &#xA;           &#xA;            for how to configure the CNR mode of Intel MKL using functions. &#xA;             &#xA;           &#xA;         &#xA;         &#xA;          PARDISO* - Parallel Direct Sparse Solver Interface &#xA;           &#xA;           &#xA;            for how to configure the CNR mode for PARDISO. &#xA;             &#xA;           &#xA;         &#xA;      "><p>PARDISO* - Parallel Direct Sparse Solver Interface 
+          </p></td>
+ 
+          <td valign="top" class="noborder"> 
+            <p>for how to configure the CNR mode for PARDISO. 
+            </p>
+ 
+          </td>
+ 
+        </tr> 
+      </table>
+ 
+    </div>
+ 
+    <p id="P_CF_12869800235462"><a name="P_CF_12869800235462"><!-- --></a> 
+	 
+<div class="tablenoborder"><a name="d20e18"><!-- --></a><table cellpadding="4" summary="" id="d20e18" frame="border" border="1" cellspacing="0" rules="all"> 
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" align="left" valign="top" width="100%" id="d20684e350"> 
+				  <p id="d20e30"><a name="d20e30"><!-- --></a>Optimization Notice 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="bgcolor(#ccecff)" bgcolor="#ccecff" valign="top" width="100%" headers="d20684e350 "> 
+				  <p>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice. 
+				  </p>
+
+				  <p> Notice revision #20110804 
+				  </p>
+				  
+
+				  </td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </p>
+ 
+  </div>
+ 
+  
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong>&nbsp;<a href="GUID-497CAEBE-9D78-4C3E-90FE-78437D73C038.htm">Obtaining Numerically Reproducible Results</a></div>
+</div>
+<div class="See Also"><h2>See Also</h2>
+<div class="linklist">
+<div><a href="GUID-4AA9082D-F781-4145-950F-091994B2A3A7.htm#GUID-4AA9082D-F781-4145-950F-091994B2A3A7">Code Examples</a></div></div><br clear="all">
+<div class="docfeedback">
+<div><a href="http://www.intel.com/software/products/softwaredocs_feedback" target="_blank">Submit feedback on this help topic 
+		  </a></div></div></div> 
+
+</body>
+</html>
