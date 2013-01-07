@@ -6,3 +6,15 @@ Begynner backup 18:38:19
 Backup fullført 18:42:36
 Begynner backup 19:05:27
 Backup fullført 19:05:27
+Begynner backup 20:18:47
+Backup fullført 20:19:22
+Begynner backup 20:25:51
+Backup fullført 20:26:21
+Begynner backup 20:34:04
+Backup fullført 20:34:31
+Begynner backup 20:35:35
+Backup fullført 20:36:01
+Begynner backup 20:47:12
+Backup fullført 20:47:52
+Begynner backup 21:01:02
+Backup fullført 21:01:07

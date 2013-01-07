@@ -27,9 +27,9 @@ alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias tracert="traceroute" 
 alias e="exit"
 alias hist='open /Users/$username/Dropbox/HIST/Dataing/2år/'
-alias rsyncbackup='"/Users/$username/Dropbox/Scripts/backupjob.bash"'
+alias rsyncbackup='"/Users/$username/Dropbox/Scripts/laptopbackup.bash"'
 alias spotify='"/Users/$username/Dropbox/Scripts/spotify.bash"'
-alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -60,6 +60,7 @@ alias nmapskript='"/home/$username/Dropbox/Scripts/nmapskript.bash"'
 alias sshskript='"/home/$username/Dropbox/Scripts/sshskript.bash"'
 alias syncprofil='"/home/$username/Dropbox/Scripts/Syncprofil.bash"'
 alias delmappe='python -m SimpleHTTPServer 8080'
+alias startminecraft='screen java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui'
 alias disktester='"/home/$username/Dropbox/Scripts/Disktester.bash"'
 alias eksternip='"/home/$username/Dropbox/Scripts/eksternip.bash"'
 alias linuxinstall='"/home/$username/Dropbox/Scripts/linuxinstall.bash"'

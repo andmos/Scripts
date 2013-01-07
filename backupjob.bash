@@ -9,15 +9,15 @@ sleep 2
 
 if [[ $ip != "158.38.48.33" ]]
 then 
-	echo "laptop ikke på kontoret, avslutter."
+	echo "laptop not @ office, abort."
 	echo $ip
     sleep 2
 	exit
 fi
 
-echo "Begynner backup `date +%T`" >> /Users/andreasmosti/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
-echo "Begynner rsync" 
+echo "Backup started; `date +%T`" >> /Users/andreasmosti/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
+echo "Beginning rsync" 
 sleep 3
 
-rsync -avPh /Users/$username andreas@afrodite:/media/disk2/
-echo "Backup fullført `date +%T`" >> /Users/andreasmosti/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
+rsync -avPh --log-file=/Users/$username/Dropbox/Scripts/Backuplog/rsynclog_`date +%F`.txt /Users/$username andreas@afrodite:/media/disk2/
+echo "Backup finished;  `date +%T`" >> /Users/andreasmosti/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
