@@ -2,6 +2,7 @@
 # environment after this. 
 # written by Andreas Mosti  
 # when edited, the symlink will sync with Dropbox and all devices get the new version of the file. 
+# Saved in Dropbox/Scripts/Profil/.bash_profile 
 
 export username=$(whoami)
 
