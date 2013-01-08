@@ -1,10 +1,2 @@
-Begynner backup 16:01:02
-Backup fullført 16:01:06
-Begynner backup 16:16:32
-Backup fullført 16:20:05
-Backup started; 17:01:02
-Backup finished;  17:01:06
-Backup started; 18:01:03
-Backup finished;  18:01:06
-Backup started; 19:01:02
-Backup finished;  19:01:05
+Backup started; 20:08:49
+Backup finished;  20:12:31

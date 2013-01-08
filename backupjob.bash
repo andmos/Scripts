@@ -15,9 +15,9 @@ then
 	exit
 fi
 
-echo "Backup started; `date +%T`" >> /Users/andreasmosti/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
+echo "Backup started; `date +%T`" >> /Users/$username/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
 echo "Beginning rsync" 
 sleep 3
 
 rsync -avPh --log-file=/Users/$username/Dropbox/Scripts/Backuplog/rsynclog_`date +%F`.txt /Users/$username andreas@afrodite:/media/disk2/
-echo "Backup finished;  `date +%T`" >> /Users/andreasmosti/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
+echo "Backup finished;  `date +%T`" >> /Users/$username/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
