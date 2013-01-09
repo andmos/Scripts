@@ -31,6 +31,7 @@ alias hist='open /Users/$username/Dropbox/HIST/Dataing/2år/'
 alias rsyncbackup='"/Users/$username/Dropbox/Scripts/backupjob.bash"'
 alias spotify='"/Users/$username/Dropbox/Scripts/spotify.bash"'
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias dogit='"/Users/$username/Dropbox/Scripts/gitcommands.bash"'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -70,6 +71,8 @@ alias passmaker='"/home/$username/Dropbox/Scripts/passmaker.bash"'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias tracert="traceroute"
 alias e="exit" 
+alias dogit='~/Dropbox/Scripts/gitcommands.bash"'
+
 
 echo "Linux - profil lastet" 
 
