@@ -1,9 +1,8 @@
 # if - statement checks uname for kernel and sets local variables and working 
 # environment after this. 
 # written by Andreas Mosti  
-# when edited, the symlink will sync with Dropbox and all devices get the new version of the file. 
-# Saved in Dropbox/Scripts/Profil/.bash_profile 
-
+# when edited, the symlink will sync with Dropbox and all devices get the new version of the file. If symlinc some how fucks up,
+# unlink from both home directory and dropbox, then symlinc again. 
 export username=$(whoami)
 
 if [[ "$(uname)" == "Darwin" ]] 
@@ -31,7 +30,6 @@ alias hist='open /Users/$username/Dropbox/HIST/Dataing/2år/'
 alias rsyncbackup='"/Users/$username/Dropbox/Scripts/backupjob.bash"'
 alias spotify='"/Users/$username/Dropbox/Scripts/spotify.bash"'
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias dogit='"/Users/$username/Dropbox/Scripts/gitcommands.bash"'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -70,9 +68,8 @@ alias sshtunell='"/home/$username/Dropbox/Scripts/sshtunell.bash"'
 alias passmaker='"/home/$username/Dropbox/Scripts/passmaker.bash"'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias tracert="traceroute"
-alias e="exit" 
-alias dogit='~/Dropbox/Scripts/gitcommands.bash"'
-
+alias e="exit"
+ 
 
 echo "Linux - profil lastet" 
 
