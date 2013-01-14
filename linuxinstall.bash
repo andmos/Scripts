@@ -63,7 +63,7 @@ done
 echo "Install Complete."
 sleep 2
 
-echo "Do you want zsh - config?(y/n)"
+echo "Do you want zsh and vim - config?(y/n)"
 read input 
 
 if [[ $input == "y" ]] 

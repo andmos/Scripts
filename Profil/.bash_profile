@@ -3,6 +3,7 @@
 # written by Andreas Mosti  
 # when edited, the symlink will sync with Dropbox and all devices get the new version of the file. If symlinc some how fucks up,
 # unlink from both home directory and dropbox, then symlinc again. 
+
 export username=$(whoami)
 
 if [[ "$(uname)" == "Darwin" ]] 
@@ -18,7 +19,6 @@ alias backupprofile='"/Users/$username/Dropbox/Scripts/backubashprofile.bash"'
 alias eksternip='"/Users/$username/Dropbox/Scripts/eksternip.bash"'
 alias sshtunell='"/Users/$username/Dropbox/Scripts/sshtunell.bash"'
 alias tor-ssh='ssh -o ProxyCommand="nc -X 4 -x localhost:9050 %h %p"'
-alias delmappehttp='python -m SimpleHTTPServer 8080'
 alias killdashboard='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
 alias aktiverdashboard='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 alias killspotlight='sudo mdutil -i on'
@@ -43,7 +43,13 @@ export CLASSPATH=/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar
 export CLASSPATH=$CLASSPATH:~/jars/jogl.jar:.  
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="/usr/local/mysql/bin:$PATH" 
- 
+
+
+
+function authme {
+  ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' \
+          < ~/.ssh/id_dsa.pub
+  }
 
 echo "Mac - profil lastet" 
 
@@ -59,7 +65,6 @@ alias backupprofile='"/home/$username/Dropbox/Scripts/backubashprofile.bash"'
 alias nmapskript='"/home/$username/Dropbox/Scripts/nmapskript.bash"'
 alias sshskript='"/home/$username/Dropbox/Scripts/sshskript.bash"'
 alias syncprofil='"/home/$username/Dropbox/Scripts/Syncprofil.bash"'
-alias delmappe='python -m SimpleHTTPServer 8080'
 alias disktester='"/home/$username/Dropbox/Scripts/Disktester.bash"'
 alias eksternip='"/home/$username/Dropbox/Scripts/eksternip.bash"'
 alias linuxinstall='"/home/$username/Dropbox/Scripts/linuxinstall.bash"'
@@ -69,13 +74,15 @@ alias passmaker='"/home/$username/Dropbox/Scripts/passmaker.bash"'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias tracert="traceroute"
 alias e="exit"
- 
+alias ls='ls --color=auto' 
 
 echo "Linux - profil lastet" 
 
 fi 
 
-# Functions not depending on OS 
+# Functions and aliases not depending on OS 
+
+alias delmappehttp='python -m SimpleHTTPServer 8080'
 
 extract () {
     if [ -f $1 ] ; then
