@@ -74,7 +74,7 @@ alias passmaker='"/home/$username/Dropbox/Scripts/passmaker.bash"'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias tracert="traceroute"
 alias e="exit"
-alias ls='ls --color=auto' 
+ 
 
 echo "Linux - profil lastet" 
 
