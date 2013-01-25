@@ -43,7 +43,7 @@ export CLASSPATH=/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar
 export CLASSPATH=$CLASSPATH:~/jars/jogl.jar:.  
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="/usr/local/mysql/bin:$PATH" 
-
+export PATH="/usr/texbin:$PATH" #Path for TeX and LaTeX 
 
 
 function authme {
