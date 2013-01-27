@@ -40,7 +40,8 @@ export PATH=$PATH:/Applications/NetBeans/glassfish-3.1.1/javadb/bin: #if netbean
 # Works on the laptop as of 08.11.2012, may need change 
 export TERM=xterm
 export CLASSPATH=/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar
-export CLASSPATH=$CLASSPATH:~/jars/jogl.jar:.  
+export CLASSPATH=$CLASSPATH:~/jars/jogl.jar:. 
+export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="/usr/local/mysql/bin:$PATH" 
 export PATH="/usr/texbin:$PATH" #Path for TeX and LaTeX 
@@ -81,6 +82,8 @@ echo "Linux - profil lastet"
 fi 
 
 # Functions and aliases not depending on OS 
+
+export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
 
 alias delmappehttp='python -m SimpleHTTPServer 8080'
 
