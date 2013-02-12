@@ -1,4 +1,4 @@
-# if - statement checks uname for kernel and sets local variables and working 
+# If - statement checks uname for kernel and sets local variables and working 
 # environment after this. 
 # written by Andreas Mosti  
 # when edited, the symlink will sync with Dropbox and all devices get the new version of the file. If symlinc some how fucks up,
@@ -23,9 +23,7 @@ alias killdashboard='defaults write com.apple.dashboard mcx-disabled -boolean YE
 alias aktiverdashboard='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 alias killspotlight='sudo mdutil -i on'
 alias aktiverspotlight='sudo sudo mdutil -i off' 
-alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
-alias tracert="traceroute" 
-alias e="exit"
+alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short' 
 alias hist='open /Users/$username/Dropbox/HIST/Dataing/2år/'
 alias rsyncbackup='"/Users/$username/Dropbox/Scripts/backupjob.bash"'
 alias spotify='"/Users/$username/Dropbox/Scripts/spotify.bash"'
@@ -73,9 +71,17 @@ alias lampinstall='"/home/$username/Dropbox/Scripts/lampinstall.bash"'
 alias sshtunell='"/home/$username/Dropbox/Scripts/sshtunell.bash"'
 alias passmaker='"/home/$username/Dropbox/Scripts/passmaker.bash"'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
-alias tracert="traceroute"
-alias e="exit"
- 
+alias unban='"/home/$username/Dropbox/Scripts/unban.bash"'
+
+function ban() {
+    if [ "`id -u`" == "0" ] ; then
+                iptables -A INPUT -s $1 -j DROP
+                    else
+                                sudo iptables -A INPUT -s $1 -j DROP
+                                    fi
+                                }
+
+
 
 echo "Linux - profil lastet" 
 
@@ -86,6 +92,8 @@ fi
 export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
 
 alias delmappehttp='python -m SimpleHTTPServer 8080'
+alias e="exit"
+alias tracert="traceroute"
 
 extract () {
     if [ -f $1 ] ; then
@@ -107,3 +115,5 @@ extract () {
          echo "'$1' is not a valid file"
      fi
 }
+
+
