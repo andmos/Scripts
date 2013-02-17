@@ -73,6 +73,7 @@ alias passmaker='"/home/$username/Dropbox/Scripts/passmaker.bash"'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias unban='"/home/$username/Dropbox/Scripts/unban.bash"'
 
+
 function ban() {
     if [ "`id -u`" == "0" ] ; then
                 iptables -A INPUT -s $1 -j DROP

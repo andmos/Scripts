@@ -2,6 +2,11 @@
 # Remember SSH key on target machine
 # Incremental backup - after full backup, rsync takes only changed files.
 
+error() {
+echo "Backup interrupted!; `date +%T`" >> /Users/$username/Dropbox/Scripts/Backuplog/Backup_`    date +%F`.txt
+exit 1
+} 
+
 ip=$(dig myip.opendns.com @resolver1.opendns.com +short)
 echo "rsync is I/O heavy, this may take some time"
 echo "loggfile in Backuplog/" 
@@ -19,5 +24,9 @@ echo "Backup started; `date +%T`" >> /Users/$username/Dropbox/Scripts/Backuplog/
 echo "Beginning rsync" 
 sleep 3
 
+
+trap error SIGINT
 rsync -avPh --log-file=/Users/$username/Dropbox/Scripts/Backuplog/rsynclog_`date +%F`.txt /Users/$username andreas@afrodite:/media/disk2/
+
+
 echo "Backup finished;  `date +%T`" >> /Users/$username/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
