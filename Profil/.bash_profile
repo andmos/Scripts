@@ -41,7 +41,7 @@ export CLASSPATH=/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar
 export CLASSPATH=$CLASSPATH:~/jars/jogl.jar:. 
 export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH="/usr/local/mysql/bin:$PATH" 
+export PATH="/usr/local/mysql/bin:$PATH" #mysql path  
 export PATH="/usr/texbin:$PATH" #Path for TeX and LaTeX 
 
 

@@ -19,7 +19,7 @@ read  svar
 if [[ $svar == "y" ]]
 then
  	programs="build-essential vim tor nmap ssh curl irssi fail2ban apg smbclient htop git hydra zsh make traceroute mosh screen
-    smbfs sshguard"
+    smbfs mailutils"
 	
 	echo "Server install"
 	sleep 2
