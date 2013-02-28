@@ -95,6 +95,9 @@ export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
 alias delmappehttp='python -m SimpleHTTPServer 8080'
 alias e="exit"
 alias tracert="traceroute"
+alias biggest='du -ksh *|sort -n'
+
+
 
 extract () {
     if [ -f $1 ] ; then
@@ -116,5 +119,3 @@ extract () {
          echo "'$1' is not a valid file"
      fi
 }
-
-

@@ -1,0 +1,463 @@
+2013/01/04 20:34:08 [96920] building file list
+2013/01/04 20:34:23 [96920] rsync: opendir "/Users/andreasmosti/Library/Saved Application State/com.blizzard.diablo3.savedState" failed: Permission denied (13)
+2013/01/04 20:34:23 [96920] rsync: opendir "/Users/andreasmosti/Library/Saved Application State/net.battle.client.savedState" failed: Permission denied (13)
+2013/01/04 20:34:26 [96920] 274700 files to consider
+2013/01/04 20:34:28 [96920] .d..t.... andreasmosti/
+2013/01/04 20:34:28 [96920] <f.st.... andreasmosti/.viminfo
+2013/01/04 20:34:28 [96920] .d..t.... andreasmosti/.dropbox/
+2013/01/04 20:34:28 [96920] <f..t.... andreasmosti/.dropbox/config.dbx
+2013/01/04 20:34:28 [96920] <f..t.... andreasmosti/.dropbox/filecache.dbx
+2013/01/04 20:34:28 [96920] <f..t.... andreasmosti/.dropbox/photo.dbx
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/.dropbox/sigstore.dbx
+2013/01/04 20:34:29 [96920] .d..t.... andreasmosti/Dropbox/Scripts/
+2013/01/04 20:34:29 [96920] <f.st.... andreasmosti/Dropbox/Scripts/backupjob.bash
+2013/01/04 20:34:29 [96920] .d..t.... andreasmosti/Dropbox/Scripts/Backuplog/
+2013/01/04 20:34:29 [96920] <f.st.... andreasmosti/Dropbox/Scripts/Backuplog/Backup_2013-01-04.txt
+2013/01/04 20:34:29 [96920] <f+++++++ andreasmosti/Dropbox/Scripts/Backuplog/rsynclog_2013-01-04
+2013/01/04 20:34:29 [96920] .d..t.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/cookies.sqlite
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/cookies.sqlite-wal
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/formhistory.sqlite
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/places.sqlite
+2013/01/04 20:34:29 [96920] <f.st.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/places.sqlite-wal
+2013/01/04 20:34:29 [96920] <f.st.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/sessionstore.js
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/webappsstore.sqlite
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/ybookmarks.sqlite
+2013/01/04 20:34:29 [96920] <f.st.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/ybookmarks@yahoo.log
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Firefox/Profiles/adt64i4h.default/jetpack/compatibility@addons.mozilla.org/simple-storage/store.json
+2013/01/04 20:34:29 [96920] .d..t.... andreasmosti/Library/Application Support/Spotify/Users/tiduz-user/
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Spotify/Users/tiduz-user/social_manager.bnk
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Spotify/Users/tiduz-user/track-player.bnk
+2013/01/04 20:34:29 [96920] .d..t.... andreasmosti/Library/Application Support/Spotify/Users/tiduz-user/LocalStorage/Local Storage/
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/Spotify/Users/tiduz-user/LocalStorage/Local Storage/sp_feed_0.localstorage
+2013/01/04 20:34:29 [96920] .d..t.... andreasmosti/Library/Application Support/uTorrent/
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/uTorrent/dht_feed.dat
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/uTorrent/dht_feed.dat.old
+2013/01/04 20:34:29 [96920] <f.st.... andreasmosti/Library/Application Support/uTorrent/resume.dat
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/uTorrent/resume.dat.old
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Application Support/uTorrent/settings.dat
+2013/01/04 20:34:29 [96920] <f.st.... andreasmosti/Library/Application Support/uTorrent/settings.dat.old
+2013/01/04 20:34:29 [96920] .d..t.... andreasmosti/Library/Caches/
+2013/01/04 20:34:29 [96920] <f..t.... andreasmosti/Library/Caches/com.apple.nsservicescache.plist
+2013/01/04 20:34:29 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/_CACHE_001_
+2013/01/04 20:34:29 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/_CACHE_002_
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/_CACHE_003_
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/3D/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/3D/2010Dd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/3D/2010Dm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/63/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/63/B7626m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/6B/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/6B/353C8d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/6B/353C8m01
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/0/CE/51943d01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/31/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/31/892C0m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/51/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/51/EB966d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/51/EB966m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/A8/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/A8/2FCDFd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/A8/2FCDFm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/C0/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/C0/E37CEm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/DB/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/DB/E9C05d01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/1/E0/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/2F/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/2F/EC563m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/48/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/48/A0EC8d01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/4F/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/4F/14371d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/4F/14371m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/B4/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/B4/E00E8d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/B4/E00E8m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/E0/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/E0/9284Cd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/E0/9284Cm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/F2/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/F2/4BF7Fd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/2/F2/4BF7Fm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/23/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/23/BB93Bm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/35/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/35/E1F01m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/3D/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/3D/86AC5d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/3D/86AC5m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/43/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/43/9EDB7m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/50/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/50/2E5DAm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/68/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/68/2EEA9m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/6C/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/6C/007EEd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/6C/007EEm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/9A/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/9A/58E59d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/9A/58E59m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/A0/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/A0/EF117d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/A0/EF117m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/C5/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/C5/84F87d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/C5/84F87m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/DA/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/DA/32C6Cd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/3/DA/32C6Cm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/1E/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/1E/C0587d01
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/1E/D65D0d01
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/1E/D65D0m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/20/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/20/FD6E6m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/56/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/56/D0CADm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/69/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/69/DEFA5d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/69/DEFA5m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/A5/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/A5/F535Fm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/F8/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/F8/B37DAd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/4/F8/B37DAm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/31/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/31/9F8BFm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/3A/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/3A/18C7Ad01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/3A/18C7Am01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/62/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/62/8F9E9m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/74/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/74/20415d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/74/20415m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/7E/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/7E/773D6m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/97/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/97/C2D06m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/B4/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/B4/C87EFd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/B4/C87EFm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/DD/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/5/DD/53457m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/19/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/19/71458d01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/5D/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/5D/F0463m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/60/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/60/34FEEm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/64/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/64/1ED5Bd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/64/1ED5Bm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/66/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/66/EB307m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/7F/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/7F/F1D25d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/7F/F1D25m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/90/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/90/EDEE5m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/A2/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/A2/65488m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/B2/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/B2/A27C4d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/B2/A27C4m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/CD/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/CD/60468m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/D6/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/D6/461B9m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/EE/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/6/EE/78C74m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/0A/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/0A/C940Fd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/0A/C940Fm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/1D/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/1D/72548d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/1D/72548m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/30/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/30/5E98Am01
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/30/CDEE9m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/6C/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/6C/2FF6Dd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/6C/2FF6Dm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/92/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/92/D33D5m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/C9/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/C9/3D974m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/D5/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/D5/7CEF0m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/E6/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/E6/A8F0Ed01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/7/E6/A8F0Em01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/0D/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/0D/FE52Dm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/14/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/14/F5CBBm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/23/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/23/90EC4m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/31/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/31/22246m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/53/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/53/56CF0d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/53/56CF0m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/57/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/57/E3170m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/67/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/67/6017Bm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/72/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/72/12438m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/76/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/76/0619Dm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/80/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/80/18638m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/9B/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/9B/67525m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/A5/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/A5/144A3d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/A5/144A3m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/A9/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/A9/7A5C9m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/BD/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/BD/78090m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/C0/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/C0/CFFAEm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/C4/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/C4/6F22Bm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/EF/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/8/EF/A974Cd01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/03/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/03/5B600m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/27/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/27/24216m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/56/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/56/B5C59m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/65/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/65/C7A64m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/6A/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/6A/159E4m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/B4/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/B4/FA369m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/C9/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/C9/15F9Bm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/E3/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/E3/2DBDDd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/9/E3/2DBDDm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/22/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/22/F5113d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/22/F5113m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/26/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/26/503CEm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/2B/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/2B/8CA20m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/3C/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/3C/5FC5Dd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/3C/5FC5Dm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/41/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/41/70781m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/56/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/56/68333m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/9B/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/9B/3EDA9m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/BC/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/BC/A2462m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/EA/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/EA/7A288m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/FE/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/A/FE/5EC4Dm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/38/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/38/33E99m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/3D/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/3D/F6566m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/46/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/46/D495Bd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/46/D495Bm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/52/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/52/02DB9d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/52/02DB9m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/72/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/72/8A90Am01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/7B/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/7B/03570d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/7B/03570m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/7F/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/7F/80B88d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/7F/80B88m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/A7/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/A7/91A19m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/C6/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/C6/3FC6Cm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/EA/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/B/EA/4DDFDm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/17/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/17/E5048m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/33/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/33/FB249d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/33/FB249m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/34/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/34/149C0m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/50/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/50/C065Cd01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/66/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/66/A99A5d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/66/A99A5m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/81/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/81/C1838d01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/96/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/96/232C6d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/96/232C6m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/A6/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/A6/5CDF1d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/A6/5CDF1m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/BD/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/BD/7BE00m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/D6/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/D6/A66D6d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/D6/A66D6m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/EF/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/C/EF/C5CFDm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/02/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/02/9F5C8m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/37/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/37/015B2m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/43/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/43/4AD29m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/60/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/60/98894d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/60/98894m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/6B/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/6B/AA736d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/6B/AA736m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/96/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/96/EC89Dd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/96/EC89Dm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/C6/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/C6/B6B14m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/E8/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/D/E8/B36F5m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/1E/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/1E/67A50m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/2B/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/2B/6E1FDm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/34/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/34/31E26m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/58/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/58/08692m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/80/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/80/10A88d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/80/10A88m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/8F/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/8F/DD503m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/9A/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/9A/3AA95d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/9A/3AA95m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/9D/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/9D/3D0FAm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/9E/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/9E/30826m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/D2/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/D2/14F62d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/E/D2/14F62m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/15/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/15/B5435d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/15/B5435m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/40/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/40/F7962m01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/54/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/54/70FA0m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/76/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/76/6352Bd01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/76/6352Bm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/8F/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/8F/DE2FDm01
+2013/01/04 20:34:30 [96920] cd+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/A2/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/A2/CEB2Fm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/B0/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/B0/BA436m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/BB/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/BB/32899m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/D6/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/D6/AF24Fm01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/E2/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/E2/D9F70d01
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/Cache/F/E2/D9F70m01
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/thumbnails/
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/thumbnails/3749fdc26013ef18a3a475a5a13105cc.png
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/thumbnails/3cd59a23e883e4b1f03506119d2a9355.png
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/thumbnails/89ab0e8f1c7bac65a45a6bc988290218.png
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/thumbnails/8a6b9fd712e3dca03c5f0c2734cc453e.png
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/thumbnails/b84814ab2df8359ce2939a390b5e6046.png
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/thumbnails/cbc580718eb38c03483c4d7616fb220d.png
+2013/01/04 20:34:30 [96920] <f+++++++ andreasmosti/Library/Caches/Firefox/Profiles/adt64i4h.default/thumbnails/d324ac1d9dc02254716b8e07ae752b61.png
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/com.spotify.client/Browser/data_0
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/com.spotify.client/Browser/data_1
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Caches/com.spotify.client/Storage/index.dat
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/com.spotify.client/Storage/16/16b0dfaed07fc2fcc925a58c93dfb29917e4ce83.file
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/com.spotify.client/Storage/26/26e48aafb2f8551f213ef35dc8ca2357197c2309.file
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/com.spotify.client/Storage/ac/
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Caches/com.spotify.client/Users/tiduz-user/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Caches/com.spotify.client/Users/tiduz-user/offline2
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Calendars/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Calendars/Calendar Cache
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Calendars/9B02E9B6-5FBA-4A90-99D2-CCCC5C1594B1.caldav/Info.plist
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Calendars/9B02E9B6-5FBA-4A90-99D2-CCCC5C1594B1.caldav/AF6A704D-93E0-4B5E-8AAB-0F4ED40443F1.calendar/Info.plist
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Calendars/BE6F763A-7380-475F-962E-C78F86438558.exchange/Info.plist
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Calendars/BE6F763A-7380-475F-962E-C78F86438558.exchange/32F4495A-6649-40A8-82CE-012F21A164C4.calendar/Info.plist
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Calendars/BE6F763A-7380-475F-962E-C78F86438558.exchange/82B55E72-375B-46C0-A979-9E1A9F9E08F7.calendar/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Calendars/Calendar Sync Changes/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Calendars/DA7C0336-B12D-4816-A920-9FCDCEFF5639.caldav/Info.plist
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Calendars/DA7C0336-B12D-4816-A920-9FCDCEFF5639.caldav/9F0C5C28-5C1A-46C4-A068-92493B268FC5.calendar/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Deleted Messages.mbox/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Deleted Messages.mbox/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Innboks.mbox/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Innboks.mbox/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Kladd.mbox/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Kladd.mbox/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Sendte elementer.mbox/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Sendte elementer.mbox/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Sent Messages.mbox/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Sent Messages.mbox/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Slettede elementer.mbox/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Slettede elementer.mbox/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Useriøs e-post.mbox/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Useriøs e-post.mbox/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Utboks.mbox/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Mail/V2/EWS-andremos@webmail.hist.no/Utboks.mbox/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/IMAP-andreas.mosti@imap.gmail.com/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Mail/V2/IMAP-andreas.mosti@imap.gmail.com/.mboxCache.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/IMAP-andremos@tihlde.org/INBOX.mbox/Inteligente mails.mbox/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Mail/V2/IMAP-andremos@tihlde.org/INBOX.mbox/Inteligente mails.mbox/Info.plist
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Mail/V2/MailData/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Mail/V2/MailData/Accounts.plist
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Mail/V2/MailData/Envelope Index-wal
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Preferences/
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Preferences/com.bittorrent.uTorrent.plist
+2013/01/04 20:34:30 [96920] rsync: send_files failed to open "/Users/andreasmosti/Library/Preferences/net.battle.Authenticator.prefs": Permission denied (13)
+2013/01/04 20:34:30 [96920] .d..t.... andreasmosti/Library/Saved Application State/com.apple.Terminal.savedState/
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Saved Application State/com.apple.Terminal.savedState/data.data
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Saved Application State/com.apple.Terminal.savedState/windows.plist
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Saved Application State/com.bittorrent.uTorrent.savedState/data.data
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Saved Application State/com.bittorrent.uTorrent.savedState/window_2.data
+2013/01/04 20:34:30 [96920] <f..t.... andreasmosti/Library/Saved Application State/com.bittorrent.uTorrent.savedState/windows.plist
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Saved Application State/com.googlecode.iterm2.savedState/data.data
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Saved Application State/com.googlecode.iterm2.savedState/window_17.data
+2013/01/04 20:34:30 [96920] <f.st.... andreasmosti/Library/Saved Application State/com.googlecode.iterm2.savedState/windows.plist
+2013/01/04 20:34:31 [96920] sent 14.57M bytes  received 269.68K bytes  631.63K bytes/sec
+2013/01/04 20:34:31 [96920] total size is 132.20G  speedup is 8906.55
+2013/01/04 20:34:31 [96920] rsync error: some files could not be transferred (code 23) at /SourceCache/rsync/rsync-42/rsync/main.c(992) [sender=2.6.9]

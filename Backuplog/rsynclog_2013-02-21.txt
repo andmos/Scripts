@@ -1,0 +1,30 @@
+2013/02/21 10:37:59 [24845] building file list
+2013/02/21 10:38:15 [24845] rsync: opendir "/Users/andreasmosti/Library/Saved Application State/com.blizzard.diablo3.savedState" failed: Permission denied (13)
+2013/02/21 10:38:15 [24845] rsync: opendir "/Users/andreasmosti/Library/Saved Application State/net.battle.client.savedState" failed: Permission denied (13)
+2013/02/21 10:38:18 [24845] 283144 files to consider
+2013/02/21 10:38:19 [24845] .d..t.... andreasmosti/
+2013/02/21 10:38:19 [24845] <f..t.... andreasmosti/.DS_Store
+2013/02/21 10:38:19 [24845] <f.st.... andreasmosti/.viminfo
+2013/02/21 10:38:19 [24845] .d..t.... andreasmosti/.Trash/
+2013/02/21 10:38:19 [24845] .d..t.... andreasmosti/.dropbox/
+2013/02/21 10:38:19 [24845] <f..t.... andreasmosti/.dropbox/config.dbx
+2013/02/21 10:38:20 [24845] <f..t.... andreasmosti/.dropbox/filecache.dbx
+2013/02/21 10:38:20 [24845] <f..t.... andreasmosti/.dropbox/photo.dbx
+2013/02/21 10:38:25 [24845] <f..t.... andreasmosti/.dropbox/sigstore.dbx
+2013/02/21 10:38:25 [24845] <f..t.... andreasmosti/.dropbox/finderplugin/toolbar_index
+2013/02/21 10:38:25 [24845] <f.st.... andreasmosti/.dropbox/finderplugin/l/5124f3da
+2013/02/21 10:38:25 [24845] .d..t.... andreasmosti/.dropbox/l/
+2013/02/21 10:38:25 [24845] <f+++++++ andreasmosti/.dropbox/l/5124f6f6
+2013/02/21 10:38:25 [24845] <f+++++++ andreasmosti/.dropbox/l/5124fce6
+2013/02/21 10:38:25 [24845] <f..t.... andreasmosti/Desktop/.DS_Store
+2013/02/21 10:38:38 [24845] .d..t.... andreasmosti/Downloads/
+2013/02/21 10:38:41 [24845] .d..t.... andreasmosti/Dropbox/HIST/Dataing/2år/Datakommunikasjon/Øvinger/
+2013/02/21 10:38:41 [24845] <f..t.... andreasmosti/Dropbox/HIST/Dataing/2år/Datakommunikasjon/Øvinger/Øving1.aux
+2013/02/21 10:38:41 [24845] <f..t.... andreasmosti/Dropbox/HIST/Dataing/2år/Datakommunikasjon/Øvinger/Øving1.log
+2013/02/21 10:38:41 [24845] <f..t.... andreasmosti/Dropbox/HIST/Dataing/2år/Datakommunikasjon/Øvinger/Øving1.pdf
+2013/02/21 10:38:41 [24845] <f..t.... andreasmosti/Dropbox/HIST/Dataing/2år/Datakommunikasjon/Øvinger/Øving1.synctex.gz
+2013/02/21 10:38:41 [24845] <f..t.... andreasmosti/Dropbox/HIST/Dataing/2år/Datakommunikasjon/Øvinger/Øving1.tex
+2013/02/21 10:38:41 [24845] .d..t.... andreasmosti/Dropbox/Scripts/Backuplog/
+2013/02/21 10:38:41 [24845] <f.st.... andreasmosti/Dropbox/Scripts/Backuplog/Backup_2013-02-20.txt
+2013/02/21 10:38:41 [24845] <f+++++++ andreasmosti/Dropbox/Scripts/Backuplog/Backup_2013-02-21.txt
+2013/02/21 10:38:42 [24845] <f.st.... andreasmosti/Dropbox/Scripts/Backuplog/rsynclog_2013-02-20.txt
