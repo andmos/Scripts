@@ -1,6 +1,6 @@
 #!/bin/bash
 # Makes a backup of the .bash_profile on the system. 
-# Written by Andreas Mosti 
+# Written by Andreas Mosti, 20.06.2012 
 # 1.2: Errorfix if .bash_profile doesnt exist. 
 # 1.3: Fixed support for bashrc on Linux 
 # BUG: Only works as primary user

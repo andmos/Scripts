@@ -1,4 +1,5 @@
 #! /bin/bash
+# By Andreas Mosti 13.02.2013 
 # Remember SSH key on target machine
 # Incremental backup - after full backup, rsync takes only changed files.
 

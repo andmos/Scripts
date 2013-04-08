@@ -33,9 +33,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 #CLASSPATHS: 
-
-export PATH=$PATH:/Applications/NetBeans/glassfish-3.1.1/javadb/bin: #if netbeans is installed, this fixes the javaDB variables.
-# Works on the laptop as of 08.11.2012, may need change 
+export PATH="/Users/andreasmosti/GlassFish_Server/javadb/bin:$PATH" #if netbeans is installed, this fixes the javaDB variables.
+# Does not work as of 12.03.2013
 export TERM=xterm
 export CLASSPATH=/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar
 export CLASSPATH=$CLASSPATH:~/jars/jogl.jar:. 
@@ -119,3 +118,10 @@ extract () {
          echo "'$1' is not a valid file"
      fi
 }
+
+function psgrep() { 
+ps axuf | grep -v grep | grep "$@" -i --color=auto; 
+
+}
+
+
