@@ -32,7 +32,7 @@ alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-#CLASSPATHS: 
+#Paths / classpaths  
 export PATH="/Users/andreasmosti/GlassFish_Server/javadb/bin:$PATH" #if netbeans is installed, this fixes the javaDB variables.
 # Does not work as of 12.03.2013
 export TERM=xterm
@@ -42,9 +42,6 @@ export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="/usr/local/mysql/bin:$PATH" #mysql path  
 export PATH="/usr/texbin:$PATH" #Path for TeX and LaTeX 
-export NXJ_HOME="/Users/andreasmosti/leJOS_NXJ"
-export LEJOS_NXT_JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home"
-export PATH="$NXJ_HOME/bin:$PATH"
 
 function authme {
   ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' \
