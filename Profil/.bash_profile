@@ -70,7 +70,7 @@ alias sshtunell='"/home/$username/Dropbox/Scripts/sshtunell.bash"'
 alias passmaker='"/home/$username/Dropbox/Scripts/passmaker.bash"'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias unban='"/home/$username/Dropbox/Scripts/unban.bash"'
-
+alias backupconfig='"/home/$username/Dropbox/Scripts/backupconf.bash"' 
 
 function ban() {
     if [ "`id -u`" == "0" ] ; then
@@ -79,8 +79,6 @@ function ban() {
                                 sudo iptables -A INPUT -s $1 -j DROP
                                     fi
                                 }
-
-
 
 echo "Linux - profil lastet" 
 
@@ -93,6 +91,10 @@ export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
 alias delmappehttp='python -m SimpleHTTPServer 8080'
 alias e="exit"
 alias tracert="traceroute"
+alias dir='ls-l'
+alias type='cat'
+alias copy='cp'
+alias move='mv'
 alias biggest='du -ksh *|sort -n'
 
 
@@ -120,7 +122,6 @@ extract () {
 
 function psgrep() { 
 ps axuf | grep -v grep | grep "$@" -i --color=auto; 
-
 }
 
 

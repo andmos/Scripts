@@ -1,5 +1,5 @@
 #! /bin/bash
-# Takes  backup of /etc folder.  
+# Takes backup of *.conf files in /etc/ 
 
 
 hostname=$(hostname -s) 
@@ -12,7 +12,6 @@ else
     echo "Copying files to $hostname -folder" 
 fi
 
- 
 for conf in /etc/*
 do
    sudo cp -r $conf ~/Dropbox/BackupConf/$hostname/
