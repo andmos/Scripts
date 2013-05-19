@@ -71,6 +71,9 @@ alias passmaker='"/home/$username/Dropbox/Scripts/passmaker.bash"'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias unban='"/home/$username/Dropbox/Scripts/unban.bash"'
 alias backupconfig='"/home/$username/Dropbox/Scripts/backupconf.bash"' 
+alias apachelog='tail -f /var/log/apache2/error.log' 
+alias syslog='tail -f /var/log/syslog' 
+
 
 function ban() {
     if [ "`id -u`" == "0" ] ; then
@@ -96,8 +99,7 @@ alias type='cat'
 alias copy='cp'
 alias move='mv'
 alias biggest='du -ksh *|sort -n'
-
-
+alias reload='source ~/.bash_profile' 
 
 extract () {
     if [ -f $1 ] ; then
@@ -120,8 +122,11 @@ extract () {
      fi
 }
 
-function psgrep() { 
+psgrep() { 
 ps axuf | grep -v grep | grep "$@" -i --color=auto; 
 }
 
+countfiles() {
+ls | wc -l
+}
 
