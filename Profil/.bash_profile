@@ -48,6 +48,17 @@ function authme {
           < ~/.ssh/id_dsa.pub
   }
 
+function hiddenFiles {
+  if [[ $1 != "YES" && $1 != "NO" ]]  
+  then   
+      "echo $1 is not a valid input. Write 'YES' or 'NO'"
+        
+  else
+    defaults write com.apple.Finder AppleShowAllFiles $1; killall Finder
+    echo "hidden files: $1" 
+  fi  
+}
+
 echo "Mac - profil lastet" 
 
 fi
@@ -83,6 +94,10 @@ function ban() {
                                     fi
                                 }
 
+
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a     shell session *as a function*
+                                
 echo "Linux - profil lastet" 
 
 fi 
@@ -93,6 +108,7 @@ export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
 
 alias delmappehttp='python -m SimpleHTTPServer 8080'
 alias e="exit"
+alias cd..="cd .." 
 alias tracert="traceroute"
 alias dir='ls-l'
 alias type='cat'
@@ -100,6 +116,7 @@ alias copy='cp'
 alias move='mv'
 alias biggest='du -ksh *|sort -n'
 alias reload='source ~/.bash_profile' 
+alias removeblanks='python ~/Dropbox/Scripts/removeSpace.py'
 
 extract () {
     if [ -f $1 ] ; then
@@ -129,4 +146,3 @@ ps axuf | grep -v grep | grep "$@" -i --color=auto;
 countfiles() {
 ls | wc -l
 }
-

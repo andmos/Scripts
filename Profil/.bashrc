@@ -107,3 +107,5 @@ if [ -f ~/.bash_profile ]; then
 fi
 
 /etc/init.d/dropbox start
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
