@@ -59,6 +59,14 @@ function hiddenFiles {
   fi  
 }
 
+function hide {
+    chflags hidden $1 
+}
+
+function unhide {
+    chflags nohidden $1
+}
+
 echo "Mac - profil lastet" 
 
 fi
@@ -82,6 +90,7 @@ alias passmaker='"/home/$username/Dropbox/Scripts/passmaker.bash"'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias unban='"/home/$username/Dropbox/Scripts/unban.bash"'
 alias backupconfig='"/home/$username/Dropbox/Scripts/backupconf.bash"' 
+alias usage='~/Dropbox/Scripts/usage.bash' 
 alias apachelog='tail -f /var/log/apache2/error.log' 
 alias syslog='tail -f /var/log/syslog' 
 
@@ -117,6 +126,7 @@ alias move='mv'
 alias biggest='du -ksh *|sort -n'
 alias reload='source ~/.bash_profile' 
 alias removeblanks='python ~/Dropbox/Scripts/removeSpace.py'
+alias valuttakalk='python ~/Dropbox/Scripts/valuttakalkulator.py' 
 
 extract () {
     if [ -f $1 ] ; then

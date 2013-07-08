@@ -13,13 +13,13 @@ echo "rsync is I/O heavy, this may take some time"
 echo "loggfile in Backuplog/" 
 sleep 2 
 
-if [[ $ip != "158.38.48.33" ]]
-then 
-	echo "laptop not @ office, abort."
-	echo $ip
-    sleep 2
-	exit
-fi
+#if [[ $ip != "158.38.48.33" ]]
+#then 
+#	echo "laptop not @ office, abort."
+#	echo $ip
+#    sleep 2
+#	exit
+# fi
 
 echo "Backup started; `date +%T`" >> /Users/$username/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
 echo "Beginning rsync" 
