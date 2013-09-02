@@ -101,7 +101,7 @@ function ban() {
                     else
                                 sudo iptables -A INPUT -s $1 -j DROP
                                     fi
-                                }
+                }
 
 
 
@@ -127,7 +127,7 @@ alias biggest='du -ksh *|sort -n'
 alias reload='source ~/.bash_profile' 
 alias removeblanks='python ~/Dropbox/Scripts/removeSpace.py'
 alias valuttakalk='python ~/Dropbox/Scripts/valuttakalkulator.py' 
-
+alias clean='clear'
 extract () {
     if [ -f $1 ] ; then
       case $1 in

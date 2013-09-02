@@ -19,7 +19,7 @@ read  svar
 if [[ $svar == "y" ]]
 then
  	programs="build-essential vim tor nmap ssh curl irssi fail2ban apg smbclient htop git hydra zsh make traceroute mosh screen
-    smbfs mailutils python-dev"
+    smbfs mailutils python-dev ufw"
 	
 	echo "Server install"
 	sleep 2
@@ -36,7 +36,8 @@ fi
 
 else
 	programs="build-essential vim tor nmap ssh curl irssi fail2ban apg smbclient htop git zsh transmission gedit texlive gedit-latex-plugin
-    thunderbird vlc hydra p7zip-full texmaker make openjdk-7-jdk unetbootin traceroute mosh awesome screen guake sshguard python-dev"
+    thunderbird vlc hydra p7zip-full texmaker make openjdk-7-jdk unetbootin traceroute mosh awesome screen guake sshguard
+    python-dev ufw"
 	
 	echo "Desktop install"
 	sleep 2 
