@@ -4,7 +4,7 @@
 # Warning: The zsh - configs works badly in OS X... 
 # V1.2: Added OS - detection to avoid errors while running   
 # V1.2.1: Bugfix 
-# V1.2: Added zsh - configurator from TJuberg, bad fit with OS X  
+# V1.3: Added zsh - configurator from TJuberg, bad fit with OS X  
 
 if [[ "$(uname)" != "Linux" ]]
 then 
@@ -19,7 +19,7 @@ read  svar
 if [[ $svar == "y" ]]
 then
  	programs="build-essential vim tor nmap ssh curl irssi fail2ban apg smbclient htop git hydra zsh make traceroute mosh screen
-    smbfs mailutils python-dev ufw"
+    smbfs mailutils python-dev ufw oidentd"
 	
 	echo "Server install"
 	sleep 2
@@ -37,7 +37,7 @@ fi
 else
 	programs="build-essential vim tor nmap ssh curl irssi fail2ban apg smbclient htop git zsh transmission gedit texlive gedit-latex-plugin
     thunderbird vlc hydra p7zip-full texmaker make openjdk-7-jdk unetbootin traceroute mosh awesome screen guake sshguard
-    python-dev ufw"
+    python-dev ufw oidentd terminator"
 	
 	echo "Desktop install"
 	sleep 2 

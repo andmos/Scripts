@@ -4,6 +4,7 @@
 # when edited, the symlink will sync with Dropbox and all devices get the new version of the file. If symlinc some how fucks up,
 # unlink from both home directory and dropbox, then symlinc again. 
 
+# OS X - Stuff: 
 export username=$(whoami)
 
 if [[ "$(uname)" == "Darwin" ]] 
@@ -24,13 +25,18 @@ alias aktiverdashboard='defaults write com.apple.dashboard mcx-disabled -boolean
 alias killspotlight='sudo mdutil -i on'
 alias aktiverspotlight='sudo sudo mdutil -i off' 
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short' 
-alias hist='open /Users/$username/Dropbox/HIST/Dataing/2år/'
+alias hist='open /Users/$username/Dropbox/HIST/Dataing/3år/'
 alias rsyncbackup='"/Users/$username/Dropbox/Scripts/backupjob.bash"'
 alias spotify='"/Users/$username/Dropbox/Scripts/spotify.bash"'
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+#Color Scheme for terminal: 
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+#export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 #Paths / classpaths  
 export PATH="/Users/andreasmosti/GlassFish_Server/javadb/bin:$PATH" #if netbeans is installed, this fixes the javaDB variables.
@@ -59,6 +65,12 @@ function hiddenFiles {
   fi  
 }
 
+which gshuf &> /dev/null
+if [ $? -eq 0 ]
+then
+        alias shuf=gshuf
+    fi
+
 function hide {
     chflags hidden $1 
 }
@@ -71,6 +83,7 @@ echo "Mac - profil lastet"
 
 fi
 
+# Linux - stuff:
 if [[ "$(uname)" == "Linux" ]]
 then 
 
@@ -93,7 +106,11 @@ alias backupconfig='"/home/$username/Dropbox/Scripts/backupconf.bash"'
 alias usage='~/Dropbox/Scripts/usage.bash' 
 alias apachelog='tail -f /var/log/apache2/error.log' 
 alias syslog='tail -f /var/log/syslog' 
+alias didyouknow='echo "Did you know that:"; whatis $(ls /bin | shuf -n 1)'
 
+function psgrep() { 
+ps axuf | grep -v grep | grep "$@" -i --color=auto; 
+}
 
 function ban() {
     if [ "`id -u`" == "0" ] ; then
@@ -103,15 +120,13 @@ function ban() {
                                     fi
                 }
 
-
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a     shell session *as a function*
                                 
 echo "Linux - profil lastet" 
 
 fi 
 
-# Functions and aliases not depending on OS 
+# Functions and aliases not depending on OS (as far as tested) 
 
 export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
 
@@ -128,6 +143,11 @@ alias reload='source ~/.bash_profile'
 alias removeblanks='python ~/Dropbox/Scripts/removeSpace.py'
 alias valuttakalk='python ~/Dropbox/Scripts/valuttakalkulator.py' 
 alias clean='clear'
+alias getInternetSpeed='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias weather='~/Dropbox/Scripts/ansiweather/ansiweather' 
+alias didyouknow='echo "Did you know that:"; whatis $(ls /bin | shuf -n 1)'
+alias JSON='~/Dropbox/Scripts/JSON.sh/JSON.sh' 
+
 extract () {
     if [ -f $1 ] ; then
       case $1 in
@@ -149,9 +169,7 @@ extract () {
      fi
 }
 
-psgrep() { 
-ps axuf | grep -v grep | grep "$@" -i --color=auto; 
-}
+
 
 countfiles() {
 ls | wc -l

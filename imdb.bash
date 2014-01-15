@@ -23,4 +23,3 @@ if [[ "$plot" != "" ]]; then echo "Plot: $plot" ;fi
 if [[ "$genre" != "" ]]; then echo "Genre(s): $genre" ;fi
 if [[ "$language" != "" ]]; then echo "Language: $language" ;fi
 if [[ "$country" != "" ]]; then echo "Country: $country" ;fi
-
