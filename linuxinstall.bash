@@ -5,6 +5,7 @@
 # V1.2: Added OS - detection to avoid errors while running   
 # V1.2.1: Bugfix 
 # V1.3: Added zsh - configurator from TJuberg, bad fit with OS X  
+# V1.4: Added gem - installer.
 
 if [[ "$(uname)" != "Linux" ]]
 then 
@@ -43,13 +44,19 @@ else
 	sleep 2 
 
 fi
-  
+
+rubyPrograms="bropages"
+
 function install() {
 
 sudo apt-get install -y $1
 	
 	}
 	
+function gemInstall() {
+sudo gem install $1
+
+    }
 
 echo "Installing programs.."
 sleep 2
@@ -60,6 +67,11 @@ sudo apt-get upgrade -y
 for tool in $programs
 do
 	install $tool
+done
+
+for gem in $rubyPrograms
+do
+    gemInstall $gem
 done
 
 echo "Install Complete."
