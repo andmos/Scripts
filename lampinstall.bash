@@ -15,13 +15,9 @@ function install() {
 echo "Installing LAMP - essentials.."
 sleep 2
 
-sudo apt-get update 
-sudo apt-get upgrade -y
+sudo apt-get update > /dev/null 2>&1 
+sudo apt-get upgrade -y > /dev/null 2>&1 
 
 for tool in $programs
-do
-    install $tool
-done
-
-echo "Install complete." 
+do; echo "Current package: $tool" ; install $tool > /dev/null 2>&1 ;done ; echo "Install complete." 
 sleep 2 
