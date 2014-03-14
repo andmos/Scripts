@@ -68,6 +68,8 @@ filetype on
 let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*  
 
+set mouse=a 
+
 " I don't like folding
 let g:Tex_Folding=0
 set iskeyword+=:

@@ -25,10 +25,10 @@ alias aktiverdashboard='defaults write com.apple.dashboard mcx-disabled -boolean
 alias killspotlight='sudo mdutil -i on'
 alias aktiverspotlight='sudo sudo mdutil -i off' 
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short' 
-alias hist='open /Users/$username/Dropbox/HIST/Dataing/3år/'
-alias rsyncbackup='"/Users/$username/Dropbox/Scripts/backupjob.bash"'
+alias rsyncbackup='"/Users/$username/Dropbox/Scripts/rsyncBackup"'
 alias spotify='"/Users/$username/Dropbox/Scripts/spotify.bash"'
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias stfu="osascript -e 'set volume output muted true'" 
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -39,15 +39,13 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 #export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 #Paths / classpaths  
-export PATH="/Users/andreasmosti/GlassFish_Server/javadb/bin:$PATH" #if netbeans is installed, this fixes the javaDB variables.
-# Does not work as of 12.03.2013
+export PATH="/Users/andreasmosti/GlassFish_Server/javadb/bin:$PATH" 
 export TERM=xterm
-export CLASSPATH=/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar
-export CLASSPATH=$CLASSPATH:~/jars/jogl.jar:. 
-export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
+export CLASSPATH=/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar:.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="/usr/local/mysql/bin:$PATH" #mysql path  
 export PATH="/usr/texbin:$PATH" #Path for TeX and LaTeX 
+PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
 
 function authme {
   ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' \
@@ -106,7 +104,6 @@ alias backupconfig='"/home/$username/Dropbox/Scripts/backupconf.bash"'
 alias usage='~/Dropbox/Scripts/usage.bash' 
 alias apachelog='tail -f /var/log/apache2/error.log' 
 alias syslog='tail -f /var/log/syslog' 
-alias didyouknow='echo "Did you know that:"; whatis $(ls /bin | shuf -n 1)'
 
 function psgrep() { 
 ps axuf | grep -v grep | grep "$@" -i --color=auto; 
@@ -126,9 +123,9 @@ echo "Linux - profil lastet"
 
 fi 
 
-# Functions and aliases not depending on OS (as far as tested) 
+# Functions and aliases not depending on OS  
 
-export CLASSPATH=$CLASSPATH:~/Dropbox/Kode/mostiBot/mostiBot/pircbot.jar
+export CLASSPATH=$CLASSPATH:~/Dev/Alexandria/*
 
 alias delmappehttp='python -m SimpleHTTPServer 8080'
 alias e="exit"
@@ -138,6 +135,7 @@ alias dir='ls-l'
 alias type='cat'
 alias copy='cp'
 alias move='mv'
+alias fuckYou='kill'
 alias biggest='du -ksh *|sort -n'
 alias reload='source ~/.bash_profile' 
 alias removeblanks='python ~/Dropbox/Scripts/removeSpace.py'
@@ -147,6 +145,7 @@ alias getInternetSpeed='wget -O /dev/null http://speedtest.wdc01.softlayer.com/d
 alias weather='~/Dropbox/Scripts/ansiweather/ansiweather' 
 alias didyouknow='echo "Did you know that:"; whatis $(ls /bin | shuf -n 1)'
 alias JSON='~/Dropbox/Scripts/JSON.sh/JSON.sh' 
+alias hr='~/Dropbox/Scripts/hr'
 
 extract () {
     if [ -f $1 ] ; then
@@ -169,8 +168,11 @@ extract () {
      fi
 }
 
-
-
 countfiles() {
 ls | wc -l
 }
+
+function screenIt(){
+    screen -S job -dm $1 
+}
+
