@@ -1,4 +1,0 @@
-Backup started; 00:31:14
-Backup finished;  02:31:33
-Backup started; 10:04:19
-Backup finished;  10:08:03
