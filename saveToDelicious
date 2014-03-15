@@ -1,0 +1,6 @@
+#! /bin/bash
+
+username=""
+password=""
+
+curl "https://$username:$password@api.del.icio.us/v1/posts/add?&url=$1&description=$2&tags=$3&replace=no"
