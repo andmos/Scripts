@@ -104,7 +104,7 @@ fi
 
 # Functions and aliases not depending on OS  
 
-export PATH="~/Dropbox/Scripts:$PATH"
+export PATH="~/Dropbox/Scripts:$PATH" # All my beatiful scripts. 
 export CLASSPATH=$CLASSPATH:~/Dev/Alexandria/*
 
 alias shareFolderViaHTTP='python -m SimpleHTTPServer 8080'
