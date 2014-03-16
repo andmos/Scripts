@@ -1,9 +1,14 @@
 #! /bin/bash
 # $1 = url
 # $2 = description
-# $3 = tags, separate with ','
+# $3 = tags, seoarate with ','
 
 username=""
 password=""
 
-curl "https://$username:$password@api.del.icio.us/v1/posts/add?&url=$1&description=$2&tags=$3&replace=no"
+if [ -z "$(curl "https://$username:$password@api.del.icio.us/v1/posts/add?&url=$1&description=$2&tags=$3&replace=no" | grep done)" ] 
+then 
+    echo "Something went wrong with the save."
+else
+    echo "Saved to Delicious."
+fi
