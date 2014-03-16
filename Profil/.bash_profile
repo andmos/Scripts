@@ -125,9 +125,10 @@ fi
 
 # Functions and aliases not depending on OS  
 
+export PATH="~/Dropbox/Scripts:$PATH"
 export CLASSPATH=$CLASSPATH:~/Dev/Alexandria/*
 
-alias delmappehttp='python -m SimpleHTTPServer 8080'
+alias shareFolderViaHTTP='python -m SimpleHTTPServer 8080'
 alias e="exit"
 alias cd..="cd .." 
 alias tracert="traceroute"
@@ -146,6 +147,7 @@ alias weather='~/Dropbox/Scripts/ansiweather/ansiweather'
 alias didyouknow='echo "Did you know that:"; whatis $(ls /bin | shuf -n 1)'
 alias JSON='~/Dropbox/Scripts/JSON.sh/JSON.sh' 
 alias hr='~/Dropbox/Scripts/hr'
+alias saveToDelicious='~/Dropbox/Scripts/saveToDelicious'
 
 extract () {
     if [ -f $1 ] ; then
