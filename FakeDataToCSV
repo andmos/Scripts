@@ -1,0 +1,14 @@
+#! /bin/bash
+# Requires faker for python:
+# port install py27-pip 
+# pip install fake-factory
+
+
+export PYTHONIOENCODING=UTF-8
+for i in `seq 1 1000`;
+do 
+    name=$(python -m faker name)
+    date=$(python -m faker date) 
+    address=$(python -m faker address)
+    echo "$name,$date,$address;" >> fakeData.csv
+done 
