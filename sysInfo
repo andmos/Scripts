@@ -1,7 +1,7 @@
 #! /usr/bin/python
 
 import subprocess
-
+import platform
 class SysInfo():
     """docstring for SysInfo"""     
     def __init__(self):
@@ -17,7 +17,10 @@ class SysInfo():
         subprocess.call('df -h', shell=True)
 
     def mem_space(self):
-        subprocess.call('free -h', shell=True)
+        if "Darwin" in platform.platform():
+            subprocess.call('~/Dropbox/Scripts/free-memory', shell=True)
+        else:
+            subprocess.call('free -h', shell=True)
 
     def basic_info(self):
         subprocess.call('cat /etc/issue', shell=True)
