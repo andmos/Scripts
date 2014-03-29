@@ -6,6 +6,7 @@
 # V1.2.1: Bugfix 
 # V1.3: Added zsh - configurator from TJuberg, bad fit with OS X  
 # V1.4: Added gem - installer.
+# V1.5: Added some git-stuff and began cleanup of file.
 
 if [[ "$(uname)" != "Linux" ]]
 then 
@@ -29,7 +30,7 @@ then
     read dns 
 if [[ $dns == "y" ]] 
 then 
-    sudo apt-get install -y bind9
+    install bind9
 else 
     echo "No DNS." 
     sleep 2
@@ -47,32 +48,41 @@ fi
 
 rubyPrograms="bropages"
 
-function install() {
+function updateSystem() {
+sudo apt-get update 
+sudo apt-get upgrade -y
 
-sudo apt-get install -y $1
+    }
+
+function install() {
+sudo apt-get install -y $1 >/dev/null 2>&1
 	
 	}
 	
 function gemInstall() {
-sudo gem install $1
+sudo gem install $1 >/dev/null 2>&1
 
     }
 
 echo "Installing programs.."
 sleep 2
 
-sudo apt-get update
-sudo apt-get upgrade -y 
+updateSystem
 
-for tool in $programs
+for program in $programs
 do
-	install $tool
+	echo "Current package: $program"
+    install $programs
 done
 
 for gem in $rubyPrograms
 do
+    echo "Current gem: $gem"
     gemInstall $gem
 done
+
+echo "Setting git-colors.."
+git config --global color.ui true
 
 echo "Install Complete."
 sleep 2
