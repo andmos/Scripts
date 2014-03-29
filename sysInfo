@@ -1,0 +1,29 @@
+#! /usr/bin/python
+
+import subprocess
+
+class SysInfo():
+    """docstring for SysInfo"""     
+    def __init__(self):
+        print '\n Basic system information \n'
+        self.basic_info()
+        self.hr_line()
+        self.mem_space()
+        self.hr_line()
+        self.disk_space()
+        print ''
+    
+    def disk_space(self):
+        subprocess.call('df -h', shell=True)
+
+    def mem_space(self):
+        subprocess.call('free -h', shell=True)
+
+    def basic_info(self):
+        subprocess.call('cat /etc/issue', shell=True)
+        subprocess.call('uname -a', shell=True)
+    
+    def hr_line(self):
+        subprocess.call('~/Dropbox/Scripts/hr', shell=True)
+
+si = SysInfo() 
