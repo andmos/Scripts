@@ -1,5 +1,8 @@
 #! /usr/bin/python
 
+# Basic system info for posix-systems.
+# Andreas Mosti, 29.03.2014
+
 import subprocess
 import platform
 
