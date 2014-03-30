@@ -81,8 +81,9 @@ do
     gemInstall $gem
 done
 
-echo "Setting git-colors.."
+echo "Setting git-options..."
 git config --global color.ui true
+git config --global core.editor "vim"
 
 echo "Install Complete."
 sleep 2
