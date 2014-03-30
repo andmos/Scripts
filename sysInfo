@@ -2,14 +2,18 @@
 
 import subprocess
 import platform
+
 class SysInfo():
     """docstring for SysInfo"""     
     def __init__(self):
+        self.hr_line()
         print '\n Basic system information \n'
         self.basic_info()
         self.hr_line()
+        print '\n Free memory: \n'
         self.mem_space()
         self.hr_line()
+        print '\n Disk info: \n'
         self.disk_space()
         print ''
     
@@ -23,7 +27,10 @@ class SysInfo():
             subprocess.call('free -h', shell=True)
 
     def basic_info(self):
-        subprocess.call('cat /etc/issue', shell=True)
+        if "Darwin" in platform.platform():  
+            subprocess.call('sw_vers', shell=True)
+        else:
+             subprocess.call('cat /etc/issue', shell=True)
         subprocess.call('uname -a', shell=True)
     
     def hr_line(self):
