@@ -1,4 +1,3 @@
 #! /bin/bash
-echo "IP to unban:"
-read ip 
-sudo iptables -D fail2ban-ssh -s $ip -j DROP
+
+sudo iptables -D fail2ban-ssh -s $1 -j DROP
