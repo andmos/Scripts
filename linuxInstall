@@ -38,8 +38,7 @@ fi
 
 else
 	programs="build-essential vim tor nmap ssh curl irssi fail2ban apg smbclient htop git zsh transmission gedit texlive gedit-latex-plugin
-    thunderbird vlc hydra p7zip-full texmaker make openjdk-7-jdk unetbootin traceroute mosh awesome screen guake sshguard
-    python-dev ufw oidentd terminator ruby"
+    thunderbird vlc hydra p7zip-full texmaker make  unetbootin traceroute mosh awesome screen guake sshguard python-dev ufw oidentd terminator ruby"
 	
 	echo "Desktop install"
 	sleep 2 
