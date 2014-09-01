@@ -14,13 +14,16 @@ alias t='"/Users/$username/Dropbox/Scripts/todo.sh"'
 alias latex='perl ~/.latexmk'
 alias flushdns='dscacheutil -flushcache'
 alias tor-ssh='ssh -o ProxyCommand="nc -X 4 -x localhost:9050 %h %p"'
+alias free='~/Dropbox/Scripts/free-memory'
 alias killDashboard='defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock'
 alias activateDashboard='defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock'
 alias killSpotlight='sudo mdutil -i on'
 alias activateSpotlight='sudo sudo mdutil -i off' 
+alias forceEmptyTrash='rm -rf ~/.Trash/*'
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short' 
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias stfu="osascript -e 'set volume output muted true'" 
+alias removeOldMacportsPackages="sudo port uninstall inactive"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -31,12 +34,14 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 #export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 #Paths / classpaths  
-export PATH="/Users/andreasmosti/GlassFish_Server/javadb/bin:$PATH" 
+ 
 export TERM=xterm
 export CLASSPATH=/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar:.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH="/usr/local/mysql/bin:$PATH" #mysql path  
+export PATH="/usr/local/mysql/bin:$PATH" 
 export PATH="/usr/texbin:$PATH" #Path for TeX and LaTeX 
+export PATH="/usr/local/apache-maven-3.2.1/bin:$PATH" 
+
 PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
 
 function authme {
@@ -69,6 +74,10 @@ function unhide {
     chflags nohidden $1
 }
 
+ if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+           . /opt/local/etc/profile.d/bash_completion.sh
+             fi
+
 echo "Mac - profil lastet" 
 
 fi
@@ -83,12 +92,14 @@ export LANG=en_US.UTF-8
 alias dnsip='dig myip.opendns.com @resolver1.opendns.com +short'  
 alias apachelog='tail -f /var/log/apache2/error.log' 
 alias syslog='tail -f /var/log/syslog' 
+alias distroVersion='cat /etc/*-release'
 
-function psgrep() { 
-ps axuf | grep -v grep | grep "$@" -i --color=auto; 
+function psgrep { 
+    ps axuf | grep -v grep | grep "$@" -i --color=auto; 
+
 }
 
-function ban() {
+function ban {
     if [ "`id -u`" == "0" ] ; then
                 iptables -A INPUT -s $1 -j DROP
                     else
@@ -106,6 +117,7 @@ fi
 
 export PATH="~/Dropbox/Scripts:$PATH" # All my beatiful scripts. 
 export CLASSPATH=$CLASSPATH:~/Dev/Alexandria/*
+export EDITOR=vim 
 
 alias shareFolderViaHTTP='python -m SimpleHTTPServer 8080'
 alias e="exit"
@@ -123,8 +135,20 @@ alias getInternetSpeed='wget -O /dev/null http://speedtest.wdc01.softlayer.com/d
 alias weather='~/Dropbox/Scripts/ansiweather/ansiweather' 
 alias didyouknow='echo "Did you know that:"; whatis $(ls /bin | shuf -n 1)'
 alias JSON='~/Dropbox/Scripts/JSON.sh/JSON.sh' 
+alias mapNetwork='nmap -sP $1'
 
-extract () {
+alias runningDocker='docker ps -l -q'
+alias removeAllDockerContainers='sudo docker rm $(sudo docker ps -a -q)'
+alias stopAllRunningDockerContainers='sudo docker stop $(sudo docker ps -a -q)'
+
+
+
+function git-forcepull {
+    git fetch --all
+    git reset --hard origin/master
+}
+
+function extract {
     if [ -f $1 ] ; then
       case $1 in
         *.tar.bz2)   tar xjf $1     ;;
@@ -133,6 +157,7 @@ extract () {
         *.rar)       unrar e $1     ;;
         *.gz)        gunzip $1      ;;
         *.tar)       tar xf $1      ;;
+        *.tar.xz)    tar xf $1      ;;
         *.tbz2)      tar xjf $1     ;;
         *.tgz)       tar xzf $1     ;;
         *.zip)       unzip $1       ;;
@@ -143,13 +168,19 @@ extract () {
      else
          echo "'$1' is not a valid file"
      fi
+
 }
 
-countfiles() {
+function countfiles {
 ls | wc -l
+
 }
 
-function screenIt(){
+
+function screenIt {
     screen -S job -dm $1 
 }
 
+function countLinesOfCode {
+    find . -name "*.$1" | xargs wc -l
+}
