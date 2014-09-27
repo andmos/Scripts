@@ -3,6 +3,10 @@
 # Remember SSH key on target machine
 # Incremental backup - after full backup, rsync takes only changed files.
 
+DIRECTORYTOBACKUP=~/
+BACKUPHOST="andreas@afrodite"
+BACKUPHOSTFOLDER="/media/disk2/"
+
 error() {
 echo "Backup interrupted!; `date +%T`" >> ~/Dropbox/Scripts/Backuplog/Backup_`    date +%F`.txt
 exit 1
@@ -27,7 +31,6 @@ sleep 3
 
 
 trap error SIGINT
-rsync -avPh --exclude 'Movies' --log-file=~/Dropbox/Scripts/Backuplog/rsynclog_`date +%F`.txt /Users/$username andreas@afrodite:/media/disk2/
-
+rsync -avPh --exclude 'Movies' --log-file=/Users/$username/Dropbox/Scripts/Backuplog/rsynclog_`date +%F`.txt $DIRECTORYTOBACKUP andreas@afrodite:/media/disk2/
 
 echo "Backup finished;  `date +%T`" >> ~/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
