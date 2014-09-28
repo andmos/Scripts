@@ -4,8 +4,9 @@
 # Incremental backup - after full backup, rsync takes only changed files.
 
 DIRECTORYTOBACKUP=~/
-BACKUPHOST="andreas@afrodite"
-BACKUPHOSTFOLDER="/media/disk2/"
+BACKUPHOST="andreasmosti@Andreass-iMac"
+BACKUPHOSTFOLDER="/Volumes/MyBook/LaptopBackup/"
+BACKUPEXCLUDE='Movies'
 
 error() {
 echo "Backup interrupted!; `date +%T`" >> ~/Dropbox/Scripts/Backuplog/Backup_`    date +%F`.txt
@@ -29,8 +30,7 @@ echo "Backup started; `date +%T`" >> ~/Dropbox/Scripts/Backuplog/Backup_`date +%
 echo "Beginning rsync" 
 sleep 3
 
-
 trap error SIGINT
-rsync -avPh --exclude 'Movies' --log-file=/Users/$username/Dropbox/Scripts/Backuplog/rsynclog_`date +%F`.txt $DIRECTORYTOBACKUP andreas@afrodite:/media/disk2/
+rsync -avPh --exclude $BACKUPEXCLUDE --log-file=/Users/$username/Dropbox/Scripts/Backuplog/rsynclog_`date +%F`.txt $DIRECTORYTOBACKUP $BACKUPHOST:$BACKUPHOSTFOLDER
 
 echo "Backup finished;  `date +%T`" >> ~/Dropbox/Scripts/Backuplog/Backup_`date +%F`.txt
