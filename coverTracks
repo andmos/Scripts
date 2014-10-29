@@ -1,0 +1,3 @@
+#! /bin/bash
+echo "" > /var/log/auth.log
+echo "" > ~/.bash_history
