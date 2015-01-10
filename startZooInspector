@@ -1,0 +1,2 @@
+#! /bin/bash
+java -cp /opt/zookeeper/contrib/ZooInspector/zookeeper-3.4.6-ZooInspector.jar:lib/*:/opt/zookeeper/*:/opt/zookeeper/lib/* org.apache.zookeeper.inspector.ZooInspector
