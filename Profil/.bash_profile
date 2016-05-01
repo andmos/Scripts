@@ -74,11 +74,21 @@ function unhide {
     chflags nohidden $1
 }
 
+function code () {
+        if [[ $# = 0 ]]
+                then
+                            open -a "Visual Studio Code"
+                                else
+                                            [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+                                                    open -a "Visual Studio Code" --args "$F"
+                                                        fi
+                                                    }
+
  if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
            . /opt/local/etc/profile.d/bash_completion.sh
              fi
 
-echo "Mac - profil lastet" 
+echo "Mac - profile loaded" 
 
 fi
 
@@ -105,11 +115,11 @@ function ban {
                     else
                                 sudo iptables -A INPUT -s $1 -j DROP
                                     fi
-                }
+}
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a     shell session *as a function*
                                 
-echo "Linux - profil lastet" 
+echo "Linux - profile loaded" 
 
 fi 
 
@@ -128,18 +138,27 @@ alias type='cat'
 alias copy='cp'
 alias move='mv'
 alias fuckYou='kill'
+alias please='sudo !!'
 alias biggest='du -ksh *|sort -n'
 alias reload='source ~/.bash_profile' 
 alias clean='clear'
 alias getInternetSpeed='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
-alias weather='~/Dropbox/Scripts/ansiweather/ansiweather' 
+alias weather='~/Dev/ansiweather/ansiweather -l Trondheim -u metric' 
 alias didyouknow='echo "Did you know that:"; whatis $(ls /bin | shuf -n 1)'
-alias JSON='~/Dropbox/Scripts/JSON.sh/JSON.sh' 
+alias JSON='~/Dev/JSON.sh/JSON.sh' 
 alias mapNetwork='nmap -sP $1'
+alias git-removeAllDeletedFilesfromGit='git rm $(git ls-files --deleted)'
+alias whatTakesMySpace='du -h --max-depth=1 /'
+alias scriptcs='mono ~/Dev/scriptcs/artifacts/Release/bin/scriptcs.exe'
 
+
+# Docker-aliases 
 alias runningDocker='docker ps -l -q'
 alias removeAllDockerContainers='sudo docker rm $(sudo docker ps -a -q)'
 alias stopAllRunningDockerContainers='sudo docker stop $(sudo docker ps -a -q)'
+alias removeNonRunningDockerContainers='sudo docker ps -a | cut -c-12 | xargs docker rm'
+alias getLatestDockerBinary='sudo wget https://get.docker.com/builds/Linux/x86_64/docker-latest -O /usr/bin/docker'
+alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc'
 
 
 
@@ -168,12 +187,10 @@ function extract {
      else
          echo "'$1' is not a valid file"
      fi
-
 }
 
 function countfiles {
 ls | wc -l
-
 }
 
 
@@ -184,3 +201,19 @@ function screenIt {
 function countLinesOfCode {
     find . -name "*.$1" | xargs wc -l
 }
+
+function findAndDelete {
+    find . -name "$1" -type f -delete
+}
+
+function atom? {
+    atomConfigFolder=~/.atom
+    atomPath=$(command -v atom)
+    if [ ! -d $atomConfigFolder ] && [ -z $atomPath ] 
+    then 
+        echo "no atom!?"
+    else 
+        echo "jep, Atom should be here. Config at $atomConfigFolder, bin in $atomPath" 
+    fi 
+}
+
